@@ -1,0 +1,29 @@
+Directory Structure
+
+<run directory>
+     ligands
+     receptors
+     dockings
+     optprep
+     optimized
+     analysis
+
+ligands   - a directory containing .mol2 files of the ligands to be
+            screened 
+
+receptors - a direcotry for the receptors against which to dock the
+            ligands There will be one subdirectory for each receptor
+            in which the receptor .pdbqt files and the .map files will
+            be stored.
+
+dockings  - a directory containing the results of individual docking
+            runs for the ligands
+
+optprep   - a directory containing the MOPAC input files for
+            reoptimization using MOZYME
+
+optimized - a directory containing the MOPAC optimized structures
+
+analysis  - a directory containing analyses of both the docking and
+            semiempircal results
+

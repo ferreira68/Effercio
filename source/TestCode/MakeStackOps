@@ -1,0 +1,10 @@
+#!/bin/csh
+# $Id: MakeStackOps 6 2011-11-17 19:55:32Z dcoss $
+
+# Use this one for Memwatch
+# mpicc -ggdb -DDEBUG -DMEMWATCH -DMEMWATCH_STDIO -O0 -o StackOps StackOps.c ../structs.c ../io_utils.c ../memwatch.c
+
+# Use this one for Valgrind
+mpicc -ggdb -DDEBUG -O0 -o StackOps StackOps.c ../structs.c ../io_utils.c
+
+rm *.o

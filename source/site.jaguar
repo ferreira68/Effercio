@@ -1,0 +1,43 @@
+// $Id: site.jaguar 9 2012-03-01 20:01:25Z dcoss $
+/*************************************************************************
+ * Authors: Antonio M. Ferreira, PhD [1,2]                               *
+ *          David Coss, PhD [1]                                          *
+ *                                                                       *
+ *          (1) High Performance Computing Faclity                       *
+ *              Research Informatics, Information Sciences               *
+ *                                                                       *
+ *          (2) Structural Biology                                       *
+ *                                                                       *
+ *          St. Jude Children's Research Hospital                        *
+ *                                                                       *
+ *************************************************************************/
+
+// Site-specific settings
+// Where will we be keeping our scratch files
+#define SCR_DIR "/scratch_space"
+#define SLEEP_TIME 4
+#define SLEEP_TIME_NSEC 6000000
+#define FILE_BUFF_SIZE 16777216 // 16MB copy buffer
+
+// First the MGLTools information
+#define MGL_TOOLS "/tmp/work/ferreira/bin/MGLTools-1.5.4/MGLToolsPckgs/AutoDockTools/Utilities24"
+#define MGL_BIN_DIR "/tmp/work/ferreira/bin/MGLTools-1.5.4/bin"
+#define envMGL_ROOT "MGL_ROOT=/tmp/work/ferreira/bin/MGLTools-1.5.4"
+#define envARCHOSV "ARCHOSV=x86_64Linux2"
+#define envMGL_EXTRALIBS "MGL_EXTRALIBS=/tmp/work/ferreira/bin/MGLTools-1.5.4/lib"
+#define envMGL_EXTRAINCLUDE "MGL_EXTRAINCLUDE=/tmp/work/ferreira/bin/MGLTools-1.5.4/include"
+#define envTCL_LIBRARY "TCL_LIBRARY=/tmp/work/ferreira/bin/MGLTools-1.5.4/tcl8.4"
+#define envTK_LIBRARY "TK_LIBRARY=/tmp/work/ferreira/bin/MGLTools-1.5.4/tk8.4"
+#define envLD_LIBRARY "LD_LIBRARY_PATH=/tmp/work/ferreira/bin/MGLTools-1.5.4/lib"
+#define envPYTHONHOME "PYTHONHOME=/tmp/work/ferreira/bin/MGLTools-1.5.4"
+#define envPYTHONPATH "PYTHONPATH=/tmp/work/ferreira/bin/MGLTools-1.5.4/MGLToolsPckgs"
+#define envPATH "PATH=/tmp/work/ferreira/bin/MGLTools-1.5.4/bin:/usr/lib64/qt-3.3/bin:/bin:/usr/bin:/usr/kerberos/bin:/usr/local/bin:/tmp/work/ferreira/bin:./"
+
+// Autodock
+#define AUTODOCK_VER "4.2"
+#define AUTODOCK_EXE "/nfs_exports/apps/gnu-apps/AutoDock/autodock4"
+
+// MOPAC
+#define MOPAC_EXE "MOPAC2009.exe"
+#define MOPAC_LIC ""
+

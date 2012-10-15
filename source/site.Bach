@@ -1,0 +1,43 @@
+// $Id: site.Bach 9 2012-03-01 20:01:25Z dcoss $
+/*************************************************************************
+ * Authors: Antonio M. Ferreira, PhD [1,2]                               *
+ *          David Coss, PhD [1]                                          *
+ *                                                                       *
+ *          (1) High Performance Computing Faclity                       *
+ *              Research Informatics, Information Sciences               *
+ *                                                                       *
+ *          (2) Structural Biology                                       *
+ *                                                                       *
+ *          St. Jude Children's Research Hospital                        *
+ *                                                                       *
+ *************************************************************************/
+
+// Site-specific settings
+// Where will we be keeping our scratch files
+#define SCR_DIR "/scratch_space"
+#define SLEEP_TIME_SEC 0
+#define SLEEP_TIME_NSEC 5000000
+#define FILE_BUFF_SIZE 16777216 // 16MB copy buffer
+
+// First the MGLTools information
+#define MGL_TOOLS "/usr/local/MGLTools-1.5.4/MGLToolsPckgs/AutoDockTools/Utilities24"
+#define MGL_BIN_DIR "/usr/local/MGLTools-1.5.4/bin/"
+#define envMGL_ROOT "MGL_ROOT=/usr/local/MGLTools-1.5.4"
+#define envARCHOSV "ARCHOSV=i86Linux2"
+#define envMGL_EXTRALIBS "MGL_EXTRALIBS=/usr/local/MGLTools-1.5.4/lib"
+#define envMGL_EXTRAINCLUDE "MGL_EXTRAINCLUDE=/usr/local/MGLTools-1.5.4/include"
+#define envTCL_LIBRARY "TCL_LIBRARY=/usr/local/MGLTools-1.5.4/tcl8.4"
+#define envTK_LIBRARY "TK_LIBRARY=/usr/local/MGLTools-1.5.4/tk8.4"
+#define envLD_LIBRARY "LD_LIBRARY_PATH=/usr/local/MGLTools-1.5.4/lib"
+#define envPYTHONHOME "PYTHONHOME=/usr/local/MGLTools-1.5.4"
+#define envPYTHONPATH "PYTHONPATH=/usr/local/MGLTools-1.5.4/MGLToolsPckgs"
+#define envPATH "PATH=/usr/local/MGLTools-1.5.4/bin:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin"
+
+// Autodock
+#define AUTODOCK_VER "4.2"
+#define AUTODOCK_EXE "/usr/local/bin/autodock4"
+
+// MOPAC
+#define MOPAC_EXE "MOPAC2009.exe"
+#define MOPAC_LIC ""
+

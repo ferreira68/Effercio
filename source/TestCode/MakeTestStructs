@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Use this one for Memwatch
+# mpicc -ggdb -DDEBUG -DMEMWATCH -DMEMWATCH_STDIO -O0 -o TestStructs TestStructs.c ../structs.c ../io_utils.c ../memwatch.c
+
+# Use this one for Valgrind
+mpicc -ggdb -DDEBUG -O0 -o TestStructs TestStructs.c ../structs.c ../io_utils.c ../RBTree.c ../analysis.c  ../deque.c ../tpl.c ../effercio_db.c && rm -f *.o
