@@ -1,4 +1,3 @@
-// $Id: rundock.c 9 2012-03-01 20:01:25Z dcoss $
 /*************************************************************************
  * Authors: Antonio M. Ferreira, PhD [1,2]                               *
  *          David Coss, PhD [1]                                          *
@@ -73,6 +72,7 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     char *ligandDir = params->ligand_dir;
     char *resultsDir = params->results_dir;
     char *clustersDir = params->clusters_dir;
+    char *scratchDir = params->scratch_dir;
     char **dockingParams = params->dock_params;
     int numParams = params->num_dock_params;
     int verbose = params->verbose;
@@ -130,7 +130,7 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     //       the name arrays
     getcwd(initdir,FILENAME_MAX);
 
-    strcpy(workdir,SCR_DIR);
+    strcpy(workdir,scratchDir);
     strcat(workdir,"/");
     strcat(workdir,user);
 

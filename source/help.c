@@ -65,5 +65,6 @@ void PrintHelp()
 	printf_master("%s        This would add FMAT and FOCK to the MOPAC header and footer lines.\n",mytabs);
 	printf_master("      --mopac-header\n%sUser-specified keywords to be added only to the MOPAC header.\n",mytabs);
 	printf_master("      --mopac-footer\n%sUser-specified keywords to be added only to the MOPAC footer.\n",mytabs);
+	printf_master("      --scratch-dir\n%sUser-specified scratch directory. Default: /scratch_space",mytabs);
 	printf_master("\n");
 }

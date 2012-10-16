@@ -1,4 +1,3 @@
-// $Id: runmopac.c 9 2012-03-01 20:01:25Z dcoss $
 /*************************************************************************
  * Authors: Antonio M. Ferreira, PhD [1,2]                               *
  *          David Coss, PhD [1]                                          *
@@ -113,13 +112,14 @@ int RunMOPAC(job_t *job,
 
   // Parameters pass from Effercio.c
   char *structDir;
-  char *resultsDir = parameters->optimized_dir;
+  char *resultsDir = parameters->optimized_dir;// Null checked in Effercio.c
   char *method = parameters->qm_method;
   int useMOZYME = parameters->use_mozyme;
   int doFreeEnergy = parameters->UseFreeEnergy;
   char *receptor = parameters->receptor_name;
   char *user = parameters->username;
   char *nodestr = parameters->node_tag;
+  char *scratch_dir = parameters->scratch_dir;
   int verbose = parameters->verbose;
   double time_left = parameters->total_time - time(NULL) + parameters->start_time;
   time_left -= 180;// Provided a buffer, in which restart files may be sent to the master node.
@@ -187,7 +187,7 @@ int RunMOPAC(job_t *job,
   // Set up the filenames
   getcwd(initdir,FILENAME_MAX);
 
-  strcpy(workdir,SCR_DIR);
+  strcpy(workdir,scratch_dir);
   strcat(workdir,"/");
   strcat(workdir,user);
 
@@ -829,7 +829,7 @@ int RunMOPAC(job_t *job,
   }
 
   // Move results files to the appropriate place
-  if (resultsDir != SCR_DIR) {
+  if (strcmp(resultsDir,scratch_dir) != 0) {
     struct stat file_status;
     int stat_retval = 0;
     // move the MOPAC output file

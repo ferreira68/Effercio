@@ -85,8 +85,6 @@ case "$with_scratch" in
 esac
 ]
 
-AC_DEFINE_UNQUOTED([SCR_DIR],["$with_scratch"],[Directory used for temporary files.])
-
 #Autodock
 AC_MSG_CHECKING([autodock version])
 AC_ARG_WITH([autodock-version],

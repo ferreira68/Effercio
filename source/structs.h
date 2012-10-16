@@ -128,34 +128,35 @@ enum input_units{INPUT_KCAL = 0,INPUT_KJ,INPUT_J,INPUT_CAL};
 
 typedef struct
 {
-	char receptor_dir[FILENAME_MAX];
-	char receptor_name[FILENAME_MAX];
-	char ligand_dir[FILENAME_MAX];
-	char results_dir[FILENAME_MAX];
-	char optimized_dir[FILENAME_MAX];
-	char clusters_dir[FILENAME_MAX];
-	char analysis_dir[FILENAME_MAX];
-	char **dock_params;
-	int num_dock_params;
-	char **mopac_header_params;
-	int num_mopac_header_params;
-	char **mopac_footer_params;
-	int num_mopac_footer_params;
-	char *qm_method;
-	char username[LOGIN_NAME_MAX],node_tag[HOST_NAME_MAX];
-	int transfer_node;
-	int verbose;
-	int use_mozyme;
-	int doMOPAC;
-	int restart_job;
-	int prescreen;
-	int UseFreeEnergy;
-	int input_units;
-	time_t start_time;
-	time_t total_time;// Total time allowed to run, if specified.
+  char receptor_dir[FILENAME_MAX];
+  char receptor_name[FILENAME_MAX];
+  char ligand_dir[FILENAME_MAX];
+  char results_dir[FILENAME_MAX];
+  char optimized_dir[FILENAME_MAX];
+  char clusters_dir[FILENAME_MAX];
+  char analysis_dir[FILENAME_MAX];
+  char scratch_dir[FILENAME_MAX];
+  char **dock_params;
+  int num_dock_params;
+  char **mopac_header_params;
+  int num_mopac_header_params;
+  char **mopac_footer_params;
+  int num_mopac_footer_params;
+  char *qm_method;
+  char username[LOGIN_NAME_MAX],node_tag[HOST_NAME_MAX];
+  int transfer_node;
+  int verbose;
+  int use_mozyme;
+  int doMOPAC;
+  int restart_job;
+  int prescreen;
+  int UseFreeEnergy;
+  int input_units;
+  time_t start_time;
+  time_t total_time;// Total time allowed to run, if specified.
 
-	double target_Hf;// Target data provided from input deck
-	double target_G;
+  double target_Hf;// Target data provided from input deck
+  double target_G;
 }JobParameters;
 
 //Job type. Contains information of jobs to be run by the slave nodes.

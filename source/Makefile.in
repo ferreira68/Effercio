@@ -51,7 +51,8 @@ am_Effercio_OBJECTS = Effercio-help.$(OBJEXT) \
 	Effercio-runmopac.$(OBJEXT) Effercio-dynamic_arrays.$(OBJEXT) \
 	Effercio-extract_index.$(OBJEXT) Effercio-Effercio.$(OBJEXT) \
 	Effercio-RBTree.$(OBJEXT) Effercio-deque.$(OBJEXT) \
-	Effercio-tpl.$(OBJEXT) Effercio-effercio_db.$(OBJEXT)
+	Effercio-tpl.$(OBJEXT) Effercio-effercio_db.$(OBJEXT) \
+	Effercio-util.$(OBJEXT)
 Effercio_OBJECTS = $(am_Effercio_OBJECTS)
 Effercio_DEPENDENCIES =
 Effercio_LINK = $(CCLD) $(Effercio_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -106,7 +107,6 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
-PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 POW_LIB = @POW_LIB@
@@ -156,7 +156,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-Effercio_SOURCES = help.c io_utils.c analysis.c structs.c rundock.c runmopac.c dynamic_arrays.c extract_index.c Effercio.c RBTree.c deque.c tpl.c effercio_db.c
+Effercio_SOURCES = help.c io_utils.c analysis.c structs.c rundock.c runmopac.c dynamic_arrays.c extract_index.c Effercio.c RBTree.c deque.c tpl.c effercio_db.c util.c
 Effercio_LDADD = -lm
 Effercio_CFLAGS = -Wall
 all: all-am
@@ -253,6 +253,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-runmopac.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-structs.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-tpl.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-util.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -449,6 +450,20 @@ Effercio-effercio_db.obj: effercio_db.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='effercio_db.c' object='Effercio-effercio_db.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-effercio_db.obj `if test -f 'effercio_db.c'; then $(CYGPATH_W) 'effercio_db.c'; else $(CYGPATH_W) '$(srcdir)/effercio_db.c'; fi`
+
+Effercio-util.o: util.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -MT Effercio-util.o -MD -MP -MF $(DEPDIR)/Effercio-util.Tpo -c -o Effercio-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/Effercio-util.Tpo $(DEPDIR)/Effercio-util.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='util.c' object='Effercio-util.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-util.o `test -f 'util.c' || echo '$(srcdir)/'`util.c
+
+Effercio-util.obj: util.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -MT Effercio-util.obj -MD -MP -MF $(DEPDIR)/Effercio-util.Tpo -c -o Effercio-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/Effercio-util.Tpo $(DEPDIR)/Effercio-util.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='util.c' object='Effercio-util.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

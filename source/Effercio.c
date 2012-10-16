@@ -1,9 +1,3 @@
-//
-// $Id: Effercio.c 11 2012-03-08 19:51:39Z dcoss $
-//
-
-
-
 /*************************************************************************
  * Authors: Antonio M. Ferreira, PhD [1,2]                               *
  *          David Coss, PhD [1]                                          *
@@ -767,7 +761,7 @@ int main(int argc, char **argv)
 
 
 	const char *opts_short = "hvRGl:m:d:c:a:qo:p:se:t:k:";
-	enum {FLAGS_MOPAC_HEADER = '{',FLAGS_MOPAC_FOOTER};
+	enum {FLAGS_MOPAC_HEADER = '{',FLAGS_MOPAC_FOOTER,FLAGS_SCRATCH_DIR};
 	const struct option opts_long[] = {
 			{"help"        ,0,NULL,'h'}, // print usage information
 			{"verbose"     ,0,NULL,'v'}, // turn on verbose mode
@@ -786,6 +780,7 @@ int main(int argc, char **argv)
 			{"mopac"	   ,1,NULL,'k'}, // Keyword(s) to be added to the mopac header *and* footer
 			{"mopac-header",1,NULL,FLAGS_MOPAC_HEADER}, // Keyword(s) to be added to the mopac header
 			{"mopac-footer",1,NULL,FLAGS_MOPAC_FOOTER}, // Keyword(s) to be added to the mopac footer
+			{"scratch-dir",1,NULL,FLAGS_SCRATCH_DIR},// Scratch Directory
 			{NULL, 0, NULL,0}
 	};
 
@@ -798,6 +793,7 @@ int main(int argc, char **argv)
 #endif
 
 	MPI_Init(&argc,&argv);
+	printf("Finished MPI_Init\n");
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 
@@ -837,6 +833,7 @@ int main(int argc, char **argv)
 
 
 	// Set the default locations for output
+	strcpy(params.scratch_dir,"/scratch_dir");
 	strcpy(params.receptor_dir ,home_dir);
 	strcpy(params.ligand_dir   ,home_dir);
 	strcpy(params.results_dir  ,home_dir);
@@ -1004,6 +1001,12 @@ int main(int argc, char **argv)
 
 			add_strtoarray(&params.mopac_footer_params,&params.num_mopac_footer_params,optarg);
 			break;
+		case FLAGS_SCRATCH_DIR:
+#ifdef DEBUG
+		  printf_master("DEBUG - Setting scratch directory to %s\n",optarg);
+		  strcpy(params.scratch_dir,optarg);
+#endif
+		  break;
 		default:
 			break;
 		}
@@ -1193,7 +1196,7 @@ int main(int argc, char **argv)
 	{
 		char workdir[FILENAME_MAX];
 		int group_rank;
-		strcpy(workdir,SCR_DIR);
+		strcpy(workdir,params.scratch_dir);
 		strcat(workdir,"/");
 		strcat(workdir,params.username);
 		if(params.transfer_node)
