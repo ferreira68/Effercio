@@ -1,4 +1,27 @@
-// $Id: effercio_db.c 6 2011-11-17 19:55:32Z dcoss $
+/*************************************************************************
+ * Authors: Antonio M. Ferreira, PhD [1,2]                               *
+ *          David Coss, PhD [1]                                          *
+ *                                                                       *
+ *          (1) High Performance Computing Faclity                       *
+ *              Research Informatics, Information Sciences               *
+ *                                                                       *
+ *          (2) Structural Biology                                       *
+ *                                                                       *
+ *          St. Jude Children's Research Hospital                        *
+ *                                                                       *
+ * Effercio is free software: you can redistribute it and/or modify      *
+ * it under the terms of the GNU General Public License as published by  *
+ * the Free Software Foundation, either version 3 of the License, or     *
+ * (at your option) any later version.                                   *
+ *                                                                       *
+ * Effercio is distributed in the hope that it will be useful,           *
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+ * GNU General Public License for more details.                          *
+ *                                                                       *
+ * You should have received a copy of the GNU General Public License     *
+ * along with Effercio. If not, see <http://www.gnu.org/licenses/>.      *
+ *************************************************************************/
 
 
 #include "effercio_db.h"

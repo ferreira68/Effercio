@@ -1,6 +1,3 @@
-//
-// $Id: RBTree.h 9 2012-03-01 20:01:25Z dcoss $
-//
 /*************************************************************************
  * Authors: Antonio M. Ferreira, PhD [1,2]                               *
  *          David Coss, PhD [1]                                          *
@@ -13,7 +10,20 @@
  *          St. Jude Children's Research Hospital                        *
  *                                                                       *
  * This code sets up and operates on a Red-Black Tree, allow efficient   *
- * log(N) inserting, deleting and searching of job nodes in Effercio    *
+ * log(N) inserting, deleting and searching of job nodes in Effercio     *
+ *                                                                       *
+ * Effercio is free software: you can redistribute it and/or modify      *
+ * it under the terms of the GNU General Public License as published by  *
+ * the Free Software Foundation, either version 3 of the License, or     *
+ * (at your option) any later version.                                   *
+ *                                                                       *
+ * Effercio is distributed in the hope that it will be useful,           *
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+ * GNU General Public License for more details.                          *
+ *                                                                       *
+ * You should have received a copy of the GNU General Public License     *
+ * along with Effercio. If not, see <http://www.gnu.org/licenses/>.      *
  *************************************************************************/
 #ifndef RBTREE_H
 #define RBTREE_H 
