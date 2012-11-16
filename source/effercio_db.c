@@ -1,5 +1,3 @@
-// $Id: effercio_db.c 6 2011-11-17 19:55:32Z dcoss $
-
 
 #include "effercio_db.h"
 
@@ -81,7 +79,7 @@ static void FPrintSQLCompoundTree(FILE *sql_file, RBTree *CompoundList, JobParam
   stics = (RBTree*) compound_tree->stics;
   if(compound->ID != NULL && stics != NULL)
     {
-      int num_read = sscanf(compound->ID,"%d",&compound_id);
+      int num_read = sscanf(compound->ID,"SJ%d",&compound_id);
       if(num_read != 1)
 	fprintf(stderr,"ERROR - Could not obtain SJ ID (integer) from compound: %s\n",compound->ID);
       else
