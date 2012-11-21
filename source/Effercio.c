@@ -1057,6 +1057,8 @@ int main(int argc, char **argv)
 	printf_master("MOPAC results (dir)   : %s\n",params.optimized_dir);
 	printf_master("Analysis results (dir): %s\n",params.analysis_dir);
 	printf_master("MGLTools bin directory: %s\n",MGL_BIN_DIR);
+	printf_master("Autodock path         : %s\n",AUTODOCK_EXE);
+	printf_master("MOPAC path            : %s\n",MOPAC_EXE);
 	printf_master("Restart file          : %s\n",restart_filename);
 	printf_master("\nAutoDock Parameters\n");
 

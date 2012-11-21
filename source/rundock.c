@@ -281,7 +281,12 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 	return(retval);
     }
     if (pid == 0) {
-	execve(cmdstr,MGL_args,MGL_env);
+      int prepare_retval = execve(cmdstr,MGL_args,MGL_env);
+      if(prepare_retval)
+	{
+	  printf("%s: ERROR - parameter file creation ended with the following error code: %d",prepare_retval);
+	  return -1;
+	}
     }
     else {
 	wait(NULL);
