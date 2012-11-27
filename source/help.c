@@ -47,7 +47,7 @@ void PrintHelp()
 
 	printf_master("  -h\n%sPrint this help message\n",mytabs);
 
-	printf_master("  -v, --verbose\n%sVerbosb output\n",mytabs);
+	printf_master("  -v, --verbose\n%sVerbose output\n",mytabs);
 
 	printf_master("  -l, --ligands\n%sDirectory containing ligand files in .pdbqt format\n",mytabs);
 
