@@ -1098,7 +1098,14 @@ int main(int argc, char **argv)
 	    else
 	      MPI_Abort(MPI_COMM_WORLD,1);
 	  }
-	MPI_Barrier(MPI_COMM_WORLD);
+	if(check_directories(&params) != 0)
+	  {
+	    printf("%s ERROR - Cannot access input/output directories.\n",params.node_tag);
+	    if(errno)
+	      MPI_Abort(MPI_COMM_WORLD,errno);
+	    else
+	      MPI_Abort(MPI_COMM_WORLD,1);
+	  }
 	
 	//
 	// MAIN LOOP

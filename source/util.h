@@ -41,4 +41,13 @@ void full_assert(int condition,const char *format,...);
  */
 int check_extern_apps(const JobParameters *params);
 
+/**
+ * Checks for the ability to write to directries where data and results are
+ * stored.
+ *
+ * @param params JobParameters struct that contains the paths to be checked.
+ * @return int 0 if all of the exectuables are accessible, -1 otherwise. 
+ */
+int check_directories(const JobParameters *params);
+
 #endif

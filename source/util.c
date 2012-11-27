@@ -78,3 +78,35 @@ int check_extern_apps(const JobParameters *params)
   
   return 0;
 }
+
+int check_directories(const JobParameters *params)
+{
+  int retval;
+  if(params == NULL)
+    return -1;
+
+  retval = access(params->receptor_dir ,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->ligand_dir   ,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->results_dir  ,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->clusters_dir ,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->optimized_dir,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->analysis_dir ,W_OK);
+  if(retval != 0)
+    return retval;
+  retval = access(params->scratch_dir ,W_OK);
+  if(retval != 0)
+    return retval;
+
+  return 0;
+
+}
