@@ -29,6 +29,16 @@
  * along with Effercio. If not, see <http://www.gnu.org/licenses/>.      *
  *************************************************************************/
 
+#include "structs.h"
+
 void full_assert(int condition,const char *format,...);
+
+/**
+ * Checks for the location of executables called by the run source files.
+ * 
+ * @param params JobParameters struct that contains the paths to be checked.
+ * @return int 0 if all of the exectuables are accessible, -1 otherwise. 
+ */
+int check_extern_apps(const JobParameters *params);
 
 #endif

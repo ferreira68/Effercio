@@ -140,6 +140,9 @@ typedef struct
   char clusters_dir[FILENAME_MAX];
   char analysis_dir[FILENAME_MAX];
   char scratch_dir[FILENAME_MAX];
+  char mopac_path[FILENAME_MAX];
+  char autodock_exe[FILENAME_MAX];
+  char mgl_bin_dir[FILENAME_MAX];
   char **dock_params;
   int num_dock_params;
   char **mopac_header_params;

@@ -28,6 +28,7 @@
 #include <stdarg.h>
 #include <errno.h>
 #include <stdio.h>
+#include <unistd.h>
 
 static void reason_exit_vargs(va_list args, const char *format)
 {
@@ -57,3 +58,23 @@ void full_assert(int condition,const char *format,...)
     reason_exit_vargs(args,format);
 } 
 
+int check_extern_apps(const JobParameters *params)
+{
+  int retval;
+  if(params == NULL)
+    return -1;
+
+  retval = access(params->mopac_path,X_OK);
+  if(retval != 0)
+    return retval;
+  
+  retval = access(params->autodock_exe,X_OK);
+  if(retval != 0)
+    return retval;
+  
+  retval = access(params->mgl_bin_dir,R_OK);
+  if(retval != 0)
+    return retval;
+  
+  return 0;
+}

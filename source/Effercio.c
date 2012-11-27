@@ -863,6 +863,9 @@ int main(int argc, char **argv)
 
 	strcat(restart_filename,PROG_NAME);
 	strcat(restart_filename,".restart");
+	strcat(params.mgl_bin_dir,MGL_BIN_DIR);
+	strcat(params.autodock_exe,AUTODOCK_EXE);
+	sprintf(params.mopac_path,"%s/%s",MOPAC_HOME,MOPAC_EXE);
 
 	// Send username to all nodes
 	if(rank == MASTER)
@@ -1056,9 +1059,9 @@ int main(int argc, char **argv)
 	printf_master("Cluster structs (dir) : %s\n",params.clusters_dir);
 	printf_master("MOPAC results (dir)   : %s\n",params.optimized_dir);
 	printf_master("Analysis results (dir): %s\n",params.analysis_dir);
-	printf_master("MGLTools bin directory: %s\n",MGL_BIN_DIR);
-	printf_master("Autodock path         : %s\n",AUTODOCK_EXE);
-	printf_master("MOPAC path            : %s\n",MOPAC_EXE);
+	printf_master("MGLTools bin directory: %s\n",params.mgl_bin_dir);
+	printf_master("Autodock path         : %s\n",params.autodock_exe);
+	printf_master("MOPAC path            : %s\n",params.mopac_path);
 	printf_master("Restart file          : %s\n",restart_filename);
 	printf_master("\nAutoDock Parameters\n");
 
@@ -1086,6 +1089,20 @@ int main(int argc, char **argv)
 
 	printf_master("Running with %d processors\n\n",size);
 
+	// Check access to executables
+	if(check_extern_apps(&params) != 0)
+	  {
+	    printf("%s ERROR - Cannot access external executables.\n",params.node_tag);
+	    if(errno)
+	      MPI_Abort(MPI_COMM_WORLD,errno);
+	    else
+	      MPI_Abort(MPI_COMM_WORLD,1);
+	  }
+	MPI_Barrier(MPI_COMM_WORLD);
+	
+	//
+	// MAIN LOOP
+	//
 	int *unique_ranks = calloc(1,sizeof(int));
 	int num_unique = 0;
 	//int unique_count = num_unique;

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.59])
-AC_INIT([Effercio], [1.0], [effercio@stjude.org])
+AC_INIT([Effercio], [1.1], [effercio@stjude.org])
 AC_CONFIG_SRCDIR([source/])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([1.9])
