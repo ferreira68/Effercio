@@ -1,0 +1,35 @@
+#!/bin/tcsh
+
+#PBS -A bip003
+#PBS -N Effercio_Test
+#PBS -q debug
+#PBS -j oe
+#PBS -l size=12
+#PBS -m abe
+#PBS -M Antonio.Ferreira@stjude.org
+
+echo "###########################################################################"
+df -h 
+echo "###########################################################################"
+echo "\n\n\n"
+
+source /lustre/widow1/proj/bip003/bin/MGLTools-1.5.4/bin/mglenv.csh
+
+set Effercio="/lustre/widow1/proj/bip003/bin/Effercio"
+setenv PYTHONHOME /lustre/widow1/proj/bip003/bin/python2.6
+setenv PYTHONPATH /lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6
+setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6/site-packages
+setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/MGLTools-1.5.4/MGLToolsPckgs/
+cd $PBS_O_WORKDIR
+date
+aprun -n 12 ${Effercio} -l /lustre/widow1/proj/bip003/DockingProjects/SJ_MDMX_set \
+                        -m /lustre/widow1/proj/bip003/DockingProjects/receptors \
+                        3DAB really_short_list
+
+
+jaguarpf-login5 scratch/ferreira> setenv PYTHONHOME /lustre/widow1/proj/bip003/bin/python2.6/lib
+jaguarpf-login5 scratch/ferreira> setenv PYTHONPATH /lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6
+jaguarpf-login5 scratch/ferreira> setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow
+widow0/  widow1/  
+jaguarpf-login5 scratch/ferreira> setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6/site-packages
+jaguarpf-login5 scratch/ferreira> setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/MGLTools-1.5.4/MGLToolsPckgs

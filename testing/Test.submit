@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#$ -N Effercio_Testing_last_run
+#$ -q effercio
+#$ -pe openmpi 24 
+#$ -o ./Effercio.log
+#$ -j y
+#$ -M David.Coss@stjude.org
+
+#source /home/aferreir/bin/MGLTools-1.5.4/bin/mglenv.sh
+
+# mpirun --tag-output --mca orte_leave_session_attached 1 --mca orte_forward_job_control 1 --mca btl openib,self -np $NSLOTS \
+mpirun --mca orte_leave_session_attached 1 --mca orte_forward_job_control 1 --mca btl openib,self -np $NSLOTS \
+       ../bin/Effercio \
+       -p ga_run=20 -p ga_num_evals=100 \
+       -s -q -G \
+	-R -v \
+        3DAB_pocket really_short_list
+#      -s dock \
+#      -v \

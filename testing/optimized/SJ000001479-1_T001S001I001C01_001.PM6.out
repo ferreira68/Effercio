@@ -1,0 +1,372 @@
+ *******************************************************************************
+ ** Site#:  958            For non-commercial use only         Version 9.015L **
+ *******************************************************************************
+ ** Cite this work as: MOPAC2009, James J. P. Stewart, Stewart Computational  **
+ ** Chemistry, Version 9.015L web: HTTP://OpenMOPAC.net                       **
+ *******************************************************************************
+ **                                                                           **
+ **                                MOPAC2009                                  **
+ **                                                                           **
+ *******************************************************************************
+
+                            PM6 CALCULATION RESULTS
+
+
+ *******************************************************************************
+ *  CALCULATION DONE:                                Wed Sep  7 00:59:18 2011  *
+ *  PM6      - The PM6 Hamiltonian to be used
+ *  PDBOUT   - PRINT GEOMETY IN PDB FORMAT
+ *  MOZYME   - USE LOCALIZED M.O.s IN SOLVING THE SCF EQUATIONS
+ *
+ *
+ *
+ *                 CHARGE ON SYSTEM =     0
+ *
+ *
+ *
+ *  EPS= 78.400
+ *  RSOLV=  1.300
+ *  LET      - OVERRIDE SOME SAFETY CHECKS
+ *  XYZ      - CARTESIAN COORDINATE SYSTEM TO BE USED
+ *  LBFGS    - USE THE LBFGS GEOMETRY OPTIMIZER
+ *  1SCF     - DO 1 SCF AND THEN STOP 
+ *  T=       - A TIME OF  0.3E+08 SECONDS REQUESTED
+ *  DUMP=N   - RESTART FILE WRITTEN EVERY  4320.000 SECONDS
+ *  DDMIN=   - MINIMUM TRUST RADIUS  0.000 ANG/RAD
+ *  GNORM=   - EXIT WHEN GRADIENT NORM DROPS BELOW .150    
+ *  RELSCF   - DEFAULT SCF CRITERION MULTIPLIED BY   0.100    
+ *             (DEFAULT SCFCRT= 0.00010)
+ *  MULLIK   - THE MULLIKEN ANALYSIS TO BE PERFORMED
+ *******************************************************************************
+ PM6 T=31504895 DUMP=4320 XYZ EPS=78.40 RSOLV=1.30 MULLIK LBFGS MOZYME PDBOUT +
+ CHARGE=0 RELSCF=0.1 LET DDMIN=0.0 GNORM=0.15 1SCF
+ SJ000001479-1_T001S001I001C01_001: Geometry optimization step
+
+   ATOM   CHEMICAL          X               Y              Z
+  NUMBER   SYMBOL      (ANGSTROMS)     (ANGSTROMS)    (ANGSTROMS)
+ 
+     1      Br         -4.5700000  *  -25.671000  *   13.976000  *
+     2       C         -2.9050000  *  -25.944000  *   13.121000  *
+     3       C         -1.6780000  *  -25.348000  *   13.687000  *
+     4       O         -1.7380000  *  -24.683000  *   14.702000  *
+     5       C         -0.3780000  *  -25.561000  *   13.019000  *
+     6      Br          1.1930000  *  -24.798000  *   13.745000  *
+     7       C         -0.3120000  *  -26.297000  *   11.898000  *
+     8      Br          1.3530000  *  -26.569000  *   11.043000  *
+     9       C         -1.5390000  *  -26.892000  *   11.333000  *
+    10       O         -1.4790000  *  -27.557000  *   10.318000  *
+    11       C         -2.8390000  *  -26.683000  *   12.003000  *
+    12      Br         -4.4080000  *  -27.452000  *   11.282000  *
+ 
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM         X         Y         Z
+
+     1        Br       -4.5700  -25.6710   13.9760
+     2         C       -2.9050  -25.9440   13.1210
+     3         C       -1.6780  -25.3480   13.6870
+     4         O       -1.7380  -24.6830   14.7020
+     5         C       -0.3780  -25.5610   13.0190
+     6        Br        1.1930  -24.7980   13.7450
+     7         C       -0.3120  -26.2970   11.8980
+     8        Br        1.3530  -26.5690   11.0430
+     9         C       -1.5390  -26.8920   11.3330
+    10         O       -1.4790  -27.5570   10.3180
+    11         C       -2.8390  -26.6830   12.0030
+    12        Br       -4.4080  -27.4520   11.2820
+
+ General Reference for PM6:
+ "Optimization of Parameters for Semiempirical Methods V: Modification of NDDO Approximations
+ and Application to 70 Elements", J. J. P. Stewart, J. Mol. Mod., 13, 1173-1213 (2007)
+ URL: http://www.springerlink.com/content/ar33482301010477/fulltext.pdf
+
+           Empirical Formula: C6 O2 Br4  =    12 atoms
+
+
+
+      MOLECULAR POINT GROUP   :   D2h 
+ 
+   NUMBER AND TYPES OF BONDS IDENTIFIED
+ 
+         SIGMA BONDS               12
+         LONE PAIRS                16
+         NORMAL PI BONDS            4
+ 
+
+                  Ramachandran Angles
+              Residue    phi    psi  omega
+
+  
+  SCF CRITERION =    0.1000E-02
+
+ -------------------------------------------------------------------------------
+ PM6 T=31504895 DUMP=4320 XYZ EPS=78.40 RSOLV=1.30 MULLIK LBFGS MOZYME PDBOUT +
+ CHARGE=0 RELSCF=0.1 LET DDMIN=0.0 GNORM=0.15 1SCF
+ SJ000001479-1_T001S001I001C01_001: Geometry optimization step
+
+
+
+     1SCF WAS SPECIFIED, SO BFGS WAS NOT USED                 
+     SCF FIELD WAS ACHIEVED                                   
+
+
+                               PM6     CALCULATION
+                                                       MOPAC2009 (Version: 9.015L)
+                                                       Wed Sep  7 00:59:18 2011
+
+
+
+
+          FINAL HEAT OF FORMATION =         -6.02984 KCAL =     -25.22886 KJ
+          VAN DER WAALS AREA      =        218.21 SQUARE ANGSTROMS
+
+
+          TOTAL ENERGY            =      -2223.03772 EV
+          ELECTRONIC ENERGY       =     -10051.87148 EV
+          CORE-CORE REPULSION     =       7828.83376 EV
+          DIELECTRIC ENERGY       =         -0.50678 EV
+          COSMO AREA              =        218.21 SQUARE ANGSTROMS
+          COSMO VOLUME            =        238.40 CUBIC ANGSTROMS
+
+          NO. OF FILLED LEVELS    =         32
+          MOLECULAR WEIGHT        =        423.681
+
+          MOLECULAR DIMENSIONS (Angstroms)
+
+            Atom       Atom       Distance
+           Br     8   Br     1     6.67014
+           Br    12   Br     6     5.65661
+           Br     6    O    10     0.01124
+
+
+          SCF CALCULATIONS        =          2
+          COMPUTATION TIME        =          0.419 SECONDS
+
+
+
+
+   ATOM           CHEMICAL             X               Y              Z
+  NUMBER           SYMBOL         (ANGSTROMS)     (ANGSTROMS)    (ANGSTROMS)
+ 
+     1      Br(     1 Br     )   -4.5700000  *  -25.671000  *   13.976000  *
+     2       C(     2  C     )   -2.9050000  *  -25.944000  *   13.121000  *
+     3       C(     3  C     )   -1.6780000  *  -25.348000  *   13.687000  *
+     4       O(     4  O     )   -1.7380000  *  -24.683000  *   14.702000  *
+     5       C(     5  C     )   -0.3780000  *  -25.561000  *   13.019000  *
+     6      Br(     6 Br     )    1.1930000  *  -24.798000  *   13.745000  *
+     7       C(     7  C     )   -0.3120000  *  -26.297000  *   11.898000  *
+     8      Br(     8 Br     )    1.3530000  *  -26.569000  *   11.043000  *
+     9       C(     9  C     )   -1.5390000  *  -26.892000  *   11.333000  *
+    10       O(    10  O     )   -1.4790000  *  -27.557000  *   10.318000  *
+    11       C(    11  C     )   -2.8390000  *  -26.683000  *   12.003000  *
+    12      Br(    12 Br     )   -4.4080000  *  -27.452000  *   11.282000  *
+
+           Empirical Formula: C6 O2 Br4  =    12 atoms
+
+
+
+              NET ATOMIC CHARGES AND DIPOLE CONTRIBUTIONS
+
+  ATOM NO.   TYPE          CHARGE      No. of ELECS.   s-Pop       p-Pop       d-Pop       
+    1         Br           0.030033        6.9700     1.98696     4.97405     0.00895
+    2          C          -0.086826        4.0868     1.13471     2.95212
+    3          C           0.547689        3.4523     1.09115     2.36116
+    4          O          -0.434636        6.4346     1.85441     4.58023
+    5          C          -0.086819        4.0868     1.13464     2.95218
+    6         Br           0.031089        6.9689     1.98695     4.97301     0.00895
+    7          C          -0.088244        4.0882     1.13464     2.95360
+    8         Br           0.030937        6.9691     1.98696     4.97316     0.00895
+    9          C           0.548940        3.4511     1.09098     2.36008
+   10          O          -0.435699        6.4357     1.85432     4.58138
+   11          C          -0.087836        4.0878     1.13415     2.95369
+   12         Br           0.031371        6.9686     1.98690     4.97277     0.00896
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM               X         Y         Z
+
+     1        Br                 -4.5700  -25.6710   13.9760
+     2         C                 -2.9050  -25.9440   13.1210
+     3         C                 -1.6780  -25.3480   13.6870
+     4         O                 -1.7380  -24.6830   14.7020
+     5         C                 -0.3780  -25.5610   13.0190
+     6        Br                  1.1930  -24.7980   13.7450
+     7         C                 -0.3120  -26.2970   11.8980
+     8        Br                  1.3530  -26.5690   11.0430
+     9         C                 -1.5390  -26.8920   11.3330
+    10         O                 -1.4790  -27.5570   10.3180
+    11         C                 -2.8390  -26.6830   12.0030
+    12        Br                 -4.4080  -27.4520   11.2820
+
+
+          ATOMIC ORBITAL ELECTRON POPULATIONS
+
+   1.98696   1.23363   1.94873   1.79170   0.00259   0.00292   0.00124   0.00092
+   0.00128   1.13471   0.95833   1.00595   0.98784   1.09115   0.86245   0.71495
+   0.78376   1.85441   1.86603   1.38486   1.32935   1.13464   0.96522   0.99493
+   0.99202   1.98695   1.31315   1.81479   1.84506   0.00209   0.00222   0.00125
+   0.00127   0.00211   1.13464   0.95909   1.00652   0.98799   1.98696   1.23297
+   1.94896   1.79123   0.00259   0.00292   0.00124   0.00091   0.00128   1.09098
+   0.86196   0.71441   0.78371   1.85432   1.86582   1.38538   1.33017   1.13415
+   0.96580   0.99528   0.99261   1.98690   1.31379   1.81196   1.84701   0.00209
+   0.00221   0.00125   0.00128   0.00213
+
+           MULLIKEN POPULATION ANALYSIS
+
+
+
+        MULLIKEN POPULATIONS AND CHARGES
+
+      NO.  ATOM   POPULATION      CHARGE
+        1   Br     6.783626      0.216374
+        2    C     4.266283     -0.266283
+        3    C     3.441008      0.558992
+        4    O     6.459756     -0.459756
+        5    C     4.266290     -0.266290
+        6   Br     6.782498      0.217502
+        7    C     4.267969     -0.267969
+        8   Br     6.782602      0.217398
+        9    C     3.439513      0.560487
+       10    O     6.460844     -0.460844
+       11    C     4.267754     -0.267754
+       12   Br     6.781857      0.218143
+
+
+
+ TOTAL CPU TIME:             0.42 SECONDS
+
+ == MOPAC DONE ==
+ *******************************************************************************
+ ** Site#:  958            For non-commercial use only         Version 9.015L **
+ *******************************************************************************
+ ** Cite this work as: MOPAC2009, James J. P. Stewart, Stewart Computational  **
+ ** Chemistry, Version 9.015L web: HTTP://OpenMOPAC.net                       **
+ *******************************************************************************
+ **                                                                           **
+ **                                MOPAC2009                                  **
+ **                                                                           **
+ *******************************************************************************
+
+                            PM6 CALCULATION RESULTS
+
+
+ *******************************************************************************
+ *  CALCULATION DONE:                                Wed Sep  7 00:59:18 2011  *
+ *  PM6      - The PM6 Hamiltonian to be used
+ *  GEO-OK   - OVERRIDE INTERATOMIC DISTANCE CHECK
+ *  MOZYME   - USE LOCALIZED M.O.s IN SOLVING THE SCF EQUATIONS
+ *
+ *
+ *
+ *                 CHARGE ON SYSTEM =     0
+ *
+ *
+ *
+ *  EPS= 78.400
+ *  RSOLV=  1.300
+ *  OLDGEO   - PREVIOUS GEOMETRY TO BE USED
+ *  T=       - A TIME OF 172800.0 SECONDS REQUESTED
+ *  DUMP=N   - RESTART FILE WRITTEN EVERY  4320.000 SECONDS
+ *  RELSCF   - DEFAULT SCF CRITERION MULTIPLIED BY   0.100    
+ *             (DEFAULT SCFCRT= 0.00010)
+ *  THERMO   - THERMODYNAMIC QUANTITIES TO BE CALCULATED
+ *******************************************************************************
+ PM6 DUMP=4320 MOZYME RELSCF=0.1 THERMO EPS=78.40 RSOLV=1.30 +
+ OLDGEO GEO-OK CHARGE=0
+ SJ000001479-1_T001S001I001C01_001: Free energy calculation
+
+   ATOM           CHEMICAL             X               Y              Z
+  NUMBER           SYMBOL         (ANGSTROMS)     (ANGSTROMS)    (ANGSTROMS)
+ 
+     1      Br(     1 Br     )   -4.5700000  *  -25.671000  *   13.976000  *
+     2       C(     2  C     )   -2.9050000  *  -25.944000  *   13.121000  *
+     3       C(     3  C     )   -1.6780000  *  -25.348000  *   13.687000  *
+     4       O(     4  O     )   -1.7380000  *  -24.683000  *   14.702000  *
+     5       C(     5  C     )   -0.3780000  *  -25.561000  *   13.019000  *
+     6      Br(     6 Br     )    1.1930000  *  -24.798000  *   13.745000  *
+     7       C(     7  C     )   -0.3120000  *  -26.297000  *   11.898000  *
+     8      Br(     8 Br     )    1.3530000  *  -26.569000  *   11.043000  *
+     9       C(     9  C     )   -1.5390000  *  -26.892000  *   11.333000  *
+    10       O(    10  O     )   -1.4790000  *  -27.557000  *   10.318000  *
+    11       C(    11  C     )   -2.8390000  *  -26.683000  *   12.003000  *
+    12      Br(    12 Br     )   -4.4080000  *  -27.452000  *   11.282000  *
+ 
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM         X         Y         Z
+
+     1        Br       -4.5700  -25.6710   13.9760
+     2         C       -2.9050  -25.9440   13.1210
+     3         C       -1.6780  -25.3480   13.6870
+     4         O       -1.7380  -24.6830   14.7020
+     5         C       -0.3780  -25.5610   13.0190
+     6        Br        1.1930  -24.7980   13.7450
+     7         C       -0.3120  -26.2970   11.8980
+     8        Br        1.3530  -26.5690   11.0430
+     9         C       -1.5390  -26.8920   11.3330
+    10         O       -1.4790  -27.5570   10.3180
+    11         C       -2.8390  -26.6830   12.0030
+    12        Br       -4.4080  -27.4520   11.2820
+
+ General Reference for PM6:
+ "Optimization of Parameters for Semiempirical Methods V: Modification of NDDO Approximations
+ and Application to 70 Elements", J. J. P. Stewart, J. Mol. Mod., 13, 1173-1213 (2007)
+ URL: http://www.springerlink.com/content/ar33482301010477/fulltext.pdf
+
+           Empirical Formula: C6 O2 Br4  =    12 atoms
+
+
+
+      MOLECULAR POINT GROUP   :   D2h 
+ 
+   NUMBER AND TYPES OF BONDS IDENTIFIED
+ 
+         SIGMA BONDS               12
+         LONE PAIRS                16
+         NORMAL PI BONDS            4
+ 
+  SCF CRITERION =    0.1000E-02
+
+
+          HEAT OF FORMATION =      -6.029874 KCALS/MOLE
+
+
+          INTERNAL COORDINATE DERIVATIVES
+
+   NUMBER  ATOM       BOND         ANGLE      DIHEDRAL
+
+     1      Br
+     2       C     -3.963985
+     3       C     -9.165089     0.063332
+     4       O      6.978183    22.280236    -0.448719
+     5       C     25.692151   -44.201450     0.264030
+     6      Br      0.132349    -0.156753    -0.020203
+     7       C    -23.336325     5.990456    -0.168457
+     8      Br      9.538611    -0.910354     0.020923
+     9       C     -6.410291   -24.045010     0.246826
+    10       O      4.072762     9.133002    -0.008519
+    11       C    -25.590776    44.711159    -0.575631
+    12      Br     -0.101648     0.509088     0.170034
+
+
+          GRADIENT NORM =  89.02185
+
+
+
+ ** GRADIENT IS TOO LARGE TO ALLOW FORCE MATRIX TO BE CALCULATED, (LIMIT=10) **
+
+
+
+ EITHER ADD 'LET' OR REDUCE GRADIENT
+ USING 'TS' OR OTHER GEOMETRY OPTIMIZER
+
+
+
+ TOTAL CPU TIME:             0.79 SECONDS
+
+ == MOPAC DONE ==

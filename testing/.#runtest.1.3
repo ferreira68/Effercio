@@ -1,0 +1,96 @@
+#!/bin/bash
+
+EXEHOST=${HOSTNAME%%-*}
+
+echo "Test job running on host: ${EXEHOST}"
+
+if [ $EXEHOST = "portal2" ]; then
+    test_root="/home/aferreir/MyDocuments/Programming/C/Effercio/pipeline_testing"
+    source_dir="/home/aferreir/MyDocuments/Programming/C/Effercio/source"
+    make_cmd="make"
+    runjob="qsub Test.submit"
+    # runjob="mpirun -np 7 ./bin/Effercio -p ga_run=2 -p ga_num_evals=100 3DAB really_short_list"
+    logging="no"
+    cleanup="./cleanscr_quantum"
+elif [ $EXEHOST = "portal3" ]; then
+    test_root="/home/aferreir/MyDocuments/Programming/C/Effercio/pipeline_testing"
+    source_dir="/home/aferreir/MyDocuments/Programming/C/Effercio/source"
+    make_cmd="make"
+    runjob="qsub Test.submit"
+    logging="no"
+    cleanup="./cleanscr_quantum"
+elif [ $EXEHOST = "Bach.ferreira.net" ]; then
+    test_root="/home/tony/MyDocuments/Programming/C/Effercio/pipeline_testing"
+    source_dir="/home/tony/MyDocuments/Programming/C/Effercio/source"
+    make_cmd="make"
+    runjob="mpirun -np 2 ./bin/Effercio -v 3DAB really_short_list"
+    logging="yes"
+    cleanup="rm -v /scratch_space/tony/*"
+    cleanup="rm -v /scratch_space/tony/*.dlg /scratch_space/aferreir/*dpf /scratch_space/aferreir/*.pdbqt"
+elif [ $EXEHOST = "corelli.stjude.org" ]; then
+    test_root="/home/tony/Programming/Effercio/testing"
+    source_dir="/home/tony/Programming/Effercio/source"
+    make_cmd="make"
+    # runjob="mpirun -np 4 ../bin/Effercio -v -p ga_run=2 -p ga_num_evals=100 3DAB really_short_list"
+    runjob="mpirun -np 4 ../bin/Effercio -v -p ga_run=2 -p ga_num_evals=100 3DAB"
+    cleanup="rm -v /scratch/tony/*"
+    # cleanup="rm -v /scratch/tony/*.dlg /scratch/tony/*dpf /scratch/tony/*pdb /scratch/tony/*out"
+    logging="yes"
+elif [ $EXEHOST = "clever.stjude.org" ]; then
+    test_root="/home/aferreir/Programming/Effercio/testing"
+    source_dir="/home/aferreir/Programming/Effercio/source"
+    make_cmd="make"
+    runjob="mpirun -np 4 valgrind --leak-check=full --leak-resolution=high --num-callers=40 --show-reachable=yes --log-file=valgrind.log.%p ../bin/Effercio -v -p ga_run=2 -p ga_num_evals=100 3DAB really_short_list"
+    # cleanup="rm -v /scratch_space/aferreir/*"
+    # runjob="mpirun -np 2 ./bin/Effercio -v -p ga_run=3 -p ga_num_evals=100 3DAB really_short_list"
+    cleanup="rm -v /scratch_space/aferreir/*.dlg /scratch_space/aferreir/*dpf /scratch_space/aferreir/*pdb /scratch_space/aferreir/*out"
+    logging="yes"
+elif [ $EXEHOST = "a41068.stjude.org" ]; then
+    test_root="/home/tony/Programming/Effercio/pipeline_testing"
+    source_dir="/home/tony/Programming/Effercio/source"
+    make_cmd="make"
+    # runjob="mpirun -np 2 ./bin/Effercio -p ga_run=2 -p ga_num_evals=100 3DAB really_short_list"
+    runjob="mpirun -dbg=ddd -np 2 ./bin/Effercio -p ga_run=2 -p ga_num_evals=100 3DAB really_short_list"
+    logging="yes"
+    # cleanup="rm -v /scratch_space/tony/*"
+    cleanup="rm -v /scratch_space/tony/*.dlg /scratch_space/tony/*dpf /scratch_space/tony/*.pdbqt"
+elif [ $EXEHOST = "node038" ]; then
+    test_root="/home/aferreir/MyDocuments/Programming/C/Effercio/pipeline_testing"
+    source_dir="/home/aferreir/MyDocuments/Programming/C/Effercio/source"
+    make_cmd="make"
+    runjob="mpirun -np 4 ./bin/Effercio -v 3DAB really_short_list"
+    logging="no"
+    cleanup="rm -v /scratch_space/aferreir/*"
+elif [ ${EXEHOST%%-*} = "jaguarpf" ]; then
+    test_root="/lustre/widow1/proj/bip003/Testing"
+    source_dir="/home/ccs/ferreira/Programming/source"
+    make_cmd="make CC=cc INSTALLDIR=/lustre/widow1/proj/bip003/bin"
+    runjob="qsub Jaguar-test.submt"
+    logging="no"
+    cleanup="rm -v /lustre/widow1/proj/bip003/scratch/ferreira"
+else
+    echo "Unknown host for testing!!!"
+    exit
+fi
+
+cd ${test_root}
+
+${cleanup}
+
+rm -v Effercio.log
+rm -v valgrind.log.*
+rm -v memwatch.log
+rm -v dockings/*
+rm -v optprep/*
+rm -v optimized/*
+
+cd ${source_dir}
+${make_cmd} uninstall
+${make_cmd} install
+cd ${test_root}
+
+if [ "${logging}" = "yes" ]; then
+    ${runjob} | tee Effercio.log
+else
+    ${runjob}
+fi

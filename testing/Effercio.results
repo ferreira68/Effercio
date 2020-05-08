@@ -1,0 +1,1945 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001113-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -1.00
+Total charge on complex = 0.00
+Heat of Formation       = -249.12280 kcal/mol
+Free Energy             = -282.36385 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 5
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.64 kcal/mol
+        Estimated Ki                         = 395.76 uM
+        Intermolecular interaction energy    =  -5.54 kcal/mol
+        Nonbonded interaction energy         =  -2.39 kcal/mol
+        Electrostatic energy                 =  -3.15 kcal/mol
+        Internal energy                      =   0.06 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.06 kcal/mol
+        RMSD from the input structure        =  34.91 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.05 kcal/mol
+        Estimated Ki                         =   1.07 mM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -2.53 kcal/mol
+        Electrostatic energy                 =  -2.42 kcal/mol
+        Internal energy                      =   0.15 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.15 kcal/mol
+        RMSD from the input structure        =  22.88 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.96 kcal/mol
+        Estimated Ki                         =   1.26 mM
+        Intermolecular interaction energy    =  -4.85 kcal/mol
+        Nonbonded interaction energy         =  -2.50 kcal/mol
+        Electrostatic energy                 =  -2.35 kcal/mol
+        Internal energy                      =   0.13 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.13 kcal/mol
+        RMSD from the input structure        =  29.60 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 4
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.88 kcal/mol
+        Estimated Ki                         =   1.42 mM
+        Intermolecular interaction energy    =  -4.78 kcal/mol
+        Nonbonded interaction energy         =  -1.96 kcal/mol
+        Electrostatic energy                 =  -2.82 kcal/mol
+        Internal energy                      =   0.05 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.05 kcal/mol
+        RMSD from the input structure        =  34.88 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 5
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.75 kcal/mol
+        Estimated Ki                         =   1.77 mM
+        Intermolecular interaction energy    =  -4.65 kcal/mol
+        Nonbonded interaction energy         =  -2.07 kcal/mol
+        Electrostatic energy                 =  -2.58 kcal/mol
+        Internal energy                      =   0.01 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.01 kcal/mol
+        RMSD from the input structure        =  26.70 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number -123456
+=== Number of poses in cluster: -123456
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001185-1
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -70.96294 kcal/mol
+Free Energy             = -114.47571 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 5
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.97 kcal/mol
+        Estimated Ki                         = 227.32 uM
+        Intermolecular interaction energy    =  -5.87 kcal/mol
+        Nonbonded interaction energy         =  -5.62 kcal/mol
+        Electrostatic energy                 =  -0.24 kcal/mol
+        Internal energy                      =  -0.36 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.36 kcal/mol
+        RMSD from the input structure        =  20.15 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1293.86866 kcal/mol
+        Entropy                     =  0.723747 kcal/mol
+        Heat Capacity (Cp)          =  0.587157 kcal/mol
+        Free Energy                 = -1508.6566 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.078770 kcal/mol
+        COSMO Surface Area          = 1318.27 sq. Angstrom
+        COSMO Volume                = 2654.89 cu. Angstrom
+        van der Waals Surface Area  = 1318.27 sq. Angstrom
+        Dipole Moment
+            x-component             =  5.308 Debye
+            y-component             =  47.531 Debye
+            z-component             = -5.508 Debye
+            -----------------------------------------
+                                    =  48.142 Debye
+        Calculation Time            = 18679.99 (seconds)
+        Number of SCF iterations    = 908
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.89 kcal/mol
+        Estimated Ki                         = 261.65 uM
+        Intermolecular interaction energy    =  -5.78 kcal/mol
+        Nonbonded interaction energy         =  -5.68 kcal/mol
+        Electrostatic energy                 =  -0.10 kcal/mol
+        Internal energy                      =  -0.44 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.44 kcal/mol
+        RMSD from the input structure        =  20.52 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1300.67705 kcal/mol
+        Entropy                     =  0.715988 kcal/mol
+        Heat Capacity (Cp)          =  0.582041 kcal/mol
+        Free Energy                 = -1513.3855 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.317440 kcal/mol
+        COSMO Surface Area          = 1322.51 sq. Angstrom
+        COSMO Volume                = 2597.87 cu. Angstrom
+        van der Waals Surface Area  = 1322.51 sq. Angstrom
+        Dipole Moment
+            x-component             =  3.483 Debye
+            y-component             =  43.260 Debye
+            z-component             = -10.658 Debye
+            -----------------------------------------
+                                    =  44.689 Debye
+        Calculation Time            = 24369.06 (seconds)
+        Number of SCF iterations    = 1442
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.82 kcal/mol
+        Estimated Ki                         = 291.05 uM
+        Intermolecular interaction energy    =  -5.72 kcal/mol
+        Nonbonded interaction energy         =  -5.63 kcal/mol
+        Electrostatic energy                 =  -0.09 kcal/mol
+        Internal energy                      =  -0.38 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.38 kcal/mol
+        RMSD from the input structure        =  21.20 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1295.57318 kcal/mol
+        Entropy                     =  0.707746 kcal/mol
+        Heat Capacity (Cp)          =  0.58311 kcal/mol
+        Free Energy                 = -1506.5282 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.640620 kcal/mol
+        COSMO Surface Area          = 1250.85 sq. Angstrom
+        COSMO Volume                = 2480.40 cu. Angstrom
+        van der Waals Surface Area  = 1250.85 sq. Angstrom
+        Dipole Moment
+            x-component             =  13.933 Debye
+            y-component             =  42.615 Debye
+            z-component             = -7.449 Debye
+            -----------------------------------------
+                                    =  45.450 Debye
+        Calculation Time            = 19883.66 (seconds)
+        Number of SCF iterations    = 1071
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 4
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.70 kcal/mol
+        Estimated Ki                         = 358.52 uM
+        Intermolecular interaction energy    =  -5.60 kcal/mol
+        Nonbonded interaction energy         =  -5.57 kcal/mol
+        Electrostatic energy                 =  -0.02 kcal/mol
+        Internal energy                      =  -0.47 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.47 kcal/mol
+        RMSD from the input structure        =  20.47 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1292.49082 kcal/mol
+        Entropy                     =  0.729388 kcal/mol
+        Heat Capacity (Cp)          =  0.586699 kcal/mol
+        Free Energy                 = -1509.1125 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.859040 kcal/mol
+        COSMO Surface Area          = 1264.22 sq. Angstrom
+        COSMO Volume                = 2523.15 cu. Angstrom
+        van der Waals Surface Area  = 1264.22 sq. Angstrom
+        Dipole Moment
+            x-component             =  8.214 Debye
+            y-component             =  46.912 Debye
+            z-component             = -10.782 Debye
+            -----------------------------------------
+                                    =  48.831 Debye
+        Calculation Time            = 16638.76 (seconds)
+        Number of SCF iterations    = 771
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 2
+Conformer index         = 2
+Charge on ligand        = -1.00
+Total charge on complex = 0.00
+Heat of Formation       = 121.89921 kcal/mol
+Free Energy             = 77.78320 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -5.57 kcal/mol
+        Estimated Ki                         =  82.32 uM
+        Intermolecular interaction energy    =  -6.17 kcal/mol
+        Nonbonded interaction energy         =  -3.84 kcal/mol
+        Electrostatic energy                 =  -2.33 kcal/mol
+        Internal energy                      =  -0.46 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.46 kcal/mol
+        RMSD from the input structure        =  30.63 Angstrom
+        Time to perform AutoDock calculation = 378.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1097.96430 kcal/mol
+        Entropy                     =  0.735741 kcal/mol
+        Heat Capacity (Cp)          =  0.585831 kcal/mol
+        Free Energy                 = -1316.7517 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -13.424020 kcal/mol
+        COSMO Surface Area          = 1383.18 sq. Angstrom
+        COSMO Volume                = 2650.80 cu. Angstrom
+        van der Waals Surface Area  = 1383.18 sq. Angstrom
+        Dipole Moment
+            x-component             =  31.449 Debye
+            y-component             =  49.272 Debye
+            z-component             = -40.160 Debye
+            -----------------------------------------
+                                    =  70.920 Debye
+        Calculation Time            = 20826.92 (seconds)
+        Number of SCF iterations    = 1232
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001479-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -11.12346 kcal/mol
+Free Energy             = -47.23494 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.47 kcal/mol
+        Estimated Ki                         = 527.29 uM
+        Intermolecular interaction energy    =  -4.47 kcal/mol
+        Nonbonded interaction energy         =  -4.47 kcal/mol
+        Electrostatic energy                 =   0.00 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   0.00 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  30.31 Angstrom
+        Time to perform AutoDock calculation = 135.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1298.63280 kcal/mol
+        Entropy                     =  0.685412 kcal/mol
+        Heat Capacity (Cp)          =  0.546903 kcal/mol
+        Free Energy                 = -1502.5427 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.162180 kcal/mol
+        COSMO Surface Area          = 1196.90 sq. Angstrom
+        COSMO Volume                = 2292.55 cu. Angstrom
+        van der Waals Surface Area  = 1196.90 sq. Angstrom
+        Dipole Moment
+            x-component             =  20.261 Debye
+            y-component             =  36.358 Debye
+            z-component             =  4.814 Debye
+            -----------------------------------------
+                                    =  41.900 Debye
+        Calculation Time            = 34231.51 (seconds)
+        Number of SCF iterations    = 2016
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001479-2
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -11.12346 kcal/mol
+Free Energy             = -47.23494 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.47 kcal/mol
+        Estimated Ki                         = 527.10 uM
+        Intermolecular interaction energy    =  -4.47 kcal/mol
+        Nonbonded interaction energy         =  -4.48 kcal/mol
+        Electrostatic energy                 =   0.00 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   0.00 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  30.30 Angstrom
+        Time to perform AutoDock calculation = 136.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1299.28279 kcal/mol
+        Entropy                     =  0.676538 kcal/mol
+        Heat Capacity (Cp)          =  0.54373 kcal/mol
+        Free Energy                 = -1500.5164 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.203290 kcal/mol
+        COSMO Surface Area          = 1202.31 sq. Angstrom
+        COSMO Volume                = 2332.68 cu. Angstrom
+        van der Waals Surface Area  = 1202.31 sq. Angstrom
+        Dipole Moment
+            x-component             =  20.389 Debye
+            y-component             =  36.660 Debye
+            z-component             =  5.272 Debye
+            -----------------------------------------
+                                    =  42.279 Debye
+        Calculation Time            = 34483.10 (seconds)
+        Number of SCF iterations    = 1888
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001504-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -36.20293 kcal/mol
+Free Energy             = -71.05535 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.33 kcal/mol
+        Estimated Ki                         =   3.61 mM
+        Intermolecular interaction energy    =  -3.93 kcal/mol
+        Nonbonded interaction energy         =  -3.30 kcal/mol
+        Electrostatic energy                 =  -0.63 kcal/mol
+        Internal energy                      =  -0.50 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.50 kcal/mol
+        RMSD from the input structure        =  26.90 Angstrom
+        Time to perform AutoDock calculation = 243.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1269.07372 kcal/mol
+        Entropy                     =  0.695088 kcal/mol
+        Heat Capacity (Cp)          =  0.557678 kcal/mol
+        Free Energy                 = -1476.1924 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.518240 kcal/mol
+        COSMO Surface Area          = 1356.98 sq. Angstrom
+        COSMO Volume                = 2424.72 cu. Angstrom
+        van der Waals Surface Area  = 1356.98 sq. Angstrom
+        Dipole Moment
+            x-component             =  5.435 Debye
+            y-component             =  47.744 Debye
+            z-component             = -20.813 Debye
+            -----------------------------------------
+                                    =  52.367 Debye
+        Calculation Time            = 18767.92 (seconds)
+        Number of SCF iterations    = 1373
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.32 kcal/mol
+        Estimated Ki                         =   3.68 mM
+        Intermolecular interaction energy    =  -3.92 kcal/mol
+        Nonbonded interaction energy         =  -3.93 kcal/mol
+        Electrostatic energy                 =   0.02 kcal/mol
+        Internal energy                      =  -0.48 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.48 kcal/mol
+        RMSD from the input structure        =  30.22 Angstrom
+        Time to perform AutoDock calculation = 243.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1262.24297 kcal/mol
+        Entropy                     =  0.694992 kcal/mol
+        Heat Capacity (Cp)          =  0.559656 kcal/mol
+        Free Energy                 = -1468.9685 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.058060 kcal/mol
+        COSMO Surface Area          = 1218.83 sq. Angstrom
+        COSMO Volume                = 2423.50 cu. Angstrom
+        van der Waals Surface Area  = 1218.83 sq. Angstrom
+        Dipole Moment
+            x-component             = -0.388 Debye
+            y-component             =  58.374 Debye
+            z-component             = -16.458 Debye
+            -----------------------------------------
+                                    =  60.651 Debye
+        Calculation Time            = 19688.94 (seconds)
+        Number of SCF iterations    = 1243
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001528-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -192.98307 kcal/mol
+Free Energy             = -229.84635 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.71 kcal/mol
+        Estimated Ki                         =   1.91 mM
+        Intermolecular interaction energy    =  -4.31 kcal/mol
+        Nonbonded interaction energy         =  -4.37 kcal/mol
+        Electrostatic energy                 =   0.06 kcal/mol
+        Internal energy                      =  -0.19 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.19 kcal/mol
+        RMSD from the input structure        =  31.05 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1418.30287 kcal/mol
+        Entropy                     =  0.701543 kcal/mol
+        Heat Capacity (Cp)          =  0.562678 kcal/mol
+        Free Energy                 = -1626.8328 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.602900 kcal/mol
+        COSMO Surface Area          = 1260.19 sq. Angstrom
+        COSMO Volume                = 2402.50 cu. Angstrom
+        van der Waals Surface Area  = 1260.19 sq. Angstrom
+        Dipole Moment
+            x-component             =  2.679 Debye
+            y-component             =  54.095 Debye
+            z-component             = -13.235 Debye
+            -----------------------------------------
+                                    =  55.755 Debye
+        Calculation Time            = 17515.29 (seconds)
+        Number of SCF iterations    = 1072
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 4
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.67 kcal/mol
+        Estimated Ki                         =   2.04 mM
+        Intermolecular interaction energy    =  -4.27 kcal/mol
+        Nonbonded interaction energy         =  -4.34 kcal/mol
+        Electrostatic energy                 =   0.08 kcal/mol
+        Internal energy                      =  -0.23 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.23 kcal/mol
+        RMSD from the input structure        =  31.06 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1419.60257 kcal/mol
+        Entropy                     =  0.724332 kcal/mol
+        Heat Capacity (Cp)          =  0.570055 kcal/mol
+        Free Energy                 = -1634.5689 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.732860 kcal/mol
+        COSMO Surface Area          = 1238.77 sq. Angstrom
+        COSMO Volume                = 2360.34 cu. Angstrom
+        van der Waals Surface Area  = 1238.77 sq. Angstrom
+        Dipole Moment
+            x-component             =  14.530 Debye
+            y-component             =  54.732 Debye
+            z-component             = -2.905 Debye
+            -----------------------------------------
+                                    =  56.702 Debye
+        Calculation Time            = 21889.24 (seconds)
+        Number of SCF iterations    = 1419
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.61 kcal/mol
+        Estimated Ki                         =   2.26 mM
+        Intermolecular interaction energy    =  -4.21 kcal/mol
+        Nonbonded interaction energy         =  -4.18 kcal/mol
+        Electrostatic energy                 =  -0.03 kcal/mol
+        Internal energy                      =  -0.27 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.27 kcal/mol
+        RMSD from the input structure        =  30.91 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1432.55374 kcal/mol
+        Entropy                     =  0.70015 kcal/mol
+        Heat Capacity (Cp)          =  0.56104 kcal/mol
+        Free Energy                 = -1640.1117 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.637690 kcal/mol
+        COSMO Surface Area          = 1262.96 sq. Angstrom
+        COSMO Volume                = 2378.21 cu. Angstrom
+        van der Waals Surface Area  = 1262.96 sq. Angstrom
+        Dipole Moment
+            x-component             =  20.811 Debye
+            y-component             =  48.413 Debye
+            z-component             = -23.251 Debye
+            -----------------------------------------
+                                    =  57.598 Debye
+        Calculation Time            = 21605.92 (seconds)
+        Number of SCF iterations    = 1403
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001677-1
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.18447 kcal/mol
+Free Energy             = -67.16604 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 387.58 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.07 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.80 Angstrom
+        Time to perform AutoDock calculation = 202.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1310.60849 kcal/mol
+        Entropy                     =  0.683429 kcal/mol
+        Heat Capacity (Cp)          =  0.548768 kcal/mol
+        Free Energy                 = -1513.6610 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.890930 kcal/mol
+        COSMO Surface Area          = 1261.41 sq. Angstrom
+        COSMO Volume                = 2474.07 cu. Angstrom
+        van der Waals Surface Area  = 1261.41 sq. Angstrom
+        Dipole Moment
+            x-component             =  41.231 Debye
+            y-component             =  42.164 Debye
+            z-component             =  3.325 Debye
+            -----------------------------------------
+                                    =  59.067 Debye
+        Calculation Time            = 38515.05 (seconds)
+        Number of SCF iterations    = 2837
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.29889 kcal/mol
+Free Energy             = -68.28277 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 388.83 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.05 kcal/mol
+        Electrostatic energy                 =   0.09 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.93 Angstrom
+        Time to perform AutoDock calculation = 204.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1269.93046 kcal/mol
+        Entropy                     =  0.706305 kcal/mol
+        Heat Capacity (Cp)          =  0.559404 kcal/mol
+        Free Energy                 = -1480.3530 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -8.370070 kcal/mol
+        COSMO Surface Area          = 1233.89 sq. Angstrom
+        COSMO Volume                = 2404.63 cu. Angstrom
+        van der Waals Surface Area  = 1233.89 sq. Angstrom
+        Dipole Moment
+            x-component             =  10.319 Debye
+            y-component             =  41.908 Debye
+            z-component             =  3.475 Debye
+            -----------------------------------------
+                                    =  43.299 Debye
+        Calculation Time            = 17296.11 (seconds)
+        Number of SCF iterations    = 969
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001677-2
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.18447 kcal/mol
+Free Energy             = -67.16604 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 387.47 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.07 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.79 Angstrom
+        Time to perform AutoDock calculation = 203.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1309.95700 kcal/mol
+        Entropy                     =  0.675556 kcal/mol
+        Heat Capacity (Cp)          =  0.547564 kcal/mol
+        Free Energy                 = -1511.0877 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -11.163680 kcal/mol
+        COSMO Surface Area          = 1255.80 sq. Angstrom
+        COSMO Volume                = 2374.77 cu. Angstrom
+        van der Waals Surface Area  = 1255.80 sq. Angstrom
+        Dipole Moment
+            x-component             =  40.382 Debye
+            y-component             =  45.308 Debye
+            z-component             = -0.565 Debye
+            -----------------------------------------
+                                    =  60.695 Debye
+        Calculation Time            = 37357.92 (seconds)
+        Number of SCF iterations    = 2753
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.29889 kcal/mol
+Free Energy             = -68.28277 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 389.30 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.05 kcal/mol
+        Electrostatic energy                 =   0.10 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.95 Angstrom
+        Time to perform AutoDock calculation = 203.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1276.20244 kcal/mol
+        Entropy                     =  0.695921 kcal/mol
+        Heat Capacity (Cp)          =  0.55416 kcal/mol
+        Free Energy                 = -1482.9564 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -8.680290 kcal/mol
+        COSMO Surface Area          = 1199.12 sq. Angstrom
+        COSMO Volume                = 2307.02 cu. Angstrom
+        van der Waals Surface Area  = 1199.12 sq. Angstrom
+        Dipole Moment
+            x-component             =  13.034 Debye
+            y-component             =  36.910 Debye
+            z-component             =  4.281 Debye
+            -----------------------------------------
+                                    =  39.377 Debye
+        Calculation Time            = 25545.71 (seconds)
+        Number of SCF iterations    = 1757
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000002349-1
+Number of STICs = 9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.71505 kcal/mol
+Free Energy             = -283.71931 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.48 kcal/mol
+        Estimated Ki                         = 518.30 uM
+        Intermolecular interaction energy    =  -6.57 kcal/mol
+        Nonbonded interaction energy         =  -6.49 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.32 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.32 kcal/mol
+        RMSD from the input structure        =  20.33 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1453.61023 kcal/mol
+        Entropy                     =  0.729336 kcal/mol
+        Heat Capacity (Cp)          =  0.611233 kcal/mol
+        Free Energy                 = -1670.4450 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.865610 kcal/mol
+        COSMO Surface Area          = 1314.53 sq. Angstrom
+        COSMO Volume                = 2580.20 cu. Angstrom
+        van der Waals Surface Area  = 1314.53 sq. Angstrom
+        Dipole Moment
+            x-component             =  21.363 Debye
+            y-component             =  48.734 Debye
+            z-component             = -8.469 Debye
+            -----------------------------------------
+                                    =  53.880 Debye
+        Calculation Time            = 18981.72 (seconds)
+        Number of SCF iterations    = 815
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.83013 kcal/mol
+Free Energy             = -284.23661 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 6
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.27 kcal/mol
+        Estimated Ki                         = 745.97 uM
+        Intermolecular interaction energy    =  -6.35 kcal/mol
+        Nonbonded interaction energy         =  -6.28 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.12 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.12 kcal/mol
+        RMSD from the input structure        =  20.05 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1455.14945 kcal/mol
+        Entropy                     =  0.742758 kcal/mol
+        Heat Capacity (Cp)          =  0.612725 kcal/mol
+        Free Energy                 = -1676.5808 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.354300 kcal/mol
+        COSMO Surface Area          = 1272.72 sq. Angstrom
+        COSMO Volume                = 2582.60 cu. Angstrom
+        van der Waals Surface Area  = 1272.72 sq. Angstrom
+        Dipole Moment
+            x-component             =  16.752 Debye
+            y-component             =  40.470 Debye
+            z-component             = -10.191 Debye
+            -----------------------------------------
+                                    =  44.970 Debye
+        Calculation Time            = 22510.87 (seconds)
+        Number of SCF iterations    = 1033
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.21 kcal/mol
+        Estimated Ki                         = 816.69 uM
+        Intermolecular interaction energy    =  -6.30 kcal/mol
+        Nonbonded interaction energy         =  -6.12 kcal/mol
+        Electrostatic energy                 =  -0.18 kcal/mol
+        Internal energy                      =  -1.26 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.26 kcal/mol
+        RMSD from the input structure        =  21.41 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1449.64917 kcal/mol
+        Entropy                     =  0.771058 kcal/mol
+        Heat Capacity (Cp)          =  0.62477 kcal/mol
+        Free Energy                 = -1678.6512 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.185550 kcal/mol
+        COSMO Surface Area          = 1307.64 sq. Angstrom
+        COSMO Volume                = 2630.83 cu. Angstrom
+        van der Waals Surface Area  = 1307.64 sq. Angstrom
+        Dipole Moment
+            x-component             =  0.089 Debye
+            y-component             =  43.082 Debye
+            z-component             = -16.505 Debye
+            -----------------------------------------
+                                    =  46.135 Debye
+        Calculation Time            = 23658.44 (seconds)
+        Number of SCF iterations    = 1038
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.80 kcal/mol
+        Estimated Ki                         =   1.63 mM
+        Intermolecular interaction energy    =  -5.89 kcal/mol
+        Nonbonded interaction energy         =  -5.72 kcal/mol
+        Electrostatic energy                 =  -0.17 kcal/mol
+        Internal energy                      =  -1.27 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.27 kcal/mol
+        RMSD from the input structure        =  22.60 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1454.87276 kcal/mol
+        Entropy                     =  0.749074 kcal/mol
+        Heat Capacity (Cp)          =  0.612454 kcal/mol
+        Free Energy                 = -1677.9132 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.447680 kcal/mol
+        COSMO Surface Area          = 1334.68 sq. Angstrom
+        COSMO Volume                = 2675.85 cu. Angstrom
+        van der Waals Surface Area  = 1334.68 sq. Angstrom
+        Dipole Moment
+            x-component             =  5.510 Debye
+            y-component             =  33.020 Debye
+            z-component             =  8.641 Debye
+            -----------------------------------------
+                                    =  34.574 Debye
+        Calculation Time            = 21950.49 (seconds)
+        Number of SCF iterations    = 1098
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 3
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.77478 kcal/mol
+Free Energy             = -283.25405 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.92 kcal/mol
+        Estimated Ki                         = 248.20 uM
+        Intermolecular interaction energy    =  -7.01 kcal/mol
+        Nonbonded interaction energy         =  -6.92 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.16 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.16 kcal/mol
+        RMSD from the input structure        =  20.19 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1454.85747 kcal/mol
+        Entropy                     =  0.732581 kcal/mol
+        Heat Capacity (Cp)          =  0.612163 kcal/mol
+        Free Energy                 = -1672.6062 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.952550 kcal/mol
+        COSMO Surface Area          = 1329.50 sq. Angstrom
+        COSMO Volume                = 2650.59 cu. Angstrom
+        van der Waals Surface Area  = 1329.50 sq. Angstrom
+        Dipole Moment
+            x-component             =  19.644 Debye
+            y-component             =  47.832 Debye
+            z-component             = -7.297 Debye
+            -----------------------------------------
+                                    =  52.221 Debye
+        Calculation Time            = 17949.26 (seconds)
+        Number of SCF iterations    = 731
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 4
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.84775 kcal/mol
+Free Energy             = -283.32565 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.52 kcal/mol
+        Estimated Ki                         = 489.79 uM
+        Intermolecular interaction energy    =  -6.60 kcal/mol
+        Nonbonded interaction energy         =  -6.53 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.11 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.11 kcal/mol
+        RMSD from the input structure        =  23.45 Angstrom
+        Time to perform AutoDock calculation = 764.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1452.29939 kcal/mol
+        Entropy                     =  0.72987 kcal/mol
+        Heat Capacity (Cp)          =  0.60853 kcal/mol
+        Free Energy                 = -1668.5071 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.362060 kcal/mol
+        COSMO Surface Area          = 1306.91 sq. Angstrom
+        COSMO Volume                = 2590.62 cu. Angstrom
+        van der Waals Surface Area  = 1306.91 sq. Angstrom
+        Dipole Moment
+            x-component             =  20.641 Debye
+            y-component             =  46.962 Debye
+            z-component             = -7.433 Debye
+            -----------------------------------------
+                                    =  51.833 Debye
+        Calculation Time            = 20823.29 (seconds)
+        Number of SCF iterations    = 1007
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.32 kcal/mol
+        Estimated Ki                         = 679.09 uM
+        Intermolecular interaction energy    =  -6.41 kcal/mol
+        Nonbonded interaction energy         =  -6.42 kcal/mol
+        Electrostatic energy                 =   0.01 kcal/mol
+        Internal energy                      =  -1.14 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.14 kcal/mol
+        RMSD from the input structure        =  24.89 Angstrom
+        Time to perform AutoDock calculation = 764.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1453.58125 kcal/mol
+        Entropy                     =  0.747322 kcal/mol
+        Heat Capacity (Cp)          =  0.612094 kcal/mol
+        Free Energy                 = -1675.4120 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.828670 kcal/mol
+        COSMO Surface Area          = 1280.42 sq. Angstrom
+        COSMO Volume                = 2631.79 cu. Angstrom
+        van der Waals Surface Area  = 1280.42 sq. Angstrom
+        Dipole Moment
+            x-component             =  4.967 Debye
+            y-component             =  58.393 Debye
+            z-component             = -12.875 Debye
+            -----------------------------------------
+                                    =  60.001 Debye
+        Calculation Time            = 28829.48 (seconds)
+        Number of SCF iterations    = 1554
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 5
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.76733 kcal/mol
+Free Energy             = -283.88967 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.60 kcal/mol
+        Estimated Ki                         = 423.01 uM
+        Intermolecular interaction energy    =  -6.69 kcal/mol
+        Nonbonded interaction energy         =  -6.65 kcal/mol
+        Electrostatic energy                 =  -0.04 kcal/mol
+        Internal energy                      =  -0.19 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.19 kcal/mol
+        RMSD from the input structure        =  22.53 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1457.67266 kcal/mol
+        Entropy                     =  0.748689 kcal/mol
+        Heat Capacity (Cp)          =  0.616572 kcal/mol
+        Free Energy                 = -1680.4894 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.334690 kcal/mol
+        COSMO Surface Area          = 1291.12 sq. Angstrom
+        COSMO Volume                = 2646.97 cu. Angstrom
+        van der Waals Surface Area  = 1291.12 sq. Angstrom
+        Dipole Moment
+            x-component             =  14.539 Debye
+            y-component             =  52.444 Debye
+            z-component             = -18.934 Debye
+            -----------------------------------------
+                                    =  57.622 Debye
+        Calculation Time            = 23867.98 (seconds)
+        Number of SCF iterations    = 1141
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 6
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.49 kcal/mol
+        Estimated Ki                         = 510.78 uM
+        Intermolecular interaction energy    =  -6.58 kcal/mol
+        Nonbonded interaction energy         =  -6.69 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.16 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.16 kcal/mol
+        RMSD from the input structure        =  22.44 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1447.82656 kcal/mol
+        Entropy                     =  0.768021 kcal/mol
+        Heat Capacity (Cp)          =  0.618705 kcal/mol
+        Free Energy                 = -1675.4662 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.901150 kcal/mol
+        COSMO Surface Area          = 1280.13 sq. Angstrom
+        COSMO Volume                = 2631.07 cu. Angstrom
+        van der Waals Surface Area  = 1280.13 sq. Angstrom
+        Dipole Moment
+            x-component             =  24.924 Debye
+            y-component             =  46.147 Debye
+            z-component             = -18.354 Debye
+            -----------------------------------------
+                                    =  55.567 Debye
+        Calculation Time            = 26420.47 (seconds)
+        Number of SCF iterations    = 1381
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.48 kcal/mol
+        Estimated Ki                         = 520.69 uM
+        Intermolecular interaction energy    =  -6.57 kcal/mol
+        Nonbonded interaction energy         =  -6.24 kcal/mol
+        Electrostatic energy                 =  -0.33 kcal/mol
+        Internal energy                      =  -0.14 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.14 kcal/mol
+        RMSD from the input structure        =  22.15 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1454.49722 kcal/mol
+        Entropy                     =  0.740579 kcal/mol
+        Heat Capacity (Cp)          =  0.61181 kcal/mol
+        Free Energy                 = -1674.8265 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.172680 kcal/mol
+        COSMO Surface Area          = 1290.36 sq. Angstrom
+        COSMO Volume                = 2656.04 cu. Angstrom
+        van der Waals Surface Area  = 1290.36 sq. Angstrom
+        Dipole Moment
+            x-component             =  2.228 Debye
+            y-component             =  38.315 Debye
+            z-component             = -17.672 Debye
+            -----------------------------------------
+                                    =  42.253 Debye
+        Calculation Time            = 27296.18 (seconds)
+        Number of SCF iterations    = 1412
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 6
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.61756 kcal/mol
+Free Energy             = -283.77816 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.99 kcal/mol
+        Estimated Ki                         = 218.71 uM
+        Intermolecular interaction energy    =  -7.08 kcal/mol
+        Nonbonded interaction energy         =  -6.85 kcal/mol
+        Electrostatic energy                 =  -0.23 kcal/mol
+        Internal energy                      =  -0.03 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.03 kcal/mol
+        RMSD from the input structure        =  21.95 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1446.45021 kcal/mol
+        Entropy                     =  0.73669 kcal/mol
+        Heat Capacity (Cp)          =  0.609615 kcal/mol
+        Free Energy                 = -1664.3056 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -8.764970 kcal/mol
+        COSMO Surface Area          = 1293.53 sq. Angstrom
+        COSMO Volume                = 2562.02 cu. Angstrom
+        van der Waals Surface Area  = 1293.53 sq. Angstrom
+        Dipole Moment
+            x-component             =  0.551 Debye
+            y-component             =  49.241 Debye
+            z-component             = -14.999 Debye
+            -----------------------------------------
+                                    =  51.478 Debye
+        Calculation Time            = 27179.62 (seconds)
+        Number of SCF iterations    = 1528
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.89 kcal/mol
+        Estimated Ki                         = 259.28 uM
+        Intermolecular interaction energy    =  -6.98 kcal/mol
+        Nonbonded interaction energy         =  -7.01 kcal/mol
+        Electrostatic energy                 =   0.03 kcal/mol
+        Internal energy                      =   0.20 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.20 kcal/mol
+        RMSD from the input structure        =  21.26 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1452.03531 kcal/mol
+        Entropy                     =  0.762034 kcal/mol
+        Heat Capacity (Cp)          =  0.61768 kcal/mol
+        Free Energy                 = -1679.0750 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.897410 kcal/mol
+        COSMO Surface Area          = 1336.42 sq. Angstrom
+        COSMO Volume                = 2687.96 cu. Angstrom
+        van der Waals Surface Area  = 1336.42 sq. Angstrom
+        Dipole Moment
+            x-component             =  9.290 Debye
+            y-component             =  36.441 Debye
+            z-component             =  26.758 Debye
+            -----------------------------------------
+                                    =  46.154 Debye
+        Calculation Time            = 22921.52 (seconds)
+        Number of SCF iterations    = 1164
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 7
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.71784 kcal/mol
+Free Energy             = -283.33652 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.83 kcal/mol
+        Estimated Ki                         = 287.27 uM
+        Intermolecular interaction energy    =  -6.92 kcal/mol
+        Nonbonded interaction energy         =  -6.67 kcal/mol
+        Electrostatic energy                 =  -0.25 kcal/mol
+        Internal energy                      =   0.22 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.22 kcal/mol
+        RMSD from the input structure        =  22.13 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1450.56970 kcal/mol
+        Entropy                     =  0.774798 kcal/mol
+        Heat Capacity (Cp)          =  0.618857 kcal/mol
+        Free Energy                 = -1681.1279 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -10.398270 kcal/mol
+        COSMO Surface Area          = 1330.52 sq. Angstrom
+        COSMO Volume                = 2606.69 cu. Angstrom
+        van der Waals Surface Area  = 1330.52 sq. Angstrom
+        Dipole Moment
+            x-component             =  1.086 Debye
+            y-component             =  33.193 Debye
+            z-component             =  4.552 Debye
+            -----------------------------------------
+                                    =  33.521 Debye
+        Calculation Time            = 23801.28 (seconds)
+        Number of SCF iterations    = 1114
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.60 kcal/mol
+        Estimated Ki                         = 424.07 uM
+        Intermolecular interaction energy    =  -6.69 kcal/mol
+        Nonbonded interaction energy         =  -6.50 kcal/mol
+        Electrostatic energy                 =  -0.19 kcal/mol
+        Internal energy                      =  -0.12 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.12 kcal/mol
+        RMSD from the input structure        =  21.50 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1455.22625 kcal/mol
+        Entropy                     =  0.724983 kcal/mol
+        Heat Capacity (Cp)          =  0.608845 kcal/mol
+        Free Energy                 = -1670.7750 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -11.072200 kcal/mol
+        COSMO Surface Area          = 1324.64 sq. Angstrom
+        COSMO Volume                = 2762.77 cu. Angstrom
+        van der Waals Surface Area  = 1324.64 sq. Angstrom
+        Dipole Moment
+            x-component             =  19.223 Debye
+            y-component             =  62.117 Debye
+            z-component             = -22.434 Debye
+            -----------------------------------------
+                                    =  68.784 Debye
+        Calculation Time            = 30026.92 (seconds)
+        Number of SCF iterations    = 1707
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 7
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.56 kcal/mol
+        Estimated Ki                         = 455.78 uM
+        Intermolecular interaction energy    =  -6.65 kcal/mol
+        Nonbonded interaction energy         =  -6.67 kcal/mol
+        Electrostatic energy                 =   0.03 kcal/mol
+        Internal energy                      =  -0.13 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.13 kcal/mol
+        RMSD from the input structure        =  21.29 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1444.17934 kcal/mol
+        Entropy                     =  0.70704 kcal/mol
+        Heat Capacity (Cp)          =  0.596004 kcal/mol
+        Free Energy                 = -1654.3948 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.548930 kcal/mol
+        COSMO Surface Area          = 1268.56 sq. Angstrom
+        COSMO Volume                = 2600.73 cu. Angstrom
+        van der Waals Surface Area  = 1268.56 sq. Angstrom
+        Dipole Moment
+            x-component             =  18.908 Debye
+            y-component             =  47.718 Debye
+            z-component             =  3.876 Debye
+            -----------------------------------------
+                                    =  51.474 Debye
+        Calculation Time            = 28689.31 (seconds)
+        Number of SCF iterations    = 1701
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 8
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.78546 kcal/mol
+Free Energy             = -283.58568 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -5.05 kcal/mol
+        Estimated Ki                         = 198.18 uM
+        Intermolecular interaction energy    =  -7.14 kcal/mol
+        Nonbonded interaction energy         =  -7.03 kcal/mol
+        Electrostatic energy                 =  -0.11 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  23.68 Angstrom
+        Time to perform AutoDock calculation = 791.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1455.85266 kcal/mol
+        Entropy                     =  0.729621 kcal/mol
+        Heat Capacity (Cp)          =  0.611042 kcal/mol
+        Free Energy                 = -1672.4879 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.768770 kcal/mol
+        COSMO Surface Area          = 1307.00 sq. Angstrom
+        COSMO Volume                = 2640.31 cu. Angstrom
+        van der Waals Surface Area  = 1307.00 sq. Angstrom
+        Dipole Moment
+            x-component             =  18.113 Debye
+            y-component             =  49.478 Debye
+            z-component             = -6.531 Debye
+            -----------------------------------------
+                                    =  53.093 Debye
+        Calculation Time            = 20909.77 (seconds)
+        Number of SCF iterations    = 1014
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 9
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.84222 kcal/mol
+Free Energy             = -284.24903 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 8
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.70 kcal/mol
+        Estimated Ki                         = 360.46 uM
+        Intermolecular interaction energy    =  -6.79 kcal/mol
+        Nonbonded interaction energy         =  -6.69 kcal/mol
+        Electrostatic energy                 =  -0.09 kcal/mol
+        Internal energy                      =  -0.89 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.89 kcal/mol
+        RMSD from the input structure        =  20.93 Angstrom
+        Time to perform AutoDock calculation = 779.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1453.37537 kcal/mol
+        Entropy                     =  0.750655 kcal/mol
+        Heat Capacity (Cp)          =  0.613236 kcal/mol
+        Free Energy                 = -1676.6803 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -9.861750 kcal/mol
+        COSMO Surface Area          = 1303.68 sq. Angstrom
+        COSMO Volume                = 2601.51 cu. Angstrom
+        van der Waals Surface Area  = 1303.68 sq. Angstrom
+        Dipole Moment
+            x-component             =  17.263 Debye
+            y-component             =  44.997 Debye
+            z-component             = -12.316 Debye
+            -----------------------------------------
+                                    =  49.744 Debye
+        Calculation Time            = 20294.10 (seconds)
+        Number of SCF iterations    = 909
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.62 kcal/mol
+        Estimated Ki                         = 413.53 uM
+        Intermolecular interaction energy    =  -6.70 kcal/mol
+        Nonbonded interaction energy         =  -6.42 kcal/mol
+        Electrostatic energy                 =  -0.28 kcal/mol
+        Internal energy                      =  -0.91 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.91 kcal/mol
+        RMSD from the input structure        =  21.64 Angstrom
+        Time to perform AutoDock calculation = 779.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Heat of Formation           = -1451.09296 kcal/mol
+        Entropy                     =  0.747407 kcal/mol
+        Heat Capacity (Cp)          =  0.612349 kcal/mol
+        Free Energy                 = -1673.5494 kcal/mol
+        Zero Point Energy           =  0.000 kcal/mol
+        Dielectric Energy           = -8.831610 kcal/mol
+        COSMO Surface Area          = 1270.47 sq. Angstrom
+        COSMO Volume                = 2588.68 cu. Angstrom
+        van der Waals Surface Area  = 1270.47 sq. Angstrom
+        Dipole Moment
+            x-component             = -0.381 Debye
+            y-component             =  32.312 Debye
+            z-component             = -16.498 Debye
+            -----------------------------------------
+                                    =  36.282 Debye
+        Calculation Time            = 28066.43 (seconds)
+        Number of SCF iterations    = 1479
+        Free Energy of Receptor     = -531.013428 kcal/mol
+        Inhibition Constant (Ki)    = 0 M
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================

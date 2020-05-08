@@ -1,0 +1,2081 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   oooooooooooo  .o88o.  .o88o.                               o8o            
+   `888'     `8  888 `"  888 `"                               `"'            
+    888         o888oo  o888oo   .ooooo.  oooo d8b  .ooooo.  oooo   .ooooo.  
+    888oooo8     888     888    d88' `88b `888""8P d88' `"Y8 `888  d88' `88b 
+    888    "     888     888    888ooo888  888     888        888  888   888 
+    888       o  888     888    888    .o  888     888   .o8  888  888   888 
+   o888ooooood8 o888o   o888o   `Y8bod8P' d888b    `Y8bod8P' o888o `Y8bod8P' 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Authors: Antonio M. Ferreira, PhD
+         High Performance Computing Facility
+         Research Informatics/Information Sciences
+         and
+         Department of Structural Biology
+         St. Jude Children's Research Hospital
+e-mail : Antonio.Ferreira@stjude.org
+
+         David Coss, PhD
+         Department of Structural Biology
+         St. Jude Children's Research Hospital
+e-mail : David.Coss@stjude.org
+
+
+Effercio started on: Tue Sep  6 16:23:52 2011
+
+WARNING: ********************************
+WARNING: *** Running in verbose mode! ***
+WARNING: *** Expect LOTS of output    ***
+WARNING: ********************************
+
+WARNING: ********************************************************
+WARNING: *** Performing two-stage docking with semi-empirical ***
+WARNING: *** refinement of the docked structures.  This WILL  ***
+WARNING: *** require a GREAT DEAL of computational time.  Be  ***
+WARNING: *** certain you know what you're doing!!  Such runs  ***
+WARNING: *** typically require about 1 CPU-day per ligand.    ***
+WARNING: ********************************************************
+
+Input geometries will be prescreened using semiempirical quanutm mechanics.
+WARNING: ***********************************************************
+WARNING: *** Maxwell-Boltzmann averaging of the docking results  ***
+WARNING: *** will use calculated Gibbs free energies.  This WILL ***
+WARNING: *** require a GREAT DEAL of computational time.  Be     ***
+WARNING: *** certain you know what you're doing!! Computing the  ***
+WARNING: *** free energy of a protein-ligand complex typically   ***
+WARNING: *** requires about 1 CPU-day per ligand.                ***
+WARNING: ***********************************************************
+
+Total time alloted    : 31536000 seconds
+Using receptor name   : 3DAB_pocket
+Using names from file : really_short_list
+Receptor files (dir)  : /home/aferreir/Programming/Effercio/testing/receptors
+Ligand files (dir)    : /home/aferreir/Programming/Effercio/testing/ligands
+Docking results (dir) : /home/aferreir/Programming/Effercio/testing/dockings
+Cluster structs (dir) : /home/aferreir/Programming/Effercio/testing/optprep
+MOPAC results (dir)   : /home/aferreir/Programming/Effercio/testing/optimized
+Analysis results (dir): /home/aferreir/Programming/Effercio/testing/analysis
+MGLTools bin directory: /home/aferreir/bin/MGLTools-1.5.6/bin
+Restart file          : Effercio.restart
+
+AutoDock Parameters
+-------------------------------------------------------------------------------
+
+Running with 4 processors
+
+Master process is running on clever.stjude.org
+Slave processes are running on:
+-------------------------------------------------------------------------------
+clever.stjude.org clever.stjude.org clever.stjude.org 
+-------------------------------------------------------------------------------
+Unique Hosts are:
+clever.stjude.org (rank = 2)
+
+Master is calling SendMapFiles (0, 0)
+Process    2 (clever.stjude.org) is calling SendMapFiles (2, 0)
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Sending to transfer nodes: 3DAB_pocket.gpf
+Sending to transfer nodes: 3DAB_pocket.H.map
+Sending to transfer nodes: 3DAB_pocket.maps.fld
+Sending to transfer nodes: 3DAB_pocket.I.map
+Sending to transfer nodes: 3DAB_pocket.maps.xyz
+Sending to transfer nodes: 3DAB_pocket.d.map
+Sending to transfer nodes: 3DAB_pocket.F.map
+Sending to transfer nodes: 3DAB_pocket.N.map
+Sending to transfer nodes: 3DAB_pocket.NA.map
+Sending to transfer nodes: 3DAB_pocket.glg
+Sending to transfer nodes: 3DAB_pocket.SA.map
+Sending to transfer nodes: 3DAB_pocket.HD.map
+Sending to transfer nodes: 3DAB_pocket.Br.map
+Sending to transfer nodes: 3DAB_pocket.OA.map
+Sending to transfer nodes: 3DAB_pocket.C.map
+Sending to transfer nodes: 3DAB_pocket.Cl.map
+Sending to transfer nodes: 3DAB_pocket.e.map
+Sending to transfer nodes: 3DAB_pocket.A.map
+Sending to transfer nodes: 3DAB_pocket.pdb
+Sending to transfer nodes: 3DAB_pocket.S.map
+Sending to transfer nodes: 3DAB_pocket.pdbqt
+Total transfered: 1009.562137Mb
+Total time in seconds for transfer: 47.000000
+Average transfer rate: 21.480045Mb/s
+Opening ligand file: really_short_list ... SUCCESS!
+Creating job list from file ... done!
+Will run 20 jobs
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I002C02 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job SJ000001185-1_T001S001I002C02
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535772 seconds
+Process    3 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I002C02 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535772 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535772 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I002C02 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01: ""
+Filename copied for SJ000001113-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001479-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535758 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001479-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01: ""
+Filename copied for SJ000001185-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001479-2_T001S001I001C01 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535743 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001479-2_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I002C02: ""
+Filename copied for SJ000001185-1_T001S001I002C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001504-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535740 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001504-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001504-1_T001S001I001C01: ""
+Filename copied for SJ000001504-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001528-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535733 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001528-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001528-1_T001S001I001C01: ""
+Filename copied for SJ000001528-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001677-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535725 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001677-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001479-1_T001S001I001C01: ""
+Filename copied for SJ000001479-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001677-1_T001S001I001C02 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535719 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001677-1_T001S001I001C02 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C01: ""
+Filename copied for SJ000001677-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001677-2_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535716 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001677-2_T001S001I001C01 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C02: ""
+Filename copied for SJ000001677-1_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001677-2_T001S001I001C02 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535710 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001677-2_T001S001I001C02 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C01: ""
+Filename copied for SJ000001677-2_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535708 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C01 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001479-2_T001S001I001C01: ""
+Filename copied for SJ000001479-2_T001S001I001C01: ""
+DEBUG - Saving state
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C02 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535704 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C02 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C02: ""
+Filename copied for SJ000001677-2_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C03 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535702 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C03 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C01: ""
+Filename copied for SJ000002349-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C04 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535643 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C04 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C02: ""
+Filename copied for SJ000002349-1_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C05 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535641 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C05 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C03: ""
+Filename copied for SJ000002349-1_T001S001I001C03: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C06 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535638 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C06 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C04: ""
+Filename copied for SJ000002349-1_T001S001I001C04: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C07 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535576 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C07 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C05: ""
+Filename copied for SJ000002349-1_T001S001I001C05: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C08 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535568 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C08 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C06: ""
+Filename copied for SJ000002349-1_T001S001I001C06: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C09 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31535563 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C09 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C07: ""
+Filename copied for SJ000002349-1_T001S001I001C07: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000001113-1_T001S001I001C01
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000001113-1_T001S001I001C01_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C08: ""
+Filename copied for SJ000002349-1_T001S001I001C08: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000001185-1_T001S001I001C01
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000001185-1_T001S001I001C01_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C09: ""
+Filename copied for SJ000002349-1_T001S001I001C09: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000001185-1_T001S001I002C02
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000001185-1_T001S001I002C02_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001113-1_T001S001I001C01_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001113-1_T001S001I001C01_001.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001113-1_T001S001I001C01_002.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001113-1_T001S001I001C01_002.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001113-1_T001S001I001C01_003.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001113-1_T001S001I001C01_003.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001113-1_T001S001I001C01_004.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001113-1_T001S001I001C01_004.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001113-1_T001S001I001C01_005.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001113-1_T001S001I001C01_005.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01: ""
+Filename copied for SJ000001113-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000001504-1_T001S001I001C01
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000001504-1_T001S001I001C01_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001185-1_T001S001I002C02_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001185-1_T001S001I002C02_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I002C02: ""
+Filename copied for SJ000001185-1_T001S001I002C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000001528-1_T001S001I001C01
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000001528-1_T001S001I001C01_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001185-1_T001S001I001C01_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001185-1_T001S001I001C01_001.pdb
+
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001185-1_T001S001I001C01_002.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001185-1_T001S001I001C01_002.pdb
+
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001185-1_T001S001I001C01_003.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001185-1_T001S001I001C01_003.pdb
+
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001185-1_T001S001I001C01_004.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001185-1_T001S001I001C01_004.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01: ""
+Filename copied for SJ000001185-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000001479-1_T001S001I001C01
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000001479-1_T001S001I001C01_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001504-1_T001S001I001C01_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001504-1_T001S001I001C01_001.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001504-1_T001S001I001C01_002.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001504-1_T001S001I001C01_002.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001504-1_T001S001I001C01: ""
+Filename copied for SJ000001504-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000001677-1_T001S001I001C01
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000001677-1_T001S001I001C01_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001479-1_T001S001I001C01_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001479-1_T001S001I001C01_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001479-1_T001S001I001C01: ""
+Filename copied for SJ000001479-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000001677-1_T001S001I001C02
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000001677-1_T001S001I001C02_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001528-1_T001S001I001C01_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001528-1_T001S001I001C01_001.pdb
+
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001528-1_T001S001I001C01_002.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001528-1_T001S001I001C01_002.pdb
+
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001528-1_T001S001I001C01_003.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001528-1_T001S001I001C01_003.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001528-1_T001S001I001C01: ""
+Filename copied for SJ000001528-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000001677-2_T001S001I001C01
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000001677-2_T001S001I001C01_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001677-1_T001S001I001C01_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001677-1_T001S001I001C01_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C01: ""
+Filename copied for SJ000001677-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000001479-2_T001S001I001C01
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000001479-2_T001S001I001C01_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001677-1_T001S001I001C02_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001677-1_T001S001I001C02_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C02: ""
+Filename copied for SJ000001677-1_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000001677-2_T001S001I001C02
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000001677-2_T001S001I001C02_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001677-2_T001S001I001C01_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001677-2_T001S001I001C01_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C01: ""
+Filename copied for SJ000001677-2_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C01
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C01_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001479-2_T001S001I001C01_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001479-2_T001S001I001C01_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001479-2_T001S001I001C01: ""
+Filename copied for SJ000001479-2_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C02
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C02_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000001677-2_T001S001I001C02_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000001677-2_T001S001I001C02_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C02: ""
+Filename copied for SJ000001677-2_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C03
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C03_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C01_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C01_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C01: ""
+Filename copied for SJ000002349-1_T001S001I001C01: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C04
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C04_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C02_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C02_001.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C02_002.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C02_002.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C02_003.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C02_003.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C02: ""
+Filename copied for SJ000002349-1_T001S001I001C02: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C05
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C05_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C03_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C03_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C03: ""
+Filename copied for SJ000002349-1_T001S001I001C03: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C06
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C06_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C04_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C04_001.pdb
+
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C04_002.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C04_002.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C04: ""
+Filename copied for SJ000002349-1_T001S001I001C04: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    1 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C07
+Process    1 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    1 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    1 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    1 (clever.stjude.org): prepare_dpf42.py has finished
+Process    1 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C07_3DAB_pocket.dpf
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C05_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C05_001.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C05_002.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C05_002.pdb
+
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C05_003.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C05_003.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C05: ""
+Filename copied for SJ000002349-1_T001S001I001C05: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    3 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C08
+Process    3 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    3 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    3 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    3 (clever.stjude.org): prepare_dpf42.py has finished
+Process    3 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C08_3DAB_pocket.dpf
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C06_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C06_001.pdb
+
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C06_002.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C06_002.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C06: ""
+Filename copied for SJ000002349-1_T001S001I001C06: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+-------------------------------------------------------------------------------
+Process    2 (clever.stjude.org): Ligand     = SJ000002349-1_T001S001I001C09
+Process    2 (clever.stjude.org): Receptor   = 3DAB_pocket
+Process    2 (clever.stjude.org): Source Dir = /home/aferreir/Programming/Effercio/testing/receptors
+Process    2 (clever.stjude.org): Calling prepare_dpf42.py to create docking parameter file
+setting PYTHONHOME environment
+Process    2 (clever.stjude.org): prepare_dpf42.py has finished
+Process    2 (clever.stjude.org): Running AutoDock on SJ000002349-1_T001S001I001C09_3DAB_pocket.dpf
+Process    1 (clever.stjude.org): AutoDock has finished with return value 0
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C07_001.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C07_001.pdb
+
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C07_002.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C07_002.pdb
+
+Process    1 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C07_003.pdb
+Process    1 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C07_003.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C07: ""
+Filename copied for SJ000002349-1_T001S001I001C07: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532304 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01_001: ""
+Filename copied for SJ000001113-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001113-1_T001S001I001C01_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 0.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532303 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): ERROR - The calculation for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001 failed.
+Process    1 (clever.stjude.org): ERROR - MOPAC was unable to recognize the input geometry!
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001113-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    1 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532289 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01_002: ""
+Filename copied for SJ000001113-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001113-1_T001S001I001C01_002
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 0.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532288 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): ERROR - The calculation for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002 failed.
+Process    1 (clever.stjude.org): ERROR - MOPAC was unable to recognize the input geometry!
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002: ""
+Filename copied for 3DAB_pocket_SJ000001113-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    1 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532273 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01_003: ""
+Filename copied for SJ000001113-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001113-1_T001S001I001C01_003
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 0.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532272 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): AutoDock has finished with return value 0
+Process    3 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C08_001.pdb
+Process    3 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C08_001.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C08: ""
+Filename copied for SJ000002349-1_T001S001I001C08: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532269 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01_004: ""
+Filename copied for SJ000001113-1_T001S001I001C01_004: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001113-1_T001S001I001C01_004
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 0.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532269 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Process    1 (clever.stjude.org): ERROR - The calculation for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003 failed.
+Process    1 (clever.stjude.org): ERROR - MOPAC was unable to recognize the input geometry!
+Received mopac_res for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003: ""
+Filename copied for 3DAB_pocket_SJ000001113-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001113-1_T001S001I001C01_005 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532257 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001113-1_T001S001I001C01_005 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001113-1_T001S001I001C01_005: ""
+Filename copied for SJ000001113-1_T001S001I001C01_005: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001113-1_T001S001I001C01_005
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 0.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532257 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005 (using MOPAC2009.exe)
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004: ""
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): ERROR - The calculation for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004 failed.
+Process    3 (clever.stjude.org): ERROR - MOPAC was unable to recognize the input geometry!
+Filename copied for 3DAB_pocket_SJ000001113-1_T001S001I001C01_004: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job SJ000001185-1_T001S001I002C02_001
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532253 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I002C02_001: ""
+Filename copied for SJ000001185-1_T001S001I002C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001185-1_T001S001I002C02_001
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of -1.0 and MOPAC thinks this should be 2.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532252 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001185-1_T001S001I002C02_001 (using MOPAC2009.exe)
+Receiving mopac_resProcess    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): ERROR - The calculation for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005 failed.
+Process    1 (clever.stjude.org): ERROR - MOPAC was unable to recognize the input geometry!
+
+Received mopac_res for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005: ""
+Filename copied for 3DAB_pocket_SJ000001113-1_T001S001I001C01_005: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532242 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01_001: ""
+Filename copied for SJ000001185-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001185-1_T001S001I001C01_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532241 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): AutoDock has finished with return value 0
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C09_001.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C09_001.pdb
+
+Process    2 (clever.stjude.org): Placing docked complex in /home/aferreir/Programming/Effercio/testing/optprep/3DAB_pocket_SJ000002349-1_T001S001I001C09_002.pdb
+Process    2 (clever.stjude.org): Placing docked ligand structure in /home/aferreir/Programming/Effercio/testing/optprep/SJ000002349-1_T001S001I001C09_002.pdb
+
+-------------------------------------------------------------------------------
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C09: ""
+Filename copied for SJ000002349-1_T001S001I001C09: ""
+DEBUG - dumping dock dataDEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532182 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01_002: ""
+Filename copied for SJ000001185-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001185-1_T001S001I001C01_002
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31532180 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001185-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001185-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31518686 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01_003: ""
+Filename copied for SJ000001185-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001185-1_T001S001I001C01_003
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31518685 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001185-1_T001S001I002C02_001: ""
+Filename copied for 3DAB_pocket_SJ000001185-1_T001S001I002C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001185-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31517920 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001185-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001185-1_T001S001I001C01_004: ""
+Filename copied for SJ000001185-1_T001S001I001C01_004: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001185-1_T001S001I001C01_004
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31517918 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001185-1_T001S001I001C01_004 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001185-1_T001S001I001C01_002: ""
+Filename copied for 3DAB_pocket_SJ000001185-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001504-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31515962 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001504-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001504-1_T001S001I001C01_001: ""
+Filename copied for SJ000001504-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001504-1_T001S001I001C01_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31515961 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001185-1_T001S001I001C01_004: ""
+Filename copied for 3DAB_pocket_SJ000001185-1_T001S001I001C01_004: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001504-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31505549 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001504-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001504-1_T001S001I001C01_002: ""
+Filename copied for SJ000001504-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001504-1_T001S001I001C01_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31505549 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001504-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001185-1_T001S001I001C01_003: ""
+Filename copied for 3DAB_pocket_SJ000001185-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001479-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31504895 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001479-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001479-1_T001S001I001C01_001: ""
+Filename copied for SJ000001479-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001479-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001479-1_T001S001I001C01_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001479-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31504894 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001479-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001504-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001504-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001528-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31503366 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001528-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001528-1_T001S001I001C01_001: ""
+Filename copied for SJ000001528-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001528-1_T001S001I001C01_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31503366 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001504-1_T001S001I001C01_002: ""
+Filename copied for 3DAB_pocket_SJ000001504-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001528-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31492102 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001528-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001528-1_T001S001I001C01_002: ""
+Filename copied for SJ000001528-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001528-1_T001S001I001C01_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31492102 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001528-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001528-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001528-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31491135 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001528-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001528-1_T001S001I001C01_003: ""
+Filename copied for SJ000001528-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001528-1_T001S001I001C01_003
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31491135 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001528-1_T001S001I001C01_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001479-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001479-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001677-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31483044 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001677-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C01_001: ""
+Filename copied for SJ000001677-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001677-1_T001S001I001C01_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31483044 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001677-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001528-1_T001S001I001C01_002: ""
+Filename copied for 3DAB_pocket_SJ000001528-1_T001S001I001C01_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001677-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31477437 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001677-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-1_T001S001I001C02_001: ""
+Filename copied for SJ000001677-1_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001677-1_T001S001I001C02_001
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31477437 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001677-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001528-1_T001S001I001C01_003: ""
+Filename copied for 3DAB_pocket_SJ000001528-1_T001S001I001C01_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000001677-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31476940 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000001677-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C01_001: ""
+Filename copied for SJ000001677-2_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001677-2_T001S001I001C01_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31476939 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001677-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001677-1_T001S001I001C02_001: ""
+Filename copied for 3DAB_pocket_SJ000001677-1_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000001479-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31465185 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000001479-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001479-2_T001S001I001C01_001: ""
+Filename copied for SJ000001479-2_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001479-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001479-2_T001S001I001C01_001
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001479-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31465184 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001479-2_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001677-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001677-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000001677-2_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31460276 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000001677-2_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000001677-2_T001S001I001C02_001: ""
+Filename copied for SJ000001677-2_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-2_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000001677-2_T001S001I001C02_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000001677-2_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31460276 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000001677-2_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001677-2_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001677-2_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31454914 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C01_001: ""
+Filename copied for SJ000002349-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C01_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31454913 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C01_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001677-2_T001S001I001C02_001: ""
+Filename copied for 3DAB_pocket_SJ000001677-2_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31443914 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C02_001: ""
+Filename copied for SJ000002349-1_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C02_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31443913 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000001479-2_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000001479-2_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C02_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31443656 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C02_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C02_002: ""
+Filename copied for SJ000002349-1_T001S001I001C02_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C02_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31443654 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C01_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C01_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C02_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31440867 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C02_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C02_003: ""
+Filename copied for SJ000002349-1_T001S001I001C02_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C02_003
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31440865 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C02_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C02_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C02_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C03_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31427804 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C03_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C03_001: ""
+Filename copied for SJ000002349-1_T001S001I001C03_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C03_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C03_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C03_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31427802 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C03_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C02_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C02_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C04_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31426102 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C04_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C04_001: ""
+Filename copied for SJ000002349-1_T001S001I001C04_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C04_001
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31426100 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C02_003: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C02_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C04_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31425446 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C04_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C04_002: ""
+Filename copied for SJ000002349-1_T001S001I001C04_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C04_002
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31425445 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C04_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C03_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C03_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C05_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31414243 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C05_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C05_001: ""
+Filename copied for SJ000002349-1_T001S001I001C05_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C05_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31414241 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C04_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C04_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C05_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31411169 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C05_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C05_002: ""
+Filename copied for SJ000002349-1_T001S001I001C05_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C05_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31411168 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C04_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C04_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C05_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31406245 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C05_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C05_003: ""
+Filename copied for SJ000002349-1_T001S001I001C05_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C05_003
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31406244 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C05_003 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C05_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C05_001: ""
+DEBUG - Saving state
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C06_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31397439 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C06_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C06_001: ""
+Filename copied for SJ000002349-1_T001S001I001C06_001: ""
+DEBUG - Saving state
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C06_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31397438 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C05_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C05_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C06_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31393017 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C06_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C06_002: ""
+Filename copied for SJ000002349-1_T001S001I001C06_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C06_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31393016 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C06_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C05_003: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C05_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C07_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31387825 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C07_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C07_001: ""
+Filename copied for SJ000002349-1_T001S001I001C07_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C07_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31387823 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C06_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C06_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C07_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31379349 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C07_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C07_002: ""
+Filename copied for SJ000002349-1_T001S001I001C07_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C07_002
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_002 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31379348 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C06_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C06_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C07_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31377157 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C07_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C07_003: ""
+Filename copied for SJ000002349-1_T001S001I001C07_003: ""
+DEBUG - Saving state
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+DEBUG - State saved
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C07_003
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_003 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31377156 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C07_003 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C07_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C07_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C08_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31371014 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C08_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C08_001: ""
+Filename copied for SJ000002349-1_T001S001I001C08_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    2 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C08_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C08_001
+Process    2 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    2 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    2 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    2 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    2 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C08_001 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Process    2 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31371012 seconds
+Process    2 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C08_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C07_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C07_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C09_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31359905 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C09_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C09_001: ""
+Filename copied for SJ000002349-1_T001S001I001C09_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    1 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C09_001
+Process    1 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    1 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    1 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    1 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    1 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_001 (using MOPAC2009.exe)
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Process    1 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31359904 seconds
+Process    1 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_001 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C07_003: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C07_003: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for SJ000002349-1_T001S001I001C09_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31358476 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for SJ000002349-1_T001S001I001C09_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for SJ000002349-1_T001S001I001C09_002: ""
+Filename copied for SJ000002349-1_T001S001I001C09_002: ""
+DEBUG - Saving state
+DEBUG - State saved
+
+Process    3 (clever.stjude.org): Found directory /scratch_space/aferreir
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): WARNING - Problem with job 3DAB_pocket_SJ000002349-1_T001S001I001C09_002
+Process    3 (clever.stjude.org): WARNING - The total charge for your system is incorrect!!
+Process    3 (clever.stjude.org): WARNING - You specified a charge of 0.0 and MOPAC thinks this should be 1.0
+Process    3 (clever.stjude.org): WARNING - Effercio will use the MOPAC charge
+Process    3 (clever.stjude.org): WARNING - Please check your results and input files carefully
+Process    3 (clever.stjude.org): Charge validation step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_002 (using MOPAC2009.exe)
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Process    3 (clever.stjude.org): DEBUG - Time remaining for MOPAC calculation is 31358475 seconds
+Process    3 (clever.stjude.org): Semi-empirical QM step for 3DAB_pocket_SJ000002349-1_T001S001I001C09_002 (using MOPAC2009.exe)
+Process    2 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C08_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C08_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+Process    1 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C09_001: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C09_001: ""
+DEBUG - Saving state
+DEBUG - State saved
+Process    3 (clever.stjude.org): MOPAC2009.exe has finished
+Receiving mopac_res
+Received mopac_res for 3DAB_pocket_SJ000002349-1_T001S001I001C09_002: ""
+Filename copied for 3DAB_pocket_SJ000002349-1_T001S001I001C09_002: ""
+Finished with Job Queue. Sending quit signal to nodes.
+Pausing master on 5457
+
+MASTER: Found directory /home/aferreir/Programming/Effercio/testing/analysis
+
+MASTER: Directory /home/aferreir/Programming/Effercio/testing/analysis/adk not found!
+MASTER: Successfully created /home/aferreir/Programming/Effercio/testing/analysis/adk
+
+MASTER: Directory /home/aferreir/Programming/Effercio/testing/analysis/qm not found!
+MASTER: Successfully created /home/aferreir/Programming/Effercio/testing/analysis/qm
+WARNING - Uninitialized Cluster representative -123456WARNING - Averaging of compound SJ000001479-2 FAILED.
+WARNING - STIC averaging failed for  SJ000001479-2_S001T001I001C001
+WARNING - Averaging of compound SJ000001677-2 FAILED.
+WARNING - STIC averaging failed for  SJ000001677-2_S001T001I001C001
+WARNING - STIC averaging failed for  SJ000001677-2_S001T001I001C002
+WARNING - Averaging of compound SJ000001185-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001185-1_S001T001I002C002
+WARNING - STIC averaging failed for  SJ000001185-1_S001T001I001C001
+WARNING - Averaging of compound SJ000001677-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001677-1_S001T001I001C001
+WARNING - STIC averaging failed for  SJ000001677-1_S001T001I001C002
+WARNING - Averaging of compound SJ000002349-1 FAILED.
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C003
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C004
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C007
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C008
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C001
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C006
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C005
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C002
+WARNING - STIC averaging failed for  SJ000002349-1_S001T001I001C009
+WARNING - Averaging of compound SJ000001113-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001113-1_S001T001I001C001
+WARNING - Averaging of compound SJ000001479-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001479-1_S001T001I001C001
+WARNING - Averaging of compound SJ000001504-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001504-1_S001T001I001C001
+WARNING - Averaging of compound SJ000001528-1 FAILED.
+WARNING - STIC averaging failed for  SJ000001528-1_S001T001I001C001
+
+Effercio finished on: Thu Sep  8 22:56:14 2011
+
+Total time = 54:32:22 hours
+

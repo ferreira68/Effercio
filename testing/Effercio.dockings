@@ -1,0 +1,1318 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001113-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -1.00
+Total charge on complex = 0.00
+Heat of Formation       = -249.12280 kcal/mol
+Free Energy             = -282.36385 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 5
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.64 kcal/mol
+        Estimated Ki                         = 395.76 uM
+        Intermolecular interaction energy    =  -5.54 kcal/mol
+        Nonbonded interaction energy         =  -2.39 kcal/mol
+        Electrostatic energy                 =  -3.15 kcal/mol
+        Internal energy                      =   0.06 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.06 kcal/mol
+        RMSD from the input structure        =  34.91 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.05 kcal/mol
+        Estimated Ki                         =   1.07 mM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -2.53 kcal/mol
+        Electrostatic energy                 =  -2.42 kcal/mol
+        Internal energy                      =   0.15 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.15 kcal/mol
+        RMSD from the input structure        =  22.88 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.96 kcal/mol
+        Estimated Ki                         =   1.26 mM
+        Intermolecular interaction energy    =  -4.85 kcal/mol
+        Nonbonded interaction energy         =  -2.50 kcal/mol
+        Electrostatic energy                 =  -2.35 kcal/mol
+        Internal energy                      =   0.13 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.13 kcal/mol
+        RMSD from the input structure        =  29.60 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 4
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.88 kcal/mol
+        Estimated Ki                         =   1.42 mM
+        Intermolecular interaction energy    =  -4.78 kcal/mol
+        Nonbonded interaction energy         =  -1.96 kcal/mol
+        Electrostatic energy                 =  -2.82 kcal/mol
+        Internal energy                      =   0.05 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.05 kcal/mol
+        RMSD from the input structure        =  34.88 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 5
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.75 kcal/mol
+        Estimated Ki                         =   1.77 mM
+        Intermolecular interaction energy    =  -4.65 kcal/mol
+        Nonbonded interaction energy         =  -2.07 kcal/mol
+        Electrostatic energy                 =  -2.58 kcal/mol
+        Internal energy                      =   0.01 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =   0.01 kcal/mol
+        RMSD from the input structure        =  26.70 Angstrom
+        Time to perform AutoDock calculation = 292.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number -123456
+=== Number of poses in cluster: -123456
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001185-1
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -70.96294 kcal/mol
+Free Energy             = -114.47571 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 5
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.97 kcal/mol
+        Estimated Ki                         = 227.32 uM
+        Intermolecular interaction energy    =  -5.87 kcal/mol
+        Nonbonded interaction energy         =  -5.62 kcal/mol
+        Electrostatic energy                 =  -0.24 kcal/mol
+        Internal energy                      =  -0.36 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.36 kcal/mol
+        RMSD from the input structure        =  20.15 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.89 kcal/mol
+        Estimated Ki                         = 261.65 uM
+        Intermolecular interaction energy    =  -5.78 kcal/mol
+        Nonbonded interaction energy         =  -5.68 kcal/mol
+        Electrostatic energy                 =  -0.10 kcal/mol
+        Internal energy                      =  -0.44 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.44 kcal/mol
+        RMSD from the input structure        =  20.52 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.82 kcal/mol
+        Estimated Ki                         = 291.05 uM
+        Intermolecular interaction energy    =  -5.72 kcal/mol
+        Nonbonded interaction energy         =  -5.63 kcal/mol
+        Electrostatic energy                 =  -0.09 kcal/mol
+        Internal energy                      =  -0.38 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.38 kcal/mol
+        RMSD from the input structure        =  21.20 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 4
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.70 kcal/mol
+        Estimated Ki                         = 358.52 uM
+        Intermolecular interaction energy    =  -5.60 kcal/mol
+        Nonbonded interaction energy         =  -5.57 kcal/mol
+        Electrostatic energy                 =  -0.02 kcal/mol
+        Internal energy                      =  -0.47 kcal/mol
+        Torsional free energy                =   0.89 kcal/mol
+        Energy of the unbound system         =  -0.47 kcal/mol
+        RMSD from the input structure        =  20.47 Angstrom
+        Time to perform AutoDock calculation = 413.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 2
+Conformer index         = 2
+Charge on ligand        = -1.00
+Total charge on complex = 0.00
+Heat of Formation       = 121.89921 kcal/mol
+Free Energy             = 77.78320 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -5.57 kcal/mol
+        Estimated Ki                         =  82.32 uM
+        Intermolecular interaction energy    =  -6.17 kcal/mol
+        Nonbonded interaction energy         =  -3.84 kcal/mol
+        Electrostatic energy                 =  -2.33 kcal/mol
+        Internal energy                      =  -0.46 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.46 kcal/mol
+        RMSD from the input structure        =  30.63 Angstrom
+        Time to perform AutoDock calculation = 378.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001479-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -11.12346 kcal/mol
+Free Energy             = -47.23494 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.47 kcal/mol
+        Estimated Ki                         = 527.29 uM
+        Intermolecular interaction energy    =  -4.47 kcal/mol
+        Nonbonded interaction energy         =  -4.47 kcal/mol
+        Electrostatic energy                 =   0.00 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   0.00 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  30.31 Angstrom
+        Time to perform AutoDock calculation = 135.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001479-2
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -11.12346 kcal/mol
+Free Energy             = -47.23494 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.47 kcal/mol
+        Estimated Ki                         = 527.10 uM
+        Intermolecular interaction energy    =  -4.47 kcal/mol
+        Nonbonded interaction energy         =  -4.48 kcal/mol
+        Electrostatic energy                 =   0.00 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   0.00 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  30.30 Angstrom
+        Time to perform AutoDock calculation = 136.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001504-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -36.20293 kcal/mol
+Free Energy             = -71.05535 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.33 kcal/mol
+        Estimated Ki                         =   3.61 mM
+        Intermolecular interaction energy    =  -3.93 kcal/mol
+        Nonbonded interaction energy         =  -3.30 kcal/mol
+        Electrostatic energy                 =  -0.63 kcal/mol
+        Internal energy                      =  -0.50 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.50 kcal/mol
+        RMSD from the input structure        =  26.90 Angstrom
+        Time to perform AutoDock calculation = 243.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.32 kcal/mol
+        Estimated Ki                         =   3.68 mM
+        Intermolecular interaction energy    =  -3.92 kcal/mol
+        Nonbonded interaction energy         =  -3.93 kcal/mol
+        Electrostatic energy                 =   0.02 kcal/mol
+        Internal energy                      =  -0.48 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.48 kcal/mol
+        RMSD from the input structure        =  30.22 Angstrom
+        Time to perform AutoDock calculation = 243.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001528-1
+Number of STICs = 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = -0.00
+Total charge on complex = 0.00
+Heat of Formation       = -192.98307 kcal/mol
+Free Energy             = -229.84635 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.71 kcal/mol
+        Estimated Ki                         =   1.91 mM
+        Intermolecular interaction energy    =  -4.31 kcal/mol
+        Nonbonded interaction energy         =  -4.37 kcal/mol
+        Electrostatic energy                 =   0.06 kcal/mol
+        Internal energy                      =  -0.19 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.19 kcal/mol
+        RMSD from the input structure        =  31.05 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 4
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.67 kcal/mol
+        Estimated Ki                         =   2.04 mM
+        Intermolecular interaction energy    =  -4.27 kcal/mol
+        Nonbonded interaction energy         =  -4.34 kcal/mol
+        Electrostatic energy                 =   0.08 kcal/mol
+        Internal energy                      =  -0.23 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.23 kcal/mol
+        RMSD from the input structure        =  31.06 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.61 kcal/mol
+        Estimated Ki                         =   2.26 mM
+        Intermolecular interaction energy    =  -4.21 kcal/mol
+        Nonbonded interaction energy         =  -4.18 kcal/mol
+        Electrostatic energy                 =  -0.03 kcal/mol
+        Internal energy                      =  -0.27 kcal/mol
+        Torsional free energy                =   0.60 kcal/mol
+        Energy of the unbound system         =  -0.27 kcal/mol
+        RMSD from the input structure        =  30.91 Angstrom
+        Time to perform AutoDock calculation = 265.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001677-1
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.18447 kcal/mol
+Free Energy             = -67.16604 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 387.58 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.07 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.80 Angstrom
+        Time to perform AutoDock calculation = 202.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.29889 kcal/mol
+Free Energy             = -68.28277 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 388.83 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.05 kcal/mol
+        Electrostatic energy                 =   0.09 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.93 Angstrom
+        Time to perform AutoDock calculation = 204.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000001677-2
+Number of STICs = 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.18447 kcal/mol
+Free Energy             = -67.16604 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 387.47 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.07 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.79 Angstrom
+        Time to perform AutoDock calculation = 203.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -34.29889 kcal/mol
+Free Energy             = -68.28277 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.65 kcal/mol
+        Estimated Ki                         = 389.30 uM
+        Intermolecular interaction energy    =  -4.95 kcal/mol
+        Nonbonded interaction energy         =  -5.05 kcal/mol
+        Electrostatic energy                 =   0.10 kcal/mol
+        Internal energy                      =  -0.04 kcal/mol
+        Torsional free energy                =   0.30 kcal/mol
+        Energy of the unbound system         =  -0.04 kcal/mol
+        RMSD from the input structure        =  25.95 Angstrom
+        Time to perform AutoDock calculation = 203.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compound ID = SJ000002349-1
+Number of STICs = 9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 1
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.71505 kcal/mol
+Free Energy             = -283.71931 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.48 kcal/mol
+        Estimated Ki                         = 518.30 uM
+        Intermolecular interaction energy    =  -6.57 kcal/mol
+        Nonbonded interaction energy         =  -6.49 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.32 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.32 kcal/mol
+        RMSD from the input structure        =  20.33 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 2
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.83013 kcal/mol
+Free Energy             = -284.23661 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 6
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.27 kcal/mol
+        Estimated Ki                         = 745.97 uM
+        Intermolecular interaction energy    =  -6.35 kcal/mol
+        Nonbonded interaction energy         =  -6.28 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.12 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.12 kcal/mol
+        RMSD from the input structure        =  20.05 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.21 kcal/mol
+        Estimated Ki                         = 816.69 uM
+        Intermolecular interaction energy    =  -6.30 kcal/mol
+        Nonbonded interaction energy         =  -6.12 kcal/mol
+        Electrostatic energy                 =  -0.18 kcal/mol
+        Internal energy                      =  -1.26 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.26 kcal/mol
+        RMSD from the input structure        =  21.41 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -3.80 kcal/mol
+        Estimated Ki                         =   1.63 mM
+        Intermolecular interaction energy    =  -5.89 kcal/mol
+        Nonbonded interaction energy         =  -5.72 kcal/mol
+        Electrostatic energy                 =  -0.17 kcal/mol
+        Internal energy                      =  -1.27 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.27 kcal/mol
+        RMSD from the input structure        =  22.60 Angstrom
+        Time to perform AutoDock calculation = 786.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 3
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.77478 kcal/mol
+Free Energy             = -283.25405 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.92 kcal/mol
+        Estimated Ki                         = 248.20 uM
+        Intermolecular interaction energy    =  -7.01 kcal/mol
+        Nonbonded interaction energy         =  -6.92 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.16 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.16 kcal/mol
+        RMSD from the input structure        =  20.19 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 4
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.84775 kcal/mol
+Free Energy             = -283.32565 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.52 kcal/mol
+        Estimated Ki                         = 489.79 uM
+        Intermolecular interaction energy    =  -6.60 kcal/mol
+        Nonbonded interaction energy         =  -6.53 kcal/mol
+        Electrostatic energy                 =  -0.08 kcal/mol
+        Internal energy                      =  -1.11 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.11 kcal/mol
+        RMSD from the input structure        =  23.45 Angstrom
+        Time to perform AutoDock calculation = 764.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.32 kcal/mol
+        Estimated Ki                         = 679.09 uM
+        Intermolecular interaction energy    =  -6.41 kcal/mol
+        Nonbonded interaction energy         =  -6.42 kcal/mol
+        Electrostatic energy                 =   0.01 kcal/mol
+        Internal energy                      =  -1.14 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -1.14 kcal/mol
+        RMSD from the input structure        =  24.89 Angstrom
+        Time to perform AutoDock calculation = 764.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 5
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.76733 kcal/mol
+Free Energy             = -283.88967 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 3
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.60 kcal/mol
+        Estimated Ki                         = 423.01 uM
+        Intermolecular interaction energy    =  -6.69 kcal/mol
+        Nonbonded interaction energy         =  -6.65 kcal/mol
+        Electrostatic energy                 =  -0.04 kcal/mol
+        Internal energy                      =  -0.19 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.19 kcal/mol
+        RMSD from the input structure        =  22.53 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 6
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.49 kcal/mol
+        Estimated Ki                         = 510.78 uM
+        Intermolecular interaction energy    =  -6.58 kcal/mol
+        Nonbonded interaction energy         =  -6.69 kcal/mol
+        Electrostatic energy                 =   0.11 kcal/mol
+        Internal energy                      =  -0.16 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.16 kcal/mol
+        RMSD from the input structure        =  22.44 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.48 kcal/mol
+        Estimated Ki                         = 520.69 uM
+        Intermolecular interaction energy    =  -6.57 kcal/mol
+        Nonbonded interaction energy         =  -6.24 kcal/mol
+        Electrostatic energy                 =  -0.33 kcal/mol
+        Internal energy                      =  -0.14 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.14 kcal/mol
+        RMSD from the input structure        =  22.15 Angstrom
+        Time to perform AutoDock calculation = 781.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 6
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.61756 kcal/mol
+Free Energy             = -283.77816 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 9
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.99 kcal/mol
+        Estimated Ki                         = 218.71 uM
+        Intermolecular interaction energy    =  -7.08 kcal/mol
+        Nonbonded interaction energy         =  -6.85 kcal/mol
+        Electrostatic energy                 =  -0.23 kcal/mol
+        Internal energy                      =  -0.03 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.03 kcal/mol
+        RMSD from the input structure        =  21.95 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.89 kcal/mol
+        Estimated Ki                         = 259.28 uM
+        Intermolecular interaction energy    =  -6.98 kcal/mol
+        Nonbonded interaction energy         =  -7.01 kcal/mol
+        Electrostatic energy                 =   0.03 kcal/mol
+        Internal energy                      =   0.20 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.20 kcal/mol
+        RMSD from the input structure        =  21.26 Angstrom
+        Time to perform AutoDock calculation = 784.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 7
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.71784 kcal/mol
+Free Energy             = -283.33652 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.83 kcal/mol
+        Estimated Ki                         = 287.27 uM
+        Intermolecular interaction energy    =  -6.92 kcal/mol
+        Nonbonded interaction energy         =  -6.67 kcal/mol
+        Electrostatic energy                 =  -0.25 kcal/mol
+        Internal energy                      =   0.22 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.22 kcal/mol
+        RMSD from the input structure        =  22.13 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 1
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.60 kcal/mol
+        Estimated Ki                         = 424.07 uM
+        Intermolecular interaction energy    =  -6.69 kcal/mol
+        Nonbonded interaction energy         =  -6.50 kcal/mol
+        Electrostatic energy                 =  -0.19 kcal/mol
+        Internal energy                      =  -0.12 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.12 kcal/mol
+        RMSD from the input structure        =  21.50 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 3
+=== Number of poses in cluster: 7
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.56 kcal/mol
+        Estimated Ki                         = 455.78 uM
+        Intermolecular interaction energy    =  -6.65 kcal/mol
+        Nonbonded interaction energy         =  -6.67 kcal/mol
+        Electrostatic energy                 =   0.03 kcal/mol
+        Internal energy                      =  -0.13 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.13 kcal/mol
+        RMSD from the input structure        =  21.29 Angstrom
+        Time to perform AutoDock calculation = 790.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 8
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.78546 kcal/mol
+Free Energy             = -283.58568 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 10
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -5.05 kcal/mol
+        Estimated Ki                         = 198.18 uM
+        Intermolecular interaction energy    =  -7.14 kcal/mol
+        Nonbonded interaction energy         =  -7.03 kcal/mol
+        Electrostatic energy                 =  -0.11 kcal/mol
+        Internal energy                      =   0.00 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =   0.00 kcal/mol
+        RMSD from the input structure        =  23.68 Angstrom
+        Time to perform AutoDock calculation = 791.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================
+===============================================================================
+Stereoisomer index      = 1
+Tautomer index          = 1
+Ionization state index  = 1
+Conformer index         = 9
+Charge on ligand        = 0.00
+Total charge on complex = 0.00
+Heat of Formation       = -231.84222 kcal/mol
+Free Energy             = -284.24903 kcal/mol
+
+Mean K_i (docked)       = 0.00000M
+Mean K_i (optimized)    = 0.00000M
+Number of clusters      = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 1
+=== Number of poses in cluster: 8
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.70 kcal/mol
+        Estimated Ki                         = 360.46 uM
+        Intermolecular interaction energy    =  -6.79 kcal/mol
+        Nonbonded interaction energy         =  -6.69 kcal/mol
+        Electrostatic energy                 =  -0.09 kcal/mol
+        Internal energy                      =  -0.89 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.89 kcal/mol
+        RMSD from the input structure        =  20.93 Angstrom
+        Time to perform AutoDock calculation = 779.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Semi-empirical Method       = PM6
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data for cluster number 2
+=== Number of poses in cluster: 2
+
+    AutoDock Results
+-------------------------------------------------------------------------------
+        Free energy of binding               =  -4.62 kcal/mol
+        Estimated Ki                         = 413.53 uM
+        Intermolecular interaction energy    =  -6.70 kcal/mol
+        Nonbonded interaction energy         =  -6.42 kcal/mol
+        Electrostatic energy                 =  -0.28 kcal/mol
+        Internal energy                      =  -0.91 kcal/mol
+        Torsional free energy                =   2.09 kcal/mol
+        Energy of the unbound system         =  -0.91 kcal/mol
+        RMSD from the input structure        =  21.64 Angstrom
+        Time to perform AutoDock calculation = 779.00 seconds
+
+
+    MOPAC Results
+-------------------------------------------------------------------------------
+        Free Energy of Receptor     = -531.013428 kcal/mol
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================================================================

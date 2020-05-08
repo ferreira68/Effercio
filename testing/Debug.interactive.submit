@@ -1,0 +1,23 @@
+#!/bin/tcsh
+
+#PBS -A bip003
+#PBS -N Effercio_Test
+#PBS -q debug
+#PBS -I
+#PBS -l size=12
+
+echo "###########################################################################"
+df -h 
+echo "###########################################################################"
+echo "\n\n\n"
+
+source /lustre/widow1/proj/bip003/bin/MGLTools-1.5.4/bin/mglenv.csh
+
+set Effercio="/lustre/widow1/proj/bip003/bin/Effercio"
+setenv PYTHONHOME /lustre/widow1/proj/bip003/bin/python2.6
+setenv PYTHONPATH /lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6
+setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/python2.6/lib/python2.6/site-packages
+setenv PYTHONPATH ${PYTHONPATH}:/lustre/widow1/proj/bip003/bin/MGLTools-1.5.4/MGLToolsPckgs/
+cd $PBS_O_WORKDIR
+date
+
