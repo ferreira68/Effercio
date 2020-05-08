@@ -66,14 +66,17 @@ int check_extern_apps(const JobParameters *params)
 
   retval = access(params->mopac_path,X_OK);
   if(retval != 0)
+    printf ("%s ERROR: MOPAC executable not found at %s",params->node_tag,params->mopac_path);
     return retval;
   
   retval = access(params->autodock_exe,X_OK);
   if(retval != 0)
+    printf ("%s ERROR: Autodock executable not found at %s",params->node_tag,params->autodock_exe);
     return retval;
   
   retval = access(params->mgl_bin_dir,R_OK);
   if(retval != 0)
+    printf ("%s ERROR: MGL Tools not found in %s",params->node_tag,params->mgl_bin_dir);
     return retval;
   
   return 0;
