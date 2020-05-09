@@ -363,7 +363,7 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 	  {
 	    if (VerifyDir(transfer_dir,1,params->node_tag) != 0)
 	      {
-		fprintf(stderr,"%s: Could not create directory need for receptor transfer %s",params->node_tag,transfer_dir);
+		fprintf(stderr,"%s: Could not create directory needed for receptor transfer %s\n",params->node_tag,transfer_dir);
 		exit(FILESYS_ERROR);
 	      }
 	  }
@@ -464,7 +464,7 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 	    stop_time = time(NULL);
 	    printf_verbose(params->verbose,"Total transfered: %fMb\n",bytes_transfered/1e6);
 	    printf_verbose(params->verbose,"Total time in seconds for transfer: %f\n",difftime(stop_time,start_time));
-	    printf_verbose(params->verbose,"Average transfer rate: %fMb/s\n",bytes_transfered/(1e6*difftime(stop_time,start_time)));
+	    printf_verbose(params->verbose,"Average transfer rate: %f Mb/s\n",bytes_transfered/(1e6*difftime(stop_time,start_time)));
 	  }
 
 	free(massive_buffer);
@@ -790,10 +790,10 @@ int main(int argc, char **argv)
 			{"time"        ,1,NULL,'t'}, // total time for job in seconds
 			{"Gibbs"       ,0,NULL,'G'}, // flag to turn on use of free energies rather than enthalpies
 			{"restart"     ,0,NULL,'R'}, // restart from an incomplete previous job
-			{"mopac"	   ,1,NULL,'k'}, // Keyword(s) to be added to the mopac header *and* footer
+			{"mopac"       ,1,NULL,'k'}, // Keyword(s) to be added to the mopac header *and* footer
 			{"mopac-header",1,NULL,FLAGS_MOPAC_HEADER}, // Keyword(s) to be added to the mopac header
 			{"mopac-footer",1,NULL,FLAGS_MOPAC_FOOTER}, // Keyword(s) to be added to the mopac footer
-			{"scratch-dir",1,NULL,FLAGS_SCRATCH_DIR},// Scratch Directory
+			{"scratch-dir" ,1,NULL,FLAGS_SCRATCH_DIR},// Scratch Directory
 			{NULL, 0, NULL,0}
 	};
 
@@ -1304,7 +1304,7 @@ int main(int argc, char **argv)
 
 			// Check to see if a message has arrived from a slave.
 			// If so, go ahead an receive it.
-			// If not, check to see if time has elapse and everything should
+			// If not, check to see if time has elapsed and everything should
 			// shut down.
 			MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &have_incoming_msg,&status);
 			while(!have_incoming_msg)

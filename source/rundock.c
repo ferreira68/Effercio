@@ -167,9 +167,9 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     strcat(dpf_file,receptName);
     strcat(dpf_file,".dpf");
 
-    strcpy(dlg_file,receptName);
+    strcpy(dlg_file,filestub);
     strcat(dlg_file,"_");
-    strcat(dlg_file,filestub);
+    strcat(dlg_file,receptName);
     strcat(dlg_file,".dlg");
 
     // Look for a scratch directory and create one if it doesn't exist
