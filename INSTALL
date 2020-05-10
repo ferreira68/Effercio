@@ -363,3 +363,7 @@ operates.
 `configure' also accepts some other, not widely useful, options.  Run
 `configure --help' for more details.
 
+
+* Example
+./configure --prefix=/opt/Effercio/30Mar2020/gnu/8.2.0/openmpi/3.1.6 --with-autodock-path=/opt/AutoDock/4.2.6/gnu/8.2.0/bin/autodock4 --with-mgltools=/opt/MGLTools/1.5.7 --with-mopac=/opt/mopac/2016 CC=mpicc --no-create --no-recursion --disable-static
+

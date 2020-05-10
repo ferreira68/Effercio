@@ -10,7 +10,7 @@
  *          St. Jude Children's Research Hospital                        *
  *                                                                       *
  * This routine takes the name of a .pdbqt file (without the file        *
- * extension), generates an appropriate .dat file for a MOPAC2009 job,   *
+ * extension), generates an appropriate .mop file for a MOPAC2009 job,   *
  * runs the job and then extracts the results into a STICelement, which  *
  * was provided by the calling routine.                                  *
  *                                                                       *
@@ -155,10 +155,8 @@ int RunMOPAC(job_t *job,
     if(find[0] == '_')
       find = &find[1];
   }
-  //MOPAC_STIC->S = ExtractIndex(job,'S');
-  //MOPAC_STIC->T = ExtractIndex(job,'T');
-  //MOPAC_STIC->I = ExtractIndex(job,'I');
-  //MOPAC_STIC->C = ExtractIndex(job,'C');
+
+  // Get the STIC indices
   MOPAC_STIC->S = ExtractIndex(find,'S');
   MOPAC_STIC->T = ExtractIndex(find,'T');
   MOPAC_STIC->I = ExtractIndex(find,'I');
@@ -210,7 +208,7 @@ int RunMOPAC(job_t *job,
   strcat(pdbqtfile_name,".pdbqt");
 
   strcpy(testdeck_name,filestub);
-  strcat(testdeck_name,"_test.dat");
+  strcat(testdeck_name,"_test.mop");
     
   strcpy(testout_name,filestub);
   strcat(testout_name,"_test.out");
@@ -218,7 +216,7 @@ int RunMOPAC(job_t *job,
   strcpy(inputdeck_name,filestub);
   strcat(inputdeck_name,".");
   strcat(inputdeck_name,method);
-  strcat(inputdeck_name,".dat");
+  strcat(inputdeck_name,".mop");
 
   strcpy(outputdeck_name,filestub);
   strcat(outputdeck_name,".");
@@ -391,6 +389,13 @@ int RunMOPAC(job_t *job,
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,envPATH);
     sprintf(cmdstr,"PWD=%s",workdir);
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
+
+  // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
+  if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
+    sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
+  else
+    sprintf(cmdstr,"LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH"));
+  add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
     // Dump the environment list for DEBUG purposes
 #ifdef DEBUG
@@ -642,12 +647,23 @@ int RunMOPAC(job_t *job,
   }
 #endif
 
+  // Make sure MOPAC can find the license file
   if (strlen(envMOPAC_LIC) > 0) {
     sprintf(cmdstr,"MOPAC_LICENSE=%s",envMOPAC_LIC);
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
   }
+
+  // Set the path
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,envPATH);
   sprintf(cmdstr,"PWD=%s",getenv("PWD"));
+  add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
+
+  // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
+  printf("genenv=%s\n",getenv("LD_LIBRARY_PATH"));
+  if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
+    sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
+  else
+    sprintf(cmdstr,"LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH"));
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
   // Dump the environment list for DEBUG purposes
