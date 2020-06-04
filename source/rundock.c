@@ -144,8 +144,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     getcwd(initdir,FILENAME_MAX);
 
     strcpy(workdir,scratchDir);
-    strcat(workdir,"/");
-    strcat(workdir,user);
+    if (params->useDefaultScratch) {
+        strcat(workdir,"/");
+        strcat(workdir,user);
+    }
 
     strcpy(filestub,job->name);
 
@@ -560,11 +562,11 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 	results->charge = ligand_charge;
 	results->total_charge = complex_charge;
         #ifdef DEBUG
-       	printf("%s: DEBUG - CHARGES receptor = %6.3f  ligand = %6.3f  total = %6.3f\n",
-	       nodestr,receptor_charge,ligand_charge,complex_charge);
+       	    printf("%s: DEBUG - CHARGES receptor = %6.3f  ligand = %6.3f  total = %6.3f\n",
+	           nodestr,receptor_charge,ligand_charge,complex_charge);
         #endif
 
-	printf("\n");
+	// printf("\n");
 
 	if ((i+1) < numclusters) {
 	    temp = InitClusterRep(temp);

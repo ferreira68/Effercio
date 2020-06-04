@@ -61,6 +61,8 @@ void PrintHelp()
 
 	printf_master("  -q, --quantum\n%sTurn on MOPAC refinement of the cluster respresentatives\n",mytabs);
 
+	printf_master("  -G, --Gibbs\n%sUse Gibbs free energies (instead of enthalpies) for analysis\n",mytabs);
+
 	printf_master("  -o, --optimized\n%sDirectory to store the MOPAC geometry optimizations\n",mytabs);
 
 	printf_master("  -R, --restart\n%sRestart a previously unfinished %s run.\n",mytabs,PROG_NAME);
@@ -77,6 +79,6 @@ void PrintHelp()
 	printf_master("%s        This would add FMAT and FOCK to the MOPAC header and footer lines.\n",mytabs);
 	printf_master("      --mopac-header\n%sUser-specified keywords to be added only to the MOPAC header.\n",mytabs);
 	printf_master("      --mopac-footer\n%sUser-specified keywords to be added only to the MOPAC footer.\n",mytabs);
-	printf_master("      --scratch-dir\n%sUser-specified scratch directory. Default: /scratch_space",mytabs);
+	printf_master("      --scratch-dir\n%sUser-specified scratch directory. Default: /scratch_space/{$USER}",mytabs);
 	printf_master("\n");
 }

@@ -198,9 +198,14 @@ int RunMOPAC(job_t *job,
   // Set up the filenames
   getcwd(initdir,FILENAME_MAX);
 
+  // Need to fix this.  The working directory should be provided
+  // by the calling function without need for modification here!
   strcpy(workdir,scratch_dir);
-  strcat(workdir,"/");
-  strcat(workdir,user);
+  if (parameters->useDefaultScratch)
+  {
+    strcat(workdir,"/");
+    strcat(workdir,user);
+  }
 
   strcpy(filestub,job->name);
     
@@ -225,6 +230,7 @@ int RunMOPAC(job_t *job,
 
   // Write out the starting values of everything for DEBUG purposes
 #ifdef DEBUG
+  printf("%s: DEBUG - scratch_dir = %s\n",nodestr,scratch_dir);
   printf("%s: DEBUG - initdir = %s\n",nodestr,initdir);
   printf("%s: DEBUG - workdir = %s\n",nodestr,workdir);
   printf("%s: DEBUG - filestub = %s\n",nodestr,filestub);
@@ -257,8 +263,8 @@ int RunMOPAC(job_t *job,
   }
   CopyFile(temp_name,pdbqtfile_name);
 #ifdef DEBUG
-  printf("DEBUG - %s: Copied %s\n",nodestr,temp_name);
-  printf("DEBUG - %s:     to %s/%s\n",nodestr,workdir,pdbqtfile_name);
+  printf("%s: DEBUG - Copied %s\n",nodestr,temp_name);
+  printf("%s: DEBUG -     to %s/%s\n",nodestr,workdir,pdbqtfile_name);
 #endif
 
   // Open the .pdbqt file.  We'll need this for a bunch of things later
@@ -272,7 +278,7 @@ int RunMOPAC(job_t *job,
 #ifdef DEBUG
   printf("%s: DEBUG - supplied total_charge is %.1f\n",nodestr,*STIC_charge);
 #endif
-  if (*STIC_charge == -9876543.21) {
+  if (*STIC_charge == DOUBLE_INIT) {
     // Need to calculate the charge for the MOPAC input deck
     total_charge = ZERO;
     rewind(pdbqtfile);
@@ -285,6 +291,7 @@ int RunMOPAC(job_t *job,
     }
     rewind(pdbqtfile);
     *STIC_charge = total_charge;
+    // MOPAC_charge = total_charge;
   }
   else {
     // Use the supplied charge
@@ -311,6 +318,7 @@ int RunMOPAC(job_t *job,
 
 #ifdef DEBUG
   printf("%s: DEBUG - Got molecular charge of %.2f\n",nodestr,total_charge);
+  printf("%s: DEBUG - Set molecular charge of %.2f\n",nodestr,MOPAC_STIC->charge);
 #endif
 
   // Do some error-correcting here in case the empirical charge models got it wrong
@@ -351,6 +359,12 @@ int RunMOPAC(job_t *job,
 	int line_length = 0;
 	line_length = strlen(line);
 	char *lineptr;
+	// Check for "***" as the residue name and fix it for MOPAC's sake
+	lineptr = strstr(line,"***");
+	if (lineptr != NULL) {
+          strncpy(lineptr,MOPAC_LIGAND_RESNAME,sizeof(MOPAC_LIGAND_RESNAME)-1);
+        }
+        // Now we can work on the line
 	lineptr = line;
 	lineptr += LINE_OFFSET;
 	strncpy(lineptr,"\n",1);
@@ -603,6 +617,12 @@ int RunMOPAC(job_t *job,
       int line_length = 0;
       line_length = strlen(line);
       char *lineptr;
+      // Check for "***" as the residue name and fix it for MOPAC's sake
+      lineptr = strstr(line,"***");
+      if (lineptr != NULL) {
+         strncpy(lineptr,MOPAC_LIGAND_RESNAME,sizeof(MOPAC_LIGAND_RESNAME)-1);
+      }
+      // Now we can work on the line
       lineptr = line;
       lineptr += LINE_OFFSET;
       strncpy(lineptr,"\n",1);
@@ -659,7 +679,9 @@ int RunMOPAC(job_t *job,
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
   // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
-  printf("genenv=%s\n",getenv("LD_LIBRARY_PATH"));
+#ifdef DEBUG
+  printf("%s: DEBUG - LD_LIBRARY_PATH=%s\n",nodestr,getenv("LD_LIBRARY_PATH"));
+#endif
   if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
     sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
   else

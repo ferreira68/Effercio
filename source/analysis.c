@@ -289,6 +289,7 @@ void GetCompoundAverage(double *Ki_DOCK, double *Ki_QM, RBTree *avg, int give_pr
 	Z_DOCK = Z_QM = 0;
 	*Ki_DOCK = 0;*Ki_QM = 0;
 	GetCompoundSum(Ki_DOCK,Ki_QM,&Z_DOCK,&Z_QM,avg, give_predicted);
+        printf("DEBUG - from GetCompoundAverage: Ki_DOCK = %.4f   Ki_QM = %.4f\n",Ki_DOCK,Ki_QM);
 	*Ki_DOCK /= Z_DOCK;
 	*Ki_QM /= Z_QM;
 	DivideSTICCoefficients(Z_DOCK,avg);
@@ -646,10 +647,10 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 	char summary_filename[FILENAME_MAX], nmr_filename[FILENAME_MAX], *ID = NULL;
 	char adk_dir[FILENAME_MAX],qm_dir[FILENAME_MAX];
 	int compound_counter;
-	static const char *master_name = "MASTER";
-	static const char *nmr_name = "NMR_DATA";
+	static const char *master_name = "AVERAGED_Ki_VALUES";
+	static const char *nmr_name = "Boltzmann_Details";
 
-	if(VerifyDir(analysis_dir,1,"MASTER") != 0)
+	if(VerifyDir(analysis_dir,1,master_name) != 0)
 	{
 		fprintf(stderr,"ERROR - Could not create analysis dir. Using current directory instead.\n");
 		analysis_dir = "./";
@@ -657,8 +658,8 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 
 	sprintf(adk_dir,"%s/adk",analysis_dir);
 	sprintf(qm_dir,"%s/qm",analysis_dir);
-	VerifyDir(adk_dir,1,"MASTER");
-	VerifyDir(qm_dir,1,"MASTER");
+	VerifyDir(adk_dir,1,master_name);
+	VerifyDir(qm_dir,1,master_name);
 
 	// Obtain a tree of CompoundAvg structs with Ki data, ordered by
 	// Ki_DOCK.

@@ -159,6 +159,7 @@ typedef struct
   int prescreen;
   int UseFreeEnergy;
   int input_units;
+  int useDefaultScratch;
   time_t start_time;
   time_t total_time;// Total time allowed to run, if specified.
 

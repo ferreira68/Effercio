@@ -89,9 +89,9 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 		time_left = params->total_time - time(NULL) + params->start_time;
 		if(time_left < 600)
 		{
-#if 1//def DEBUG
-		  printf("Only have %f seconds remaining, delaying %s\n",time_left,((job_t*)curr_job->data)->name);
-		  #endif
+#ifdef DEBUG
+			printf("Only have %f seconds remaining, delaying %s\n",time_left,((job_t*)curr_job->data)->name);
+#endif
 			push_back(busy_list,curr_job);
 			return NULL;
 		}
@@ -110,7 +110,7 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 
 #ifdef DEBUG
 		JobString(strJobType,job_info);
-		printf_master("DEBUG - Sending %s to node %d for %s run\n",job_info->name,destination,strJobType);
+		printf_master("DEBUG - Sending %s to Process %d for %s run\n",job_info->name,destination,strJobType);
 #endif
 
 		float_buffer[0] = job_info->input_data.Hf;
@@ -124,7 +124,8 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 		//Put curr_job into the busy_list
 		push_back(busy_list,curr_job);
 #ifdef DEBUG
-		printf_master("DEBUG - Added %s (0x%x) to busy list for %d\n",((job_t*)curr_job->data)->name,curr_job,((job_t*)curr_job->data)->host_rank);
+		printf_master("DEBUG - Added %s (0x%x) to busy list for %d\n",
+				((job_t*)curr_job->data)->name,curr_job,((job_t*)curr_job->data)->host_rank);
 		fflush(stdout);
 #endif
 		return curr_job;
@@ -191,9 +192,9 @@ int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 		stic->reps->optimized.G         = DOUBLE_INIT;
 		stic->reps->optimized.ZPE       = DOUBLE_INIT;
 		stic->reps->optimized.E_dielec  = DOUBLE_INIT;
-		stic->reps->optimized.mu_x     = DOUBLE_INIT;
-		stic->reps->optimized.mu_y     = DOUBLE_INIT;
-		stic->reps->optimized.mu_z     = DOUBLE_INIT;
+		stic->reps->optimized.mu_x      = DOUBLE_INIT;
+		stic->reps->optimized.mu_y      = DOUBLE_INIT;
+		stic->reps->optimized.mu_z      = DOUBLE_INIT;
 		stic->reps->optimized.mu_total  = DOUBLE_INIT;
 		stic->reps->optimized.time      = DOUBLE_INIT;
 		stic->reps->optimized.num_SCFs  = INT_INIT;
@@ -210,8 +211,8 @@ int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 		break;
 	  }
 	case QM:
-	case QMLIG:
 		params->use_mozyme = TRUE;
+	case QMLIG:
 		// stic->charge = DOUBLE_INIT;
 		retval = RunMOPAC(job,params,stic);
 		break;
@@ -228,7 +229,7 @@ int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 /**
  * Performs functions on the job which should happen after
  * that particular type of job finishes. The job node is then removed
- * from the job Tree. Any state stored in finished_job using malloc is
+ * from the job Tree. Any state stored in finished_job using calloc is
  * freed. HOWEVER, this function does not free finished_job itself.
  * It may be used, and eventually should be freed, after this function
  * is called.
@@ -341,7 +342,9 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 #ifdef DEBUG
 	printf("%s: Entered SendMapFiles (rank = %d)\n",params->node_tag,rank);
 #endif 
-	massive_buffer = (char*)malloc(FILE_BUFF_SIZE);
+	// Let's try calloc here
+	// massive_buffer = (char*)malloc(FILE_BUFF_SIZE);
+	massive_buffer = (char*)calloc(1,FILE_BUFF_SIZE);
 
 	start_time = stop_time = time(NULL);
 
@@ -462,9 +465,10 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 	if(is_master)
 	  {
 	    stop_time = time(NULL);
-	    printf_verbose(params->verbose,"Total transfered: %fMb\n",bytes_transfered/1e6);
-	    printf_verbose(params->verbose,"Total time in seconds for transfer: %f\n",difftime(stop_time,start_time));
-	    printf_verbose(params->verbose,"Average transfer rate: %f Mb/s\n",bytes_transfered/(1e6*difftime(stop_time,start_time)));
+	    // printf_verbose(params->verbose,"Total transfered: %fMb\n",bytes_transfered/1e6);
+	    // printf_verbose(params->verbose,"Total time in seconds for transfer: %f\n",difftime(stop_time,start_time));
+	    printf_verbose(params->verbose,"Transferred %.2f Mb in %.2f seconds",bytes_transfered/1e6,difftime(stop_time,start_time));
+	    printf_verbose(params->verbose," (Average transfer rate: %.2f Mb/s)\n",bytes_transfered/(1e6*difftime(stop_time,start_time)));
 	  }
 
 	free(massive_buffer);
@@ -573,7 +577,8 @@ int RestoreCompoundTree(RBTree **CompoundList)
 		if(!tpl_unpack(tn_cmpd,1))
 			continue;
 		RBTree *compound_node = NULL;
-		CompoundTree *new_cmpd_tree = (CompoundTree*)malloc(sizeof(CompoundTree));
+		// CompoundTree *new_cmpd_tree = (CompoundTree*)malloc(sizeof(CompoundTree));
+		CompoundTree *new_cmpd_tree = (CompoundTree*)calloc(1,sizeof(CompoundTree));
 		new_cmpd_tree->data = InitCompound(new_cmpd_tree->data);
 		new_cmpd_tree->stics = NULL;
 		stic_idx = 0;
@@ -773,8 +778,8 @@ int main(int argc, char **argv)
 
 
 
-	const char *opts_short = "hvRGl:m:d:c:a:qo:p:se:t:k:";
-	enum {FLAGS_MOPAC_HEADER = '{',FLAGS_MOPAC_FOOTER,FLAGS_SCRATCH_DIR};
+	const char *opts_short = ":hvRGl:m:d:c:a:qo:p:s:t:k:";
+	enum {FLAGS_MOPAC_HEADER = '{',FLAGS_MOPAC_FOOTER,FLAGS_SCRATCH_DIR='w'};
 	const struct option opts_long[] = {
 			{"help"        ,0,NULL,'h'}, // print usage information
 			{"verbose"     ,0,NULL,'v'}, // turn on verbose mode
@@ -804,6 +809,7 @@ int main(int argc, char **argv)
 #ifdef DEBUG
 	srand((unsigned)(time(0)));
 #endif
+
 
 	MPI_Init(&argc,&argv);
 	printf("Finished MPI_Init\n");
@@ -837,15 +843,33 @@ int main(int argc, char **argv)
 	// Send start_time to everyone
 	MPI_Bcast(&params.start_time,sizeof(time_t),MPI_BYTE,MASTER,MPI_COMM_WORLD);
 
+///////////////////////////////////////////////////////////////////////////////
+//
+// This is a "trap" for debugging with DDD/gdb.  This block can be commented
+// out if you simply wish to debug via the debugging output
+// 
+#ifdef DEBUG
+	if (master_node) {
+		int WaitDebug = 1;
+		printf("MASTER PROCESS IS WAITING: pid = %d\n",getpid());
+		while (WaitDebug) ;
+	}
+#endif
+//
+///////////////////////////////////////////////////////////////////////////////
 	if (master_node) {
 		PrintBanner();
 		printf("%s started on: %s\n",PROG_NAME,asctime(localtime(&params.start_time)));
 		fflush(stdout);
 	}
 
-
+	// Send username to all nodes
+	if(master_node)
+		strcpy(params.username,getenv("USER"));
+	MPI_Bcast(&params.username,LOGIN_NAME_MAX,MPI_CHAR,MASTER,MPI_COMM_WORLD);
 
 	// Set the default locations for output
+	params.useDefaultScratch = 1;
 	strcpy(params.scratch_dir,"/scratch_dir");
 	strcpy(params.receptor_dir ,home_dir);
 	strcpy(params.ligand_dir   ,home_dir);
@@ -866,11 +890,6 @@ int main(int argc, char **argv)
 	strcat(params.mgl_bin_dir,MGL_BIN_DIR);
 	strcat(params.autodock_exe,AUTODOCK_EXE);
 	sprintf(params.mopac_path,"%s/%s",MOPAC_HOME,MOPAC_EXE);
-
-	// Send username to all nodes
-	if(rank == MASTER)
-		strcpy(params.username,getenv("USER"));
-	MPI_Bcast(&params.username,LOGIN_NAME_MAX,MPI_CHAR,MASTER,MPI_COMM_WORLD);
 
 	// Parse the command line and do some mild error checking
 	int opt_count = 0; // number of options processed
@@ -1017,12 +1036,19 @@ int main(int argc, char **argv)
 
 			add_strtoarray(&params.mopac_footer_params,&params.num_mopac_footer_params,optarg);
 			break;
-		case FLAGS_SCRATCH_DIR:
+		// case FLAGS_SCRATCH_DIR:
+		case 'w':
 #ifdef DEBUG
-		  printf_master("DEBUG - Setting scratch directory to %s\n",optarg);
-		  strcpy(params.scratch_dir,optarg);
+		  printf_master("DEBUG - Setting scratch directory to %s\n\n",optarg);
 #endif
+		  strcpy(params.scratch_dir,optarg);
+		  params.useDefaultScratch = 0;
 		  break;
+#ifdef DEBUG
+		case '?':
+		  printf_master("DEBUG - Unrecognized option: ",argv);
+		  break;
+#endif
 		default:
 			break;
 		}
@@ -1052,20 +1078,19 @@ int main(int argc, char **argv)
 	// Print some useful info about the run
 	printf_master("Total time alloted    : %d seconds\n",params.total_time);
 	printf_master("Using receptor name   : %s\n",params.receptor_name);
-	printf_master("Using names from file : %s\n",infilename);
+	printf_master("Ligand names from     : %s\n",infilename);
 	printf_master("Receptor files (dir)  : %s\n",params.receptor_dir);
 	printf_master("Ligand files (dir)    : %s\n",params.ligand_dir);
 	printf_master("Docking results (dir) : %s\n",params.results_dir);
 	printf_master("Cluster structs (dir) : %s\n",params.clusters_dir);
 	printf_master("MOPAC results (dir)   : %s\n",params.optimized_dir);
 	printf_master("Analysis results (dir): %s\n",params.analysis_dir);
-	printf_master("MGLTools bin directory: %s\n",params.mgl_bin_dir);
-	printf_master("Autodock path         : %s\n",params.autodock_exe);
-	printf_master("MOPAC path            : %s\n",params.mopac_path);
+	printf_master("MGLTools binary (dir) : %s\n",params.mgl_bin_dir);
+	printf_master("Autodock executable   : %s\n",params.autodock_exe);
+	printf_master("MOPAC executable      : %s\n",params.mopac_path);
 	printf_master("Restart file          : %s\n",restart_filename);
-	printf_master("\nAutoDock Parameters\n");
 
-#ifdef DEBUG
+#ifdef QUICK_DEBUG
 	// Free all the strings in dock_params and repopulate it with some parameters
 	// more suitable for debugging purposes
 	FreeStringArray(&params.dock_params,&params.num_dock_params);
@@ -1080,9 +1105,9 @@ int main(int argc, char **argv)
 	printf_master("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 #endif
 
-	//printf_master("-------------------------------------------------------------\n");
-	printf_master("%s\n",DASH_HDR);
 	for (i=0;i<params.num_dock_params;i++) {
+		printf_master("\nAutoDock Parameters\n");
+		printf_master("%s\n",DASH_HDR);
 		printf_master("    %s\n",params.dock_params[i]);
 	}
 	printf_master("\n");
@@ -1236,8 +1261,14 @@ int main(int argc, char **argv)
 		char workdir[FILENAME_MAX];
 		int group_rank;
 		strcpy(workdir,params.scratch_dir);
-		strcat(workdir,"/");
-		strcat(workdir,params.username);
+		if (params.useDefaultScratch)
+		{
+			strcat(workdir,"/");
+			strcat(workdir,params.username);
+		}
+#ifdef DEBUG
+		printf("%s: DEBUG - scratch directory set to %s\n",params.node_tag,workdir);
+#endif
 		if(params.transfer_node)
 		  {
 		    printf("%s is calling SendMapFiles (%d, %d)\n",params.node_tag,rank,root_group_rank);
@@ -1289,7 +1320,8 @@ int main(int argc, char **argv)
 			int return_val, have_incoming_msg;
 			char *result_name;
 			void *receive_buffer;
-			char *Compound_ID = malloc(sizeof(char *));
+			// char *Compound_ID = malloc(sizeof(char *));
+			char *Compound_ID = calloc(1,sizeof(char *));
 			struct STICelement *results = NULL;
 			size_t buffer_size;
 			deque_node *received_node = NULL;
@@ -1304,18 +1336,18 @@ int main(int argc, char **argv)
 
 			// Check to see if a message has arrived from a slave.
 			// If so, go ahead an receive it.
-			// If not, check to see if time has elapsed and everything should
-			// shut down.
+			// If not, check to see if time has elapsed and shut everything down
 			MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &have_incoming_msg,&status);
-			while(!have_incoming_msg)
+			while (!have_incoming_msg)
 			{
 				struct timespec pause_interval;
 				pause_interval.tv_sec = 45;
 				if(params.total_time - difftime(time(NULL),params.start_time) < 120)
 				{
 					// Time's up!
-				  printf_verbose(params.verbose,"Time remaining: %f\nShutting down.",params.total_time - difftime(time(NULL),params.start_time));
-				  
+					printf_verbose(params.verbose,"Time remaining: %f\nShutting down.",
+						       params.total_time - difftime(time(NULL),params.start_time));
+				 	// Save the current state and shutdown 
 					SaveState(jobs,busy_list,CompoundList,&params);
 					MPI_Abort(MPI_COMM_WORLD,0);
 				}
@@ -1328,7 +1360,10 @@ int main(int argc, char **argv)
 			// Get the results from the slave node
 			// Data sent: Stic buffer size, Stic Buffer, job tree node pointer
 			MPI_Recv(&buffer_size,1,MPI_INT,status.MPI_SOURCE,MPI_ANY_TAG, MPI_COMM_WORLD,&status);
-			receive_buffer = malloc(buffer_size);
+
+			// Allocate the receive buffer
+			// receive_buffer = malloc(buffer_size);
+			receive_buffer = calloc(1,buffer_size);
 			MPI_Recv(receive_buffer,buffer_size,MPI_BYTE,status.MPI_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
 			MPI_Recv(&received_node,sizeof(deque_node*),MPI_BYTE,status.MPI_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
 			printf("Receiving mopac_res\n");
@@ -1425,7 +1460,7 @@ int main(int argc, char **argv)
 
 #ifdef DEBUG
 			printf("%s\n",AT_HDR);
-			printf("\nDEBUG- COMPOUND LIST AFTER MERGE\n");
+			printf("\nDEBUG - COMPOUND LIST AFTER MERGE OF %s\n",result_name);
 			FPrintCompoundTree(stdout, CompoundList);
 			printf("%s\n",AT_HDR);
 			fflush(stdout);
@@ -1592,19 +1627,29 @@ int main(int argc, char **argv)
 			printf("WARNING - Writing final results to standard output instead\n");
 			full_results_file = stdout;
 		}
+		else
+		{
+			printf("Writing final results to %s\n",full_result_name);
+		}
 
 		// Average results and write to the results file
+		printf("Performing Boltzmann averaging ... ");
 		BoltzmannAvgCompoundTree(CompoundList, params.analysis_dir,params.UseFreeEnergy);
+		printf("done.\n");
 		FPrintCompoundTree(full_results_file, CompoundList);
 		
 		// Write SQL statements for the results
 		sql_results_file = fopen(sql_result_name,"w");
 		if(sql_results_file == NULL)
 		  {
-		    printf("WARNING - Could not open %s. Reason: %s\n",full_result_name, strerror(errno));
+		    printf("WARNING - Could not open %s. Reason: %s\n",sql_result_name, strerror(errno));
 		    printf("WARNING - Writing SQL statements to standard output instead\n");
 		    sql_results_file = stdout;
 		  }
+		else
+		{
+			printf("Writing SQL statements to %s\n",sql_result_name);
+		}
 		FPrintSQL(sql_results_file,CompoundList,&params);
 
 		FreeRBTree(CompoundList);
@@ -1624,6 +1669,7 @@ int main(int argc, char **argv)
 		free(timestring);
 	}
 
+	// Should probably have a function to free params rather than this piecemeal approach
 	FreeStringArray(&params.dock_params,&params.num_dock_params);
 	FreeStringArray(params.mopac_footer_params,&params.num_mopac_footer_params);
 	FreeStringArray(params.mopac_header_params,&params.num_mopac_header_params);

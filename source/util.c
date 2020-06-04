@@ -85,37 +85,66 @@ int check_extern_apps(const JobParameters *params)
 int check_directories(const JobParameters *params)
 {
   int retval;
+
+  // check for no parameters
   if(params == NULL)
     return -1;
-
+  //
+  // Check the receptor .map files directory
   retval = euidaccess(params->receptor_dir ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s",params->node_tag,params->receptor_dir);
     return retval;
+  }
+  //
+  // Check the ligands directory
   retval = euidaccess(params->ligand_dir   ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->ligand_dir);
     return retval;
+  }
+  //
+  // Check the docking results directory
   retval = euidaccess(params->results_dir  ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->results_dir);
     return retval;
+  }
+  //
+  // Check the cluster representatives directory
   retval = euidaccess(params->clusters_dir ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->clusters_dir);
     return retval;
+  }
+  //
+  // Check the directory for SEQM optimized structures
   retval = euidaccess(params->optimized_dir,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->optimized_dir);
     return retval;
+  }
+  //
+  // Check the directory for final results
   retval = euidaccess(params->analysis_dir ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->analysis_dir);
     return retval;
+  }
+  //
+  // Check the scratch directory
   retval = euidaccess(params->scratch_dir ,W_OK);
   if(retval != 0)
+  {
     printf("%s ERROR: Directory check failed for %s\n",params->node_tag,params->scratch_dir);
     return retval;
+  }
 
   return 0;
 

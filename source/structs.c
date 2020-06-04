@@ -774,7 +774,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 
 	STICNode = CompoundNode = NULL;
 
-	//Are the compounds?
+	//Are there compounds?
 	//If there are compounds, get a pointer to the compounds
 	//whose name matches compound_name
 	//Else, insert a new compound
@@ -939,6 +939,9 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 	}
 
 	fflush(stdout);
+
+	FreeCompound(CompoundNode);
+		// CompoundNode->data = malloc(sizeof(CompoundTree));
 
 	return retval;
 
