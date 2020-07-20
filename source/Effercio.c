@@ -713,7 +713,8 @@ void DefaultParameters(JobParameters *params)
 	memset(params->analysis_dir,0,FILENAME_MAX);
 	memset(params->username,0,LOGIN_NAME_MAX);
 	memset(params->node_tag,0,HOST_NAME_MAX);
-	params->qm_method = "PM6"; // can use PM6-D3H4 as well
+        params->qm_method = (char*)malloc(128);
+	strcpy(params->qm_method, "PM6"); // can use PM6-D3H4 as well
 	params->doMOPAC = FALSE;
 	params->restart_job = FALSE;
 	params->prescreen = FALSE;
@@ -818,6 +819,10 @@ int main(int argc, char **argv)
 		printf("ERROR - %s\n",strerror(errno));
 		exit(EXIT_FAILURE);
 	}
+        if (getenv("LD_LIBRARY_PATH") == NULL) {
+            printf("ERROR - LD_LIBRARY_PATH needs to be defined for mopac\n");
+            exit(EXIT_FAILURE);
+        }
 
 	// Check the length of the strings and truncate if necessary
 	if ((strlen(hostname) + 15) <= HOST_NAME_MAX) {
@@ -852,6 +857,10 @@ int main(int argc, char **argv)
 		while (WaitDebug) ;
 	}
 #endif
+if (rank == 1) {
+    printf("Sleeping rank 1\n");
+    sleep(20);
+}
 //
 ///////////////////////////////////////////////////////////////////////////////
 	if (master_node) {
@@ -1281,7 +1290,7 @@ int main(int argc, char **argv)
 	unique_ranks = NULL;
 
 	// Send qm_method to everyone
-	MPI_Bcast(&params.qm_method,strlen(params.qm_method)+1,MPI_CHAR,MASTER,MPI_COMM_WORLD);
+	MPI_Bcast(params.qm_method,strlen(params.qm_method)+1,MPI_CHAR,MASTER,MPI_COMM_WORLD);
 
 	// Let everyone sync up before we start
 	MPI_Barrier(MPI_COMM_WORLD);
