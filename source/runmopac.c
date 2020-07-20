@@ -163,9 +163,9 @@ int RunMOPAC(job_t *job,
   MOPAC_STIC->C = ExtractIndex(find,'C');
 
 #ifdef DEBUG
-  printf("DEBUG - %s contains %d '_' characters\n",job->name,num_underscores);
-  printf("DEBUG - receptor = %s\n",receptor);
-  printf("DEBUG - S = %d\tT = %d\tI = %d\tC = %d\n",MOPAC_STIC->S,MOPAC_STIC->T,
+  printf("DEBUG (RunMOPAC) - %s contains %d '_' characters\n",job->name,num_underscores);
+  printf("DEBUG (RunMOPAC) - receptor = %s\n",receptor);
+  printf("DEBUG (RunMOPAC) - S = %d\tT = %d\tI = %d\tC = %d\n",MOPAC_STIC->S,MOPAC_STIC->T,
 	 MOPAC_STIC->I,MOPAC_STIC->C);
 #endif
 
@@ -230,17 +230,17 @@ int RunMOPAC(job_t *job,
 
   // Write out the starting values of everything for DEBUG purposes
 #ifdef DEBUG
-  printf("%s: DEBUG - scratch_dir = %s\n",nodestr,scratch_dir);
-  printf("%s: DEBUG - initdir = %s\n",nodestr,initdir);
-  printf("%s: DEBUG - workdir = %s\n",nodestr,workdir);
-  printf("%s: DEBUG - filestub = %s\n",nodestr,filestub);
-  printf("%s: DEBUG - pdbqtfile_name = %s\n",nodestr,pdbqtfile_name);
-  printf("%s: DEBUG - inputdeck_name = %s\n",nodestr,inputdeck_name);
-  printf("%s: DEBUG - user = %s\n",nodestr,user);
-  printf("%s: DEBUG - STIC_charge = %.2f\n",nodestr,*STIC_charge);
-  printf("%s: DEBUG - method = %s\n",nodestr,method);
-  printf("%s: DEBUG - useMOZYME = %d\n",nodestr,useMOZYME);
-  printf("%s: DEBUG - doFreeEnergy = %d\n",nodestr,doFreeEnergy);
+  printf("%s: DEBUG (RunMOPAC) - scratch_dir = %s\n",nodestr,scratch_dir);
+  printf("%s: DEBUG (RunMOPAC) - initdir = %s\n",nodestr,initdir);
+  printf("%s: DEBUG (RunMOPAC) - workdir = %s\n",nodestr,workdir);
+  printf("%s: DEBUG (RunMOPAC) - filestub = %s\n",nodestr,filestub);
+  printf("%s: DEBUG (RunMOPAC) - pdbqtfile_name = %s\n",nodestr,pdbqtfile_name);
+  printf("%s: DEBUG (RunMOPAC) - inputdeck_name = %s\n",nodestr,inputdeck_name);
+  printf("%s: DEBUG (RunMOPAC) - user = %s\n",nodestr,user);
+  printf("%s: DEBUG (RunMOPAC) - STIC_charge = %.2f\n",nodestr,*STIC_charge);
+  printf("%s: DEBUG (RunMOPAC) - method = %s\n",nodestr,method);
+  printf("%s: DEBUG (RunMOPAC) - useMOZYME = %d\n",nodestr,useMOZYME);
+  printf("%s: DEBUG (RunMOPAC) - doFreeEnergy = %d\n",nodestr,doFreeEnergy);
 #endif
 
     
@@ -263,8 +263,8 @@ int RunMOPAC(job_t *job,
   }
   CopyFile(temp_name,pdbqtfile_name);
 #ifdef DEBUG
-  printf("%s: DEBUG - Copied %s\n",nodestr,temp_name);
-  printf("%s: DEBUG -     to %s/%s\n",nodestr,workdir,pdbqtfile_name);
+  printf("%s: DEBUG (RunMOPAC) - Copied %s\n",nodestr,temp_name);
+  printf("%s: DEBUG (RunMOPAC) -     to %s/%s\n",nodestr,workdir,pdbqtfile_name);
 #endif
 
   // Open the .pdbqt file.  We'll need this for a bunch of things later
@@ -276,7 +276,7 @@ int RunMOPAC(job_t *job,
 
   // Get the charge from the .pdbqt file if none is supplied
 #ifdef DEBUG
-  printf("%s: DEBUG - supplied total_charge is %.1f\n",nodestr,*STIC_charge);
+  printf("%s: DEBUG (RunMOPAC) - supplied total_charge is %.1f\n",nodestr,*STIC_charge);
 #endif
   if (*STIC_charge == DOUBLE_INIT) {
     // Need to calculate the charge for the MOPAC input deck
@@ -317,17 +317,17 @@ int RunMOPAC(job_t *job,
     }
 
 #ifdef DEBUG
-  printf("%s: DEBUG - Got molecular charge of %.2f\n",nodestr,total_charge);
-  printf("%s: DEBUG - Set molecular charge of %.2f\n",nodestr,MOPAC_STIC->charge);
+  printf("%s: DEBUG (RunMOPAC) - Got molecular charge of %.2f\n",nodestr,total_charge);
+  printf("%s: DEBUG (RunMOPAC) - Set molecular charge of %.2f\n",nodestr,MOPAC_STIC->charge);
 #endif
 
   // Do some error-correcting here in case the empirical charge models got it wrong
   // In particular CORINA seems to generate structures with serious problems
   while (!charge_OK) {
 #ifdef DEBUG
-    printf("%s: DEBUG - total charge in test loop is %.3f\n",nodestr,total_charge);
-    printf("%s: DEBUG - MOPAC charge in test loop is %.3f\n",nodestr,MOPAC_charge);
-    printf("%s: DEBUG - Charge difference = %.4f\t\tTolerance = %.4f\n",nodestr,
+    printf("%s: DEBUG (RunMOPAC) - total charge in test loop is %.3f\n",nodestr,total_charge);
+    printf("%s: DEBUG (RunMOPAC) - MOPAC charge in test loop is %.3f\n",nodestr,MOPAC_charge);
+    printf("%s: DEBUG (RunMOPAC) - Charge difference = %.4f\t\tTolerance = %.4f\n",nodestr,
 	   fabs(MOPAC_charge - total_charge),CHARGE_TOL);
 #endif
     testdeck = fopen(testdeck_name,"w+");
@@ -342,6 +342,7 @@ int RunMOPAC(job_t *job,
     strcat(MOPAC_header,line);
     strcat(MOPAC_header,"LET CHARGES ");
     if (useMOZYME) {
+      // strcat(MOPAC_header,"MOZYME REORTHOG ");
       strcat(MOPAC_header,"MOZYME ");
     }
     strcat(MOPAC_header,MOPAC_KEYWDS_SOLV);
@@ -389,9 +390,9 @@ int RunMOPAC(job_t *job,
 
     // Dump the argument list for debug purposes
 #ifdef DEBUG
-    printf("%s: DEBUG - MOPAC_args is:\n",nodestr);
+    printf("%s: DEBUG (RunMOPAC) - MOPAC_args is:\n",nodestr);
     for (i=0;i<num_MOPAC_args;i++) {
-      printf("%s: DEBUG - MOPAC_args[%d] = %s\n",nodestr,i,MOPAC_args[i]);
+      printf("%s: DEBUG (RunMOPAC) - MOPAC_args[%d] = %s\n",nodestr,i,MOPAC_args[i]);
     }
 #endif
 
@@ -413,9 +414,9 @@ int RunMOPAC(job_t *job,
 
     // Dump the environment list for DEBUG purposes
 #ifdef DEBUG
-    printf("%s: DEBUG - MOPAC_env is:\n",nodestr);
+    printf("%s: DEBUG (RunMOPAC) - MOPAC_env is:\n",nodestr);
     for (i=0;i<num_MOPAC_env;i++) {
-      printf("%s: DEBUG - MOPAC_env[%d] = %s\n",nodestr,i,MOPAC_env[i]);
+      printf("%s: DEBUG (RunMOPAC) - MOPAC_env[%d] = %s\n",nodestr,i,MOPAC_env[i]);
     }
 #endif
 
@@ -426,7 +427,7 @@ int RunMOPAC(job_t *job,
       fflush(stdout);
     }
 #ifdef DEBUG
-    printf("%s: DEBUG - cmdstr = %s\n",nodestr,cmdstr);
+    printf("%s: DEBUG (RunMOPAC) - cmdstr = %s\n",nodestr,cmdstr);
 #endif
     pid = vfork();
     if (pid == -1) {
@@ -468,9 +469,9 @@ int RunMOPAC(job_t *job,
       if (strstr(line,MOPAC_CALC_CHARGE) != NULL) {
 	GetValueByColumn(line," ",5,&MOPAC_charge);
 #ifdef DEBUG
-	printf("%s: DEBUG - total charge after run in test loop is %.3f\n",nodestr,total_charge);
-	printf("%s: DEBUG - MOPAC charge after run in test loop is %.3f\n",nodestr,MOPAC_charge);
-	printf("%s: DEBUG - Charge difference = %.4f\t\tTolerance = %.4f\n",nodestr,
+	printf("%s: DEBUG (RunMOPAC) - total charge after run in test loop is %.3f\n",nodestr,total_charge);
+	printf("%s: DEBUG (RunMOPAC) - MOPAC charge after run in test loop is %.3f\n",nodestr,MOPAC_charge);
+	printf("%s: DEBUG (RunMOPAC) - Charge difference = %.4f\t\tTolerance = %.4f\n",nodestr,
 	       fabs(MOPAC_charge - total_charge),CHARGE_TOL);
 #endif
 	if (fabs(MOPAC_charge - total_charge) < CHARGE_TOL ) {
@@ -478,12 +479,20 @@ int RunMOPAC(job_t *job,
 	  break;
 	}
 	else {
-	  printf("%s: WARNING - Problem with job %s\n",nodestr,job->name);
-	  printf("%s: WARNING - The total charge for your system is incorrect!!\n",nodestr);
-	  printf("%s: WARNING - You specified a charge of %.1f and MOPAC thinks this should be %.1f\n",
-		 nodestr,total_charge,MOPAC_charge);
-	  printf("%s: WARNING - %s will use the MOPAC charge\n",nodestr,PROG_NAME);
-	  printf("%s: WARNING - Please check your results and input files carefully\n",nodestr);
+        if (verbose) {
+            printf("%s: WARNING - Problem with job %s\n",nodestr,job->name);
+            printf("%s: WARNING - The total charge for your system is incorrect!!\n",nodestr);
+            printf("%s: WARNING - You specified a charge of %.1f and MOPAC thinks this should be %.1f\n",
+                   nodestr,total_charge,MOPAC_charge);
+            printf("%s: WARNING - %s will use the MOPAC charge\n",nodestr,PROG_NAME);
+            printf("%s: WARNING - Please check your results and input files carefully\n",nodestr);
+        }
+        else {
+            printf("WARNING - >>>>>>>>>>>>>> %s <<<<<<<<<<<<<<\n",job->name);
+            printf("WARNING - %s is adjusting the charge in your input deck.\n",PROG_NAME);
+            printf("WARNING - You specified a charge of %.1f and MOPAC thinks this should be %.1f\n",
+                   total_charge,MOPAC_charge);
+        }
 	  total_charge = MOPAC_charge;
 	  break;
 	}
@@ -527,11 +536,14 @@ int RunMOPAC(job_t *job,
     
   sprintf(line," %s ",method);
   strcat(MOPAC_header,line);
-  if (verbose) printf("%s: DEBUG - Time remaining for MOPAC calculation is %.0f seconds\n",nodestr,time_left);
+  if (verbose) printf("%s: Time remaining for MOPAC calculation is %.0f seconds\n",nodestr,time_left);
+/*
 #ifdef DEBUG
   time_left = (double) MOPAC_DEBUG_TIME;
-  printf("%s: DEBUG - Using remaining time of %.0f instead!!!!\n",nodestr,time_left);
+  printf("%s: DEBUG (RunMOPAC) - Using remaining time of %.0f instead!!!!\n",nodestr,time_left);
 #endif
+*/
+  // sprintf(line,"T=%.0f DUMP=4320 PL ",time_left);
   sprintf(line,"T=%.0f DUMP=4320 ",time_left);
   strcat(MOPAC_header,line);
   //strcat(MOPAC_header,"XYZ GRAPH ");
@@ -548,24 +560,38 @@ int RunMOPAC(job_t *job,
     }
 
   if (useMOZYME) {
+    // strcat(MOPAC_header,"LBFGS MOZYME REORTHOG PDBOUT +\n ");
     strcat(MOPAC_header,"LBFGS MOZYME PDBOUT +\n ");
   }
   else {
     //strcat(MOPAC_header,"BFGS SYBYL +\n ");
-    strcat(MOPAC_header,"SYBYL +\n ");
+    strcat(MOPAC_header,"BFGS PDBOUT +\n ");
   }
 
   sprintf(line,"CHARGE=%.0f",total_charge);
   strcat(MOPAC_header,line);
   //strcat(MOPAC_header," PRECISE LET DDMIN=0.0 GNORM=0.15");
-  strcat(MOPAC_header," RELSCF=0.1 LET DDMIN=0.0 GNORM=0.15");
+    if (job->type == PRESCREENING) {
+        // strcat(MOPAC_header," PRECISE LET RELSCF=0.1");
+        strcat(MOPAC_header," PRECISE LET KING SCFCRT=1E-3");
+    }
+    else if (job->type == QMLIG) {
+        // strcat(MOPAC_header," LET RELSCF=0.1 DDMIN=0.0 GNORM=0.15 SCFCRT=1E-4 ");
+        strcat(MOPAC_header," LET DDMIN=0.0001 GNORM=0.015 SCFCRT=1E-3 ");
+    }
+    else {
+        #ifdef DEBUG
+        strcat(MOPAC_header," LET DDMIN=0.01 GNORM=13 ");
+        #else
+        // strcat(MOPAC_header," LET RELSCF=0.1 DDMIN=0.0 GNORM=5 SCFCRT=1E-4 ");
+        strcat(MOPAC_header," LET DDMIN=0.0001 GNORM=6.5 SCFCRT=1E-3 ");
+        #endif
+    }
 
-#ifdef DEBUG
-  strcat(MOPAC_header," NOOPT");
-#endif
   // If this is only a ligand in a docked pose, don't optimize
-  if(job->type == QMLIG) {
-    strcat(MOPAC_header," 1SCF");
+  if(job->type == QMLIG || job->type == PRESCREENING) {
+    // strcat(MOPAC_header," 1SCF");
+    strcat(MOPAC_header," NOOPT");
   }
 
   // Add the comment line for the job
@@ -582,18 +608,22 @@ int RunMOPAC(job_t *job,
     sprintf(line,"DUMP=240 ");
   strcat(MOPAC_footer,line);
   if (useMOZYME) {
+    // strcat(MOPAC_footer,"MOZYME REORTHOG ");
     strcat(MOPAC_footer,"MOZYME ");
   }
   //strcat(MOPAC_footer,"PRECISE THERMO LET ");
   //strcat(MOPAC_footer,"PRECISE THERMO ");
-  strcat(MOPAC_footer,"RELSCF=0.1 THERMO ");
+    #ifdef DEBUG
+    strcat(MOPAC_footer,"THERMO ");
+    #else
+    // strcat(MOPAC_footer,"RELSCF=0.1 THERMO SCFCRT=1E-4 ");
+    strcat(MOPAC_footer,"THERMO SCFCRT=1E-4 ");
+    #endif
   strcat(MOPAC_footer,MOPAC_KEYWDS_SOLV);
   strcat(MOPAC_footer," +\n OLDGEO GEO-OK ");
   sprintf(line,"CHARGE=%.0f",total_charge);
   strcat(MOPAC_footer,line);
-#ifdef DEBUG
   strcat(MOPAC_footer," LET");
-#endif
   strcat(MOPAC_footer,"\n ");
   strcat(MOPAC_footer,job->name);
   strcat(MOPAC_footer,": Free energy calculation\n");
@@ -601,8 +631,8 @@ int RunMOPAC(job_t *job,
   if (!doFreeEnergy) MOPAC_footer[0] = (char) NULL;
 
 #ifdef DEBUG
-  printf("%s: DEBUG - MOPAC_header\n%s\n%s\n%s\n",nodestr,DASH_HDR,MOPAC_header,DASH_HDR);
-  printf("\n%s: DEBUG - MOPAC_footer\n%s\n%s\n%s\n",nodestr,DASH_HDR,MOPAC_footer,DASH_HDR);
+  printf("%s: DEBUG (RunMOPAC) - MOPAC_header\n%s\n%s\n%s\n",nodestr,DASH_HDR,MOPAC_header,DASH_HDR);
+  printf("\n%s: DEBUG (RunMOPAC) - MOPAC_footer\n%s\n%s\n%s\n",nodestr,DASH_HDR,MOPAC_footer,DASH_HDR);
 #endif
     
   // Write the MOPAC header lines
@@ -661,9 +691,9 @@ int RunMOPAC(job_t *job,
 
   // Dump the argument list for debug purposes
 #ifdef DEBUG
-  printf("%s: DEBUG - MOPAC_args is:\n",nodestr);
+  printf("%s: DEBUG (RunMOPAC) - MOPAC_args is:\n",nodestr);
   for (i=0;i<num_MOPAC_args;i++) {
-    printf("%s: DEBUG - MOPAC_args[%d] = %s\n",nodestr,i,MOPAC_args[i]);
+    printf("%s: DEBUG (RunMOPAC) - MOPAC_args[%d] = %s\n",nodestr,i,MOPAC_args[i]);
   }
 #endif
 
@@ -680,7 +710,7 @@ int RunMOPAC(job_t *job,
 
   // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
 #ifdef DEBUG
-  printf("%s: DEBUG - LD_LIBRARY_PATH=%s\n",nodestr,getenv("LD_LIBRARY_PATH"));
+  printf("%s: DEBUG (RunMOPAC) - LD_LIBRARY_PATH=%s\n",nodestr,getenv("LD_LIBRARY_PATH"));
 #endif
   if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
     sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
@@ -690,9 +720,9 @@ int RunMOPAC(job_t *job,
 
   // Dump the environment list for DEBUG purposes
 #ifdef DEBUG
-  printf("%s: DEBUG - MOPAC_env is:\n",nodestr);
+  printf("%s: DEBUG (RunMOPAC) - MOPAC_env is:\n",nodestr);
   for (i=0;i<num_MOPAC_env;i++) {
-    printf("%s: DEBUG - MOPAC_env[%d] = %s\n",nodestr,i,MOPAC_env[i]);
+    printf("%s: DEBUG (RunMOPAC) - MOPAC_env[%d] = %s\n",nodestr,i,MOPAC_env[i]);
   }
 #endif
 
@@ -703,7 +733,7 @@ int RunMOPAC(job_t *job,
     fflush(stdout);
   }
 #ifdef DEBUG
-  printf("%s: DEBUG - cmdstr = %s\n",nodestr,cmdstr);
+  printf("%s: DEBUG (RunMOPAC) - cmdstr = %s\n",nodestr,cmdstr);
 #endif
   pid = vfork();
   if (pid == -1) {
@@ -843,7 +873,7 @@ int RunMOPAC(job_t *job,
     find++;
     MOPAC_STIC->reps->index = atoi(find);
 #ifdef DEBUG
-    printf("DEBUG - find = %s\t\tCluster index = %d\n",find,MOPAC_STIC->reps->index);
+    printf("DEBUG (RunMOPAC) - find = %s\t\tCluster index = %d\n",find,MOPAC_STIC->reps->index);
 #endif
     if (!IncludesReceptor) {
       struct QMresult *qm_temp;
@@ -885,24 +915,30 @@ int RunMOPAC(job_t *job,
     int stat_retval = 0;
     // move the MOPAC output file
     sprintf(dest_name,"%s/%s.%s.out",resultsDir,filestub,method);
-    CopyFile(outputdeck_name,dest_name);
-    remove(outputdeck_name);
+    #ifdef DEBUG
+    char jname[512];
+    printf("DEBUG (RunMOPAC) - Copying (outputdeck_name) %s --> (dest_name) %s\n",outputdeck_name,dest_name);
+    #endif
     // move the structure file
-    if (useMOZYME) {
+    MoveFile(outputdeck_name,dest_name);
+    // CopyFile(outputdeck_name,dest_name);
+    // remove(outputdeck_name);
+    // if (useMOZYME) {
       sprintf(src_name,"%s.%s.pdb",filestub,method);
       sprintf(dest_name,"%s/%s.%s.pdb",resultsDir,filestub,method);
-    }
-    else {
-      sprintf(src_name,"%s.%s.syb",filestub,method);
-      sprintf(dest_name,"%s/%s.%s.syb",resultsDir,filestub,method);
-    }
+    // }
+    // else {
+      // sprintf(src_name,"%s.%s.syb",filestub,method);
+      // sprintf(dest_name,"%s/%s.%s.syb",resultsDir,filestub,method);
+    // }
     stat_retval = stat(src_name,&file_status);
     if(stat_retval != 0 && errno == ENOENT && strlen(job->mopac_res) != 0)
       printf_verbose(parameters->verbose,"%s: Could not find structure file, but a restart has been scheduled.\n",nodestr);
     else
       {
-	CopyFile(src_name,dest_name);
-	remove(src_name);
+        MoveFile(src_name,dest_name);
+        // CopyFile(src_name,dest_name);
+        // remove(src_name);
       }
   }
     

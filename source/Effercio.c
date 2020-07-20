@@ -89,9 +89,8 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 		time_left = params->total_time - time(NULL) + params->start_time;
 		if(time_left < 600)
 		{
-#ifdef DEBUG
-			printf("Only have %f seconds remaining, delaying %s\n",time_left,((job_t*)curr_job->data)->name);
-#endif
+            if (params->verbose)
+			    printf("Only have %f seconds remaining, delaying %s\n",time_left,((job_t*)curr_job->data)->name);
 			push_back(busy_list,curr_job);
 			return NULL;
 		}
@@ -108,10 +107,10 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 		}
 		job_info = (job_t*)curr_job->data;
 
-#ifdef DEBUG
-		JobString(strJobType,job_info);
-		printf_master("DEBUG - Sending %s to Process %d for %s run\n",job_info->name,destination,strJobType);
-#endif
+        if (params->verbose) {
+		    JobString(strJobType,job_info);
+		    printf_master("Sending %s to Process %d for %s run\n",job_info->name,destination,strJobType);
+        }
 
 		float_buffer[0] = job_info->input_data.Hf;
 		float_buffer[1] = job_info->input_data.G;
@@ -123,11 +122,11 @@ deque_node* issue_order(deque* jobs, deque* busy_list,int destination, int rank,
 
 		//Put curr_job into the busy_list
 		push_back(busy_list,curr_job);
-#ifdef DEBUG
-		printf_master("DEBUG - Added %s (0x%x) to busy list for %d\n",
-				((job_t*)curr_job->data)->name,curr_job,((job_t*)curr_job->data)->host_rank);
-		fflush(stdout);
-#endif
+        #ifdef DEBUG
+		    printf_master("DEBUG - Added %s (0x%x) to busy list for %d\n",
+                          ((job_t*)curr_job->data)->name,curr_job,((job_t*)curr_job->data)->host_rank);
+		    fflush(stdout);
+        #endif
 		return curr_job;
 	}
 	return NULL;
@@ -151,24 +150,24 @@ cpunode* suspend_cpu(cpunode** free_cpus, int cpu_rank)
 int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 {
   int retval = 0;
-#ifdef QUICK_DEBUG
+#ifdef FAKEDATA
 	printf("%s: Ran %s\n",params->node_tag,job->name);
 	stic->S = ExtractIndex(job->name,'S');
 	stic->T = ExtractIndex(job->name,'T');
 	stic->I = ExtractIndex(job->name,'I');
 	stic->C = ExtractIndex(job->name,'C');
-	stic->G = rand()/1e9;
-	stic->Hf = rand()/1e9;
+	stic->G = rand()/-1e9;
+	stic->Hf = rand()/-1e9;
 	stic->reps = InitClusterRep(stic->reps);
 	if(job->type == DOCK)
 	{
-		stic->reps->docked.G_binding = rand()/1e9;
-		stic->reps->docked.Ki_DOCK = rand()/1e9;
+		stic->reps->docked.G_binding = rand()/-1e3;
+		stic->reps->docked.Ki_DOCK = rand()/-1e3;
 	}
 	else if(job->type == QM)
-		stic->reps->optimized.G = rand()/1e9;
+		stic->reps->optimized.G = rand()/-1e3;
 	else if(job->type == QMLIG)
-		stic->reps->optimized.G_ligand = rand()/1e9;
+		stic->reps->optimized.G_ligand = rand()/-1e3;
 	strcpy(stic->reps->docked.Ki_unit,"mM");
 	return 0;
 #endif
@@ -176,10 +175,6 @@ int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 	{
 	case PRESCREENING:
 	  {
-#ifdef DEBUG
-	    int original_UseFreeEnergy = params->UseFreeEnergy;
-	    params->UseFreeEnergy = TRUE;
-#endif
 	    params->use_mozyme = FALSE;
 		stic->charge = DOUBLE_INIT;
 		retval = RunMOPAC(job,params,stic);
@@ -205,9 +200,6 @@ int RunJob(job_t *job,struct STICelement *stic, JobParameters *params)
 		stic->reps->optimized.G_ligand  = DOUBLE_INIT;
 		stic->reps->optimized.G_binding = DOUBLE_INIT;
 		stic->reps->optimized.Ki_QM     = DOUBLE_INIT;
-#ifdef DEBUG
-		params->UseFreeEnergy = original_UseFreeEnergy;
-#endif
 		break;
 	  }
 	case QM:
@@ -335,13 +327,13 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 	time_t start_time, stop_time;
 	long int bytes_transfered = 0;
 
-#ifdef QUICK_DEBUG
-	return 0;
-#endif
+    #ifdef QUICK_DEBUG
+	    return 0;
+    #endif
 
-#ifdef DEBUG
-	printf("%s: Entered SendMapFiles (rank = %d)\n",params->node_tag,rank);
-#endif 
+    #ifdef DEBUG
+	    printf("DEBUG - %s: Entered SendMapFiles (rank = %d)\n",params->node_tag,rank);
+    #endif 
 	// Let's try calloc here
 	// massive_buffer = (char*)malloc(FILE_BUFF_SIZE);
 	massive_buffer = (char*)calloc(1,FILE_BUFF_SIZE);
@@ -663,10 +655,10 @@ int RestoreState(cpunode **free_cpus,
 	if(!retval)
 		printf("WARNING - RestoreState could not restore the compound tree.");
 
-#ifdef DEBUG
-	printf_master("DEBUG - Compound Tree after restart:\n");
-	FPrintCompoundTree(stdout, *CompoundList);
-#endif
+    #ifdef DEBUG
+	    printf_master("DEBUG - Compound Tree after restart:\n");
+	    FPrintCompoundTree(stdout, *CompoundList);
+    #endif
 
 	return retval;
 
@@ -721,7 +713,7 @@ void DefaultParameters(JobParameters *params)
 	memset(params->analysis_dir,0,FILENAME_MAX);
 	memset(params->username,0,LOGIN_NAME_MAX);
 	memset(params->node_tag,0,HOST_NAME_MAX);
-	params->qm_method = "PM6";
+	params->qm_method = "PM6"; // can use PM6-D3H4 as well
 	params->doMOPAC = FALSE;
 	params->restart_job = FALSE;
 	params->prescreen = FALSE;
@@ -806,9 +798,9 @@ int main(int argc, char **argv)
 
 	MPI_Status status;
 
-#ifdef DEBUG
-	srand((unsigned)(time(0)));
-#endif
+    #ifdef DEBUG
+	    srand((unsigned)(time(0)));
+    #endif
 
 
 	MPI_Init(&argc,&argv);
@@ -835,7 +827,12 @@ int main(int argc, char **argv)
 		int templength;
 		templength = strlen(hostname) + 15 - HOST_NAME_MAX;
 		hostname[templength] = 0;
-		sprintf(params.node_tag,"Process %4d (%s)",rank,hostname);
+        if (params.verbose) {
+		    sprintf(params.node_tag,"Process %4d running on %s with pid of %d",rank,hostname,getpid());
+        }
+        else {
+		    sprintf(params.node_tag,"Process %4d (%s)",rank,hostname);
+        }
 	}
 
 	if (rank == MASTER) master_node = TRUE;
@@ -848,7 +845,7 @@ int main(int argc, char **argv)
 // This is a "trap" for debugging with DDD/gdb.  This block can be commented
 // out if you simply wish to debug via the debugging output
 // 
-#ifdef DEBUG
+#ifdef GDBDEBUG
 	if (master_node) {
 		int WaitDebug = 1;
 		printf("MASTER PROCESS IS WAITING: pid = %d\n",getpid());
@@ -889,7 +886,7 @@ int main(int argc, char **argv)
 	strcat(restart_filename,".restart");
 	strcat(params.mgl_bin_dir,MGL_BIN_DIR);
 	strcat(params.autodock_exe,AUTODOCK_EXE);
-	sprintf(params.mopac_path,"%s/%s",MOPAC_HOME,MOPAC_EXE);
+	sprintf(params.mopac_path,"%s%s",MOPAC_HOME,MOPAC_EXE);
 
 	// Parse the command line and do some mild error checking
 	int opt_count = 0; // number of options processed
@@ -900,15 +897,15 @@ int main(int argc, char **argv)
 
 		switch(opt_switch) {
 		case 'h':
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -h argument\n");
-#endif
+            #endif
 			PrintHelp();
 			exit(0);
 		case 'v':
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -v argument\n");
-#endif
+            #endif
 			params.verbose = TRUE;
 			printf_master("WARNING: ********************************\n");
 			printf_master("WARNING: *** Running in verbose mode! ***\n");
@@ -917,43 +914,43 @@ int main(int argc, char **argv)
 			break;
 		case 'l':
 			strcpy(params.ligand_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -l argument\n");
 			printf_master("DEBUG - ligand_dir = %s\n",params.ligand_dir);
-#endif
+            #endif
 			break;
 		case 'm':
 			strcpy(params.receptor_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -m argument\n");
 			printf_master("DEBUG - receptor_dir = %s\n",params.receptor_dir);
-#endif
+            #endif
 			break;
 		case 'd':
 			strcpy(params.results_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -d argument\n");
 			printf_master("DEBUG - results_dir = %s\n",params.results_dir);
-#endif
+            #endif
 			break;
 		case 'c':
 			strcpy(params.clusters_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -c argument\n");
 			printf_master("DEBUG - clusters_dir = %s\n",params.clusters_dir);
-#endif
+            #endif
 			break;
 		case 'a':
 			strcpy(params.analysis_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -a argument\n");
 			printf_master("DEBUG - analysis_dir = %s\n",params.analysis_dir);
-#endif
+            #endif
 			break;
 		case 'q':
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -q argument\n");
-#endif
+            #endif
 			params.doMOPAC = TRUE;
 			printf_master("WARNING: ********************************************************\n");
 			printf_master("WARNING: *** Performing two-stage docking with semi-empirical ***\n");
@@ -966,19 +963,19 @@ int main(int argc, char **argv)
 			break;
 		case 'o':
 			strcpy(params.optimized_dir,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -o argument\n");
 			printf_master("DEBUG - optimized_dir = %s\n",params.optimized_dir);
-#endif
+            #endif
 			break;
 		case 'p':
 			add_strtoarray(&params.dock_params,&params.num_dock_params,optarg);
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -p argument\n");
 			printf_master("DEBUG - docking parameters:\n");
 			for (i=0;i<params.num_dock_params;i++)
 				printf_master("DEBUG - %s\n",params.dock_params[i]);
-#endif
+            #endif
 			break;
 		case 't':
 			// Need to work on this to allow Minutes, Hours, or Days
@@ -986,7 +983,7 @@ int main(int argc, char **argv)
 			params.total_time = (time_t) strtod(optarg,NULL);
 			break;
 		case 's':
-#ifdef DEBUG
+            #ifdef DEBUG
            printf_master("DEBUG - Found -s argument\n");
            #endif
            params.prescreen = TRUE;
@@ -994,9 +991,9 @@ int main(int argc, char **argv)
            break;
 			break;
 		case 'G':
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -G argument\n");
-#endif
+            #endif
 			params.UseFreeEnergy = TRUE;
 			printf_master("WARNING: ***********************************************************\n");
 			printf_master("WARNING: *** Maxwell-Boltzmann averaging of the docking results  ***\n");
@@ -1010,70 +1007,73 @@ int main(int argc, char **argv)
 			break;
 		case 'R':
 			params.restart_job = TRUE;
-#ifdef DEBUG
+            #ifdef DEBUG
 			printf_master("DEBUG - Found -R argument\n");
-#endif
+            #endif
 			printf_master("This is a restart of a previous run.  Using '%s' as the restart file.\n",
 					restart_filename);
 			break;
 		case 'k':
-#ifdef DEBUG
-		  printf_master("DEBUG - Adding the following to mopac headers and footers:\n%s\n",optarg);
-#endif
+            #ifdef DEBUG
+            printf_master("DEBUG - Adding the following to mopac headers and footers:\n%s\n",optarg);
+            #endif
 			add_strtoarray(&params.mopac_header_params,&params.num_mopac_header_params,optarg);
 			add_strtoarray(&params.mopac_footer_params,&params.num_mopac_footer_params,optarg);
 			break;
 		case FLAGS_MOPAC_HEADER:
-#ifdef DEBUG
-		  printf_master("DEBUG - Adding the following to mopac headers:\n%s\n",optarg);
-#endif
+            #ifdef DEBUG
+            printf_master("DEBUG - Adding the following to mopac headers:\n%s\n",optarg);
+            #endif
 			add_strtoarray(&params.mopac_header_params,&params.num_mopac_header_params,optarg);
 			break;
 		case FLAGS_MOPAC_FOOTER:
-#ifdef DEBUG
-		  printf_master("DEBUG - Adding the following to mopac footers:\n%s\n",optarg);
-#endif
+            #ifdef DEBUG
+            printf_master("DEBUG - Adding the following to mopac footers:\n%s\n",optarg);
+            #endif
 
 			add_strtoarray(&params.mopac_footer_params,&params.num_mopac_footer_params,optarg);
 			break;
 		// case FLAGS_SCRATCH_DIR:
 		case 'w':
-#ifdef DEBUG
-		  printf_master("DEBUG - Setting scratch directory to %s\n\n",optarg);
-#endif
-		  strcpy(params.scratch_dir,optarg);
-		  params.useDefaultScratch = 0;
-		  break;
-#ifdef DEBUG
+            #ifdef DEBUG
+            printf_master("DEBUG - Setting scratch directory to %s\n\n",optarg);
+            #endif
+            strcpy(params.scratch_dir,optarg);
+            params.useDefaultScratch = 0;
+            break;
+        #ifdef DEBUG
 		case '?':
-		  printf_master("DEBUG - Unrecognized option: ",argv);
-		  break;
-#endif
+            printf_master("DEBUG - Unrecognized option: ",argv);
+            break;
+        #endif
 		default:
 			break;
 		}
 	}
 
 	if (argc - optind < 2) {
-	  printf_master("ERROR: %s requires at least two arguments!!! There were only %d, %d of which have been parsed\n\n",PROG_NAME, argc, optind);
+        printf_master("ERROR: %s requires at least two arguments!!! There were only %d, %d of which have been parsed\n\n",
+                      PROG_NAME, argc, optind);
 		PrintHelp();
 		MPI_Abort(MPI_COMM_WORLD,-1);
 	}
 	strcpy(params.receptor_name,argv[optind++]);
 	strcpy(infilename   ,argv[optind]);
 
-	// The following lines will override switches for debugging purposes.
-#ifdef DEBUG
+    // Override certain switches for debugging purposes
+    #ifdef DEBUG
+    // DEBUG implies verbose output
 	params.verbose = TRUE;
-	params.prescreen = TRUE;
-	params.doMOPAC = TRUE;
-        // This will not calculate Free Energy in optimization, but will (because
-        // of the DEBUG flag) calculated Free Energy in optimization. This was
-        // done to match the usage in the original Effercio.
-	params.UseFreeEnergy = TRUE;
-        // Tony changed this to TRUE after we added the NOOPT and LET flags in runmopac.
-#endif
+    //
+    // The following two flags will turn on the SEQM parts to check
+    // if they are working properly
+	// params.prescreen = TRUE;
+	// params.doMOPAC = TRUE;
+    #endif
 
+    // If we're using MOPAC, then we need to prescreen to get the ligand energies
+    // for the Boltzmann averaging
+    if (params.doMOPAC) params.prescreen = TRUE;
 
 	// Print some useful info about the run
 	printf_master("Total time alloted    : %d seconds\n",params.total_time);
@@ -1090,15 +1090,13 @@ int main(int argc, char **argv)
 	printf_master("MOPAC executable      : %s\n",params.mopac_path);
 	printf_master("Restart file          : %s\n",restart_filename);
 
-#ifdef QUICK_DEBUG
+#ifdef DEBUG
 	// Free all the strings in dock_params and repopulate it with some parameters
 	// more suitable for debugging purposes
 	FreeStringArray(&params.dock_params,&params.num_dock_params);
 	params.dock_params = realloc(params.dock_params,sizeof(char**));
 	add_strtoarray(&params.dock_params,&params.num_dock_params,"ga_run=2");
-	add_strtoarray(&params.dock_params,&params.num_dock_params,"ga_num_evals=1000");
-	//add_strtoarray(&dock_params,&num_dock_params,"ga_run=20");
-	//add_strtoarray(&dock_params,&num_dock_params,"ga_num_evals=100000");
+	add_strtoarray(&params.dock_params,&params.num_dock_params,"ga_num_evals=10000");
 	printf_master("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 	printf_master("!! Ignoring user-supplied docking parameters for DEBUG run !!\n");
 	printf_master("!!!!!!!!!! Using the following parameters instead !!!!!!!!!!!\n");
@@ -1266,9 +1264,7 @@ int main(int argc, char **argv)
 			strcat(workdir,"/");
 			strcat(workdir,params.username);
 		}
-#ifdef DEBUG
 		printf("%s: DEBUG - scratch directory set to %s\n",params.node_tag,workdir);
-#endif
 		if(params.transfer_node)
 		  {
 		    printf("%s is calling SendMapFiles (%d, %d)\n",params.node_tag,rank,root_group_rank);
@@ -1311,7 +1307,8 @@ int main(int argc, char **argv)
 		busy_list = InitDeque(busy_list);
 		SetupEffercio(&free_cpus,jobs,busy_list,&CompoundList,rank,size,&params);
 		num_jobs = CountJobs(jobs) + CountJobs(busy_list);
-		printf_master("Will run %d jobs\n",num_jobs);
+		// printf_master("Will run %d jobs\n",num_jobs);
+		printf_master("Will process %d ligands\n",num_jobs);
 
 
 		// Wait for the results to come back and kick off another job
@@ -1328,9 +1325,13 @@ int main(int argc, char **argv)
 			job_t *received_job = NULL;
 
 			//Save state
+            #ifdef DEBUG
 			printf_master("DEBUG - Saving state\n");fflush(stdout);
+            #endif
 			SaveState(jobs,busy_list,CompoundList,&params);
+            #ifdef DEBUG
 			printf_master("DEBUG - State saved\n");fflush(stdout);
+            #endif
 
 			results = InitSTIC(results);
 
@@ -1340,8 +1341,8 @@ int main(int argc, char **argv)
 			MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &have_incoming_msg,&status);
 			while (!have_incoming_msg)
 			{
-				struct timespec pause_interval;
-				pause_interval.tv_sec = 45;
+				// struct timespec pause_interval;
+				// pause_interval.tv_sec = 45;
 				if(params.total_time - difftime(time(NULL),params.start_time) < 120)
 				{
 					// Time's up!
@@ -1352,7 +1353,7 @@ int main(int argc, char **argv)
 					MPI_Abort(MPI_COMM_WORLD,0);
 				}
 
-				nanosleep(&pause_interval,NULL);
+				// nanosleep(&pause_interval,NULL);
 				MPI_Iprobe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &have_incoming_msg,&status);
 			}
 
@@ -1366,12 +1367,16 @@ int main(int argc, char **argv)
 			receive_buffer = calloc(1,buffer_size);
 			MPI_Recv(receive_buffer,buffer_size,MPI_BYTE,status.MPI_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
 			MPI_Recv(&received_node,sizeof(deque_node*),MPI_BYTE,status.MPI_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
-			printf("Receiving mopac_res\n");
+            #ifdef DEBUG
+			    printf("DEBUG - Receiving mopac_res\n");
+            #endif
 			memset(temp_mopac_res,0,FILENAME_MAX*sizeof(char));
 			MPI_Recv(temp_mopac_res,FILENAME_MAX,MPI_CHAR,status.MPI_SOURCE,MPI_ANY_TAG,MPI_COMM_WORLD,&status);
 			return_val = status.MPI_TAG;
 			
-			printf("Received mopac_res for %s: \"%s\"\n",((job_t*)received_node->data)->name,temp_mopac_res);
+            #ifdef DEBUG
+			    printf("DEBUG - Received mopac_res for %s: \"%s\"\n",((job_t*)received_node->data)->name,temp_mopac_res);
+            #endif
 			if(strlen(temp_mopac_res) == 0)
 			{
 				free(((job_t*)received_node->data)->mopac_res);
@@ -1382,7 +1387,10 @@ int main(int argc, char **argv)
 				free(((job_t*)received_node->data)->mopac_res);
 				((job_t*)received_node->data)->mopac_res = strdup(temp_mopac_res);
 			}
-			printf("Filename copied for %s: \"%s\"\n",((job_t*)received_node->data)->name,((job_t*)received_node->data)->mopac_res);
+            if (params.verbose) {
+			    printf("Filename copied for %s: \"%s\"\n",((job_t*)received_node->data)->name,
+                       ((job_t*)received_node->data)->mopac_res);
+            }
 
 			suspend_cpu(&free_cpus,status.MPI_SOURCE);
 
@@ -1392,7 +1400,7 @@ int main(int argc, char **argv)
 			unpack_stic_status = UnpackBufferSTIC(receive_buffer, buffer_size,&result_name, &return_val, results);
 			if(unpack_stic_status != 0)
 			{
-				// If unpacking fails, re-initializes the stic and warn the
+				// If unpacking fails, re-initialize the stic and warn the
 				// user in the log file.
 				int S,T,I,C;
 				struct ClusterRep *tmp_reps;
@@ -1404,10 +1412,11 @@ int main(int argc, char **argv)
 				printf("ERROR - unpacking of stic buffer failed for %s\n",result_name);
 			}
 
-#ifdef DEBUG
-			printf_master("DEBUG - STIC results received from slave are:\n");
-			FPrintSTIC(stdout,results);
-#endif
+            #ifdef DEBUG
+			    printf_master("DEBUG - STIC results received from slave are:\n");
+			    FPrintSTIC(stdout,results);
+                fflush(stdout);
+            #endif
 			received_job->input_data = *results;
 
 			sender = status.MPI_SOURCE;
@@ -1421,11 +1430,11 @@ int main(int argc, char **argv)
 			  }
 			else
 			  GetStringByColumn(result_name,"_",1,&Compound_ID);			
-#ifdef DEBUG
-			printf("STIC for %s:\n",Compound_ID);
-			FPrintSTIC(stdout, results);
-			fflush(stdout);
-#endif
+            #ifdef DEBUG
+			    printf("STIC for %s:\n",Compound_ID);
+			    FPrintSTIC(stdout, results);
+			    fflush(stdout);
+            #endif
 
 			// If all dock jobs have been completed, dump the CompoundList to a
 			// file. If the file cannot be opened, dump it to standard to and
@@ -1450,22 +1459,21 @@ int main(int argc, char **argv)
 					curr_rep = curr_rep->next;
 				}
 				finished_dock_count++;
-			}
-			
-                        #ifdef DEBUG
-                        printf("DEBUG - temp_mopac_res prior to merge is \"%s\"\n",temp_mopac_res);
-                        #endif
+			} 
+            #ifdef DEBUG
+                printf("DEBUG - temp_mopac_res prior to merge is \"%s\"\n",temp_mopac_res);
+            #endif
 			if(strlen(temp_mopac_res) == 0)// Only write stics when results finish, i.e. no restarts
 			  MergeSTICData(Compound_ID,results,&CompoundList);
 
-#ifdef DEBUG
-			printf("%s\n",AT_HDR);
-			printf("\nDEBUG - COMPOUND LIST AFTER MERGE OF %s\n",result_name);
-			FPrintCompoundTree(stdout, CompoundList);
-			printf("%s\n",AT_HDR);
-			fflush(stdout);
-#endif
-			
+            if (params.verbose)
+            {
+			    printf_master("%s\n",AT_HDR);
+			    printf_master("\nCOMPOUND LIST AFTER MERGE OF %s\n",result_name);
+			    FPrintCompoundTree(stdout, CompoundList);
+			    printf_master("%s\n",AT_HDR);
+			    fflush(stdout);
+            }
 
 			finish_job(jobs,busy_list,received_node,receive_buffer,return_val,&params);
 
@@ -1473,7 +1481,9 @@ int main(int argc, char **argv)
 			{
 				char *dock_result_name = "Effercio.dockings";
 				FILE *dock_results_file = fopen(dock_result_name,"w");
-				printf("DEBUG - dumping dock data");
+                #ifdef DEBUG
+				printf("DEBUG - dumping dock data\n");
+                #endif
 
 				// Write the compound tree now that effercio has finished. If the
 				// file cannot be opened, write it to standard out so that a least
@@ -1517,6 +1527,9 @@ int main(int argc, char **argv)
 		    MPI_Send(unnecessary,FILENAME_MAX,MPI_CHAR,destination,QUIT_SIGNAL,MPI_COMM_WORLD);
 
 		//Free Memory
+        #ifdef DEBUG
+            printf_master("Freeing memory pointers\n");
+        #endif
 		if (jobs != NULL) free(jobs);
 		if (busy_list != NULL) free(busy_list);
 		FreeCPUNode(free_cpus);
@@ -1559,23 +1572,23 @@ int main(int argc, char **argv)
 			newjob.input_data.G = STIC->G = float_buff[1];
 			newjob.type = status.MPI_TAG;
 
-#ifdef DEBUG
-			printf("%s: DEBUG - Got %s from master node for job\n",params.node_tag,jobname);
-			printf("%s: DEBUG - status.MPI_TAG = %d\n",params.node_tag,status.MPI_TAG);
-			printf("%s: DEBUG - charge on STIC before = %.1f\n",params.node_tag,STIC->charge);
-#endif
+            #ifdef DEBUG
+			    char strJobType[512];
+			    JobString(strJobType,&newjob);
+			    printf("%s: DEBUG - Got %s from master node for %s job\n",params.node_tag,jobname,strJobType);
+			    printf("%s: DEBUG - status.MPI_TAG = %d\n",params.node_tag,status.MPI_TAG);
+			    printf("%s: DEBUG - charge on STIC before = %.1f\n",params.node_tag,STIC->charge);
+            #endif
 
 			// Run the calculation here
 			retval = RunJob(&newjob,STIC,&params);
 			if(retval < 0)
 			  retval *= -1;
-#ifdef DEBUG
-			char strJobType[512];
-			JobString(strJobType,&newjob);
-			printf("%s: DEBUG - charge on STIC after = %.1f\n",params.node_tag,STIC->charge);
-			printf("%s: DEBUG - %s results returned:\n",params.node_tag,strJobType);
-			FPrintSTIC(stdout, STIC);
-#endif
+            #ifdef DEBUG
+			    printf("%s: DEBUG - charge on STIC after = %.1f\n",params.node_tag,STIC->charge);
+			    printf("%s: DEBUG - %s results returned:\n",params.node_tag,strJobType);
+			    FPrintSTIC(stdout, STIC);
+            #endif
 
 			PackBufferSTIC(&return_buffer,&num_bytes,jobname,retval,STIC);
 
@@ -1601,15 +1614,25 @@ int main(int argc, char **argv)
 			memset(return_buffer,0,num_bytes);
 
 		}
-                free(newjob.mopac_res);
 
-#ifdef DEBUG
-		printf("%s: DEBUG - No more jobs for me to do\n",params.node_tag);
-#endif
-
+        free(newjob.mopac_res);
 		free(return_buffer);
+
+        #ifdef DEBUG
+		    printf("%s: DEBUG - No more jobs for me to do\n",params.node_tag);
+        #endif
+
 	}
 	//END NEW QUEUE LOOP
+
+    //Save state
+    if (params.verbose) {
+        printf_master("DEBUG - Saving state\n");fflush(stdout);
+    }
+    SaveState(jobs,busy_list,CompoundList,&params);
+    #ifdef DEBUG
+        printf_master("DEBUG - State saved\n");fflush(stdout);
+    #endif
 
 	if (master_node)
 	{

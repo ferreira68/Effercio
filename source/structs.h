@@ -98,7 +98,7 @@ struct QMresult {
     double G_prot;    // Free Energy of protein, from input deck
     //double G_liginput;// Free Energy of ligand input structure
     double G_ligand;  // Free Energy of ligand, from Mopac
-    double G_binding; // Estimated Free Energy of Binding, calculated by G_binding := G_products - G_reactants *Used for Boltzmann*
+    double G_binding; // Estimated Free Energy of Binding
     double Ki_QM;     // Estimated Inhibition Constant
     char *method;
     char *Ki_type;

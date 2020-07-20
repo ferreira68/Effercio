@@ -26,11 +26,13 @@
  * along with Effercio. If not, see <http://www.gnu.org/licenses/>.      *
  *************************************************************************/
 #include <stdlib.h>
+#include <string.h>
 #include "RBTree.h"
 
 RBTree*  InitRBTree(RBTree *node,int node_type)
 {
-	node = (RBTree*)malloc(sizeof(RBTree));
+	// node = (RBTree*)malloc(sizeof(RBTree));
+	node = (RBTree*)calloc(1,sizeof(RBTree));
 	node->type = node_type;
 	node->data = NULL;
 	node->left = node->parent = node->right = NULL;

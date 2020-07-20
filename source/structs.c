@@ -32,6 +32,7 @@
 #endif
 
 #include <limits.h>
+#include <math.h>
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -287,51 +288,53 @@ void FPrintQM(FILE *file, const struct QMresult *data)
     fprintf(file, "    MOPAC Results\n");
     fprintf(file, "%s\n",DASH_HDR);
     if (strcmp(data->method,STR_INIT) != 0)
-	fprintf(file, "        Semi-empirical Method       = %s\n",data->method);
+	    fprintf(file, "        Semi-empirical Method       = %s\n",data->method);
     if (data->Hf != DOUBLE_INIT)
-	fprintf(file, "        Heat of Formation           = % .5f kcal/mol\n",data->Hf);
+	    fprintf(file, "        Heat of Formation           = % .5f kcal/mol\n",data->Hf);
     if (data->S != DOUBLE_INIT)
-	fprintf(file, "        Entropy                     = % .6G kcal/mol\n",data->S);
+	    fprintf(file, "        Entropy                     = % .6G kcal/mol\n",data->S);
     if (data->Cp != DOUBLE_INIT)
-	fprintf(file, "        Heat Capacity (Cp)          = % .6G kcal/mol\n",data->Cp);
+	    fprintf(file, "        Heat Capacity (Cp)          = % .6G kcal/mol\n",data->Cp);
     if (data->G != DOUBLE_INIT)
-	fprintf(file, "        Free Energy                 = % .4f kcal/mol\n",data->G);
+	    fprintf(file, "        Free Energy                 = % .4f kcal/mol\n",data->G);
     if (data->ZPE != DOUBLE_INIT)
-	fprintf(file, "        Zero Point Energy           = % .3f kcal/mol\n",data->ZPE);
+	    fprintf(file, "        Zero Point Energy           = % .3f kcal/mol\n",data->ZPE);
     if (data->E_dielec != DOUBLE_INIT)
-	fprintf(file, "        Dielectric Energy           = % .6f kcal/mol\n",data->E_dielec);
+	    fprintf(file, "        Dielectric Energy           = % .6f kcal/mol\n",data->E_dielec);
     if (data->COSMO_A != DOUBLE_INIT)
-	fprintf(file, "        COSMO Surface Area          = %.2f sq. Angstrom\n",data->COSMO_A);
+	    fprintf(file, "        COSMO Surface Area          = %.2f sq. Angstrom\n",data->COSMO_A);
     if (data->COSMO_V != DOUBLE_INIT)
-	fprintf(file, "        COSMO Volume                = %.2f cu. Angstrom\n",data->COSMO_V);
+	    fprintf(file, "        COSMO Volume                = %.2f cu. Angstrom\n",data->COSMO_V);
     if (data->vdW_A != DOUBLE_INIT)
-	fprintf(file, "        van der Waals Surface Area  = %.2f sq. Angstrom\n",data->vdW_A);
+	    fprintf(file, "        van der Waals Surface Area  = %.2f sq. Angstrom\n",data->vdW_A);
     if (data->mu_x != DOUBLE_INIT && data->mu_y != DOUBLE_INIT && data->mu_z != DOUBLE_INIT) {
-	fprintf(file, "        Dipole Moment\n");
-	fprintf(file, "            x-component             = % .3f Debye\n",data->mu_x);
-	fprintf(file, "            y-component             = % .3f Debye\n",data->mu_y);
-	fprintf(file, "            z-component             = % .3f Debye\n",data->mu_z);
-	fprintf(file, "            -----------------------------------------\n");
-	fprintf(file, "                                    = % .3f Debye\n",data->mu_total);
+	    fprintf(file, "        Dipole Moment\n");
+	    fprintf(file, "            x-component             = % .3f Debye\n",data->mu_x);
+	    fprintf(file, "            y-component             = % .3f Debye\n",data->mu_y);
+	    fprintf(file, "            z-component             = % .3f Debye\n",data->mu_z);
+	    fprintf(file, "            -----------------------------------------\n");
+	    fprintf(file, "                                    = % .3f Debye\n",data->mu_total);
     }
     if (data->time != DOUBLE_INIT)
-	fprintf(file, "        Calculation Time            = %.2f (seconds)\n",data->time);
+	    fprintf(file, "        Calculation Time            = %.2f (seconds)\n",data->time);
     if (data->num_SCFs != INT_INIT)
-	fprintf(file, "        Number of SCF iterations    = %d\n",data->num_SCFs);
+	    fprintf(file, "        Number of SCF iterations    = %d\n",data->num_SCFs);
     if (strcmp(data->Ki_type,STR_INIT) != 0)
-	fprintf(file, "        Ki Estimation Method        = %s\n",data->Ki_type);
+	    fprintf(file, "        Ki Estimation Method        = %s\n",data->Ki_type);
     if (data->G_prot != DOUBLE_INIT)
-	fprintf(file, "        Free Energy of Receptor     = %.6f kcal/mol\n",data->G_prot);
+	    fprintf(file, "        Free Energy of Receptor     = %.6f kcal/mol\n",data->G_prot);
     if (data->G_ligand != DOUBLE_INIT)
-	fprintf(file, "        Free Energy of Ligand       = %.6f kcal/mol\n",data->G_ligand);
-/*
-    if (data->G_liginput != DOUBLE_INIT)
-	fprintf(file, "              (for input structure) = %.6f kcal/mol)\n",data->G_liginput);
-*/
+	    fprintf(file, "        Free Energy of Ligand       = %.6f kcal/mol\n",data->G_ligand);
     if (data->G_binding != DOUBLE_INIT)
-	fprintf(file, "        Free Energy of Binding      = %.6f kcal/mol\n",data->G_binding);
+        if (data->G_binding > ZERO) {
+	        fprintf(file, "        Free Energy of Binding      = %.6f kcal/mol (Does Not Bind)\n",data->G_binding);
+	        fprintf(file, "        Inhibition Constant (Ki)    = %.6G M\n",INFINITY);
+        }
+        else {
+	        fprintf(file, "        Free Energy of Binding      = %.6f kcal/mol\n",data->G_binding);
+	        fprintf(file, "        Inhibition Constant (Ki)    = %.6G M\n",data->Ki_QM);
+        }
     if (data->Ki_QM != DOUBLE_INIT)
-	fprintf(file, "        Inhibition Constant (Ki)    = %.6G M\n",data->Ki_QM);
     fprintf(file, "\n\n");
 
     fflush(file);
@@ -443,7 +446,16 @@ void FreeSTIC(struct STICelement *data)
 void FPrintSTIC(FILE *file, const struct STICelement *data)
 {
     struct ClusterRep *clustptr;
-    double ki[2];
+    double coeff_dock[4096];
+    double coeff_qm[4096];
+    double Z_DOCK = ZERO;
+    double Z_QM = ZERO;
+    double Ki_docking = ZERO;
+    double Ki_qm      = ZERO;
+    double adjusted_value = ZERO;
+    char units[16];
+
+    BoltzmannAvgSTIC(data,&coeff_dock,coeff_qm,&Z_DOCK,&Z_QM,&Ki_docking,&Ki_qm);
 
     if(file == NULL)
     	file = stdout;
@@ -454,14 +466,43 @@ void FPrintSTIC(FILE *file, const struct STICelement *data)
     fprintf(file, "Ionization state index  = %d\n",data->I);
     fprintf(file, "Conformer index         = %d\n",data->C);
     fprintf(file, "Charge on ligand        = %.2f\n",data->charge);
-    fprintf(file, "Total charge on complex = %.2f\n",data->total_charge);
+    if (data->total_charge != DOUBLE_INIT)
+    {
+        fprintf(file, "Total charge on complex = %.2f\n",data->total_charge);
+    }
+    else
+    {
+        fprintf(file, "Total charge on complex = unavailable\n");
+    }
     fprintf(file, "Heat of Formation       = %.5f kcal/mol\n",data->Hf);
-    fprintf(file, "Free Energy             = %.5f kcal/mol\n\n",data->G);
-
-    //BoltzmannAvgSTIC(data,&ki[0],&ki[1]);
-
-    fprintf(file, "Mean K_i (docked)       = %.5fM\n",ki[0]);
-    fprintf(file, "Mean K_i (optimized)    = %.5fM\n",ki[1]);
+    if (data->G != DOUBLE_INIT)
+    {
+        fprintf(file, "Free Energy             = %.5f kcal/mol\n\n",data->G);
+    }
+    else
+    {
+        fprintf(file, "Free Energy             = unavailable\n\n");
+    }
+    if (Ki_docking != DOUBLE_INIT) 
+    {
+        adjusted_value = Ki_docking;
+        AdjustUnits(&adjusted_value,units);
+        fprintf(file, "Mean K_i (docked)       = %.6g %sM\n",adjusted_value,units);
+    }
+    else
+    {
+        fprintf(file, "Mean K_i (docked)       = unavailable\n");
+    }
+    if (Ki_qm != DOUBLE_INIT)
+    {
+        adjusted_value = Ki_qm;
+        AdjustUnits(&adjusted_value,units);
+        fprintf(file, "Mean K_i (optimized)    = %.6g %sM\n",adjusted_value,units);
+    }
+    else
+    {
+        fprintf(file, "Mean K_i (optimized)    = unavailable\n");
+    }
     fprintf(file, "Number of clusters      = %d\n",NumClusterReps(data));
 
     clustptr = data->reps;
@@ -1077,6 +1118,10 @@ deque* CreateJobList(char inpfile[FILENAME_MAX], JobParameters *params)
 
     // Get first line. If it contains optional key words, parse them.
     // Otherwise move on.
+    //
+    // NOTE: This needs to be revamped to provide a more free-form input
+    //       Should just look for keywords on each line and then start
+    //       reading ligands when a new keywork (e.g lig_list) is found
     if(fgets(nextjob,FILENAME_MAX,jobfile)!=NULL)
     {
     	int get_next_line = TRUE;

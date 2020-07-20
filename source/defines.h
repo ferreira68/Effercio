@@ -102,9 +102,24 @@
 #define COMPOUND_RESTART_FILE "Effercio.compound.restart"
 #define STIC_RESTART_FILE "Effercio.stic.restart"
 
-#define EFFERCIO_KT 0.59 //kcal/mol
+/*****************************************************************
+   EFFERCIO_KT is the factor (k_B T) calculated using
+
+      k_B = 1.380649E-23 J K^-1 (Boltzmann constant from CODATA)
+          = 1.380649E-23 J K^-1 * (1 kcal/4184 J)
+          = 1.380649E-23 J K^-1 * (2.390057361E-4 kcal J^-1)
+          = 3.299830306E-27 kcal K^-1
+   so,
+          k_B T (T=298K) = 9.833494312E-25 kcal
+*****************************************************************/
+#define EFFERCIO_KT 9.833494312E-25 // kcal K^-1
+#define AVOGADRO 6.02214076E23 // Avogadro's number
+#define K_BOLTZMANN 3.299830306E-27 // kcal K^-1
 
 #ifndef ARG_MAX
 #define ARG_MAX 4096
 #endif
+
+// #define Q_SCALE_FACTOR 2.390057361E-4
+#define Q_SCALE_FACTOR 6.02214076E23
 

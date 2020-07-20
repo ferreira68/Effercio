@@ -1,4 +1,5 @@
 *.[oa]
 config.log
 config.status
+core.*
 

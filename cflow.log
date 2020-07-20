@@ -1,0 +1,247 @@
+:: +-BoltzmannAvgCompoundTree() <void BoltzmannAvgCompoundTree (RBTree *CompoundList, const char *analysis_dir, int use_gibbs) at source/analysis.c:712>:
+:: | +-VerifyDir() <int VerifyDir (char dirname[FILENAME_MAX], int verbose, char nodestr[HOST_NAME_MAX]) at source/io_utils.c:311>:
+:: | | +-stat()
+:: | | +-printf()
+:: | | \-mkdir()
+:: | +-fprintf()
+:: | +-sprintf()
+:: | +-BoltzmannAvgCompounds() <void BoltzmannAvgCompounds (RBTree **average, const RBTree *CompoundList, int qm_sort) at source/analysis.c:362> (R):
+:: | | +-BoltzmannAvgSTICTree() <void BoltzmannAvgSTICTree (RBTree **averages, double *Z, const RBTree *stics) at source/analysis.c:220> (R):
+:: | | | +-NumClusterReps() <int NumClusterReps (const struct STICelement *data) at source/structs.c:481>:
+:: | | | +-calloc()
+:: | | | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | | | | \-malloc()
+:: | | | +-malloc()
+:: | | | +-BoltzmannAvgSTIC() <void BoltzmannAvgSTIC (struct STICelement *stic, double *Z_list_DOCK, double *Z_list_QM, double *Z_DOCK, double *Z_QM, double *dock, double *qm) at source/analysis.c:76>:
+:: | | | | +-fprintf()
+:: | | | | +-exit()
+:: | | | | \-exp()
+:: | | | +-exp()
+:: | | | +-free()
+:: | | | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | | | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | | | | | | +-fprintf()
+:: | | | | | | +-exit()
+:: | | | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | | | | | | | \-strcmp()
+:: | | | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | | | | | | | \-strcmp()
+:: | | | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | | | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | | | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | | | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 1963)
+:: | | | | | +-fprintf()
+:: | | | | | \-fflush()
+:: | | | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | | | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | | | \-BoltzmannAvgSTICTree() <void BoltzmannAvgSTICTree (RBTree **averages, double *Z, const RBTree *stics) at source/analysis.c:220> (recursive: see 1950)
+:: | | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | | | \-malloc()
+:: | | +-calloc()
+:: | | +-GetCompoundAverage() <void GetCompoundAverage (double *Ki_DOCK, double *Ki_QM, RBTree *avg, int give_predicted) at source/analysis.c:339>:
+:: | | | +-GetCompoundSum() <void GetCompoundSum (double *Ki_DOCK, double *Ki_QM, double *Z_DOCK, double *Z_QM, RBTree *avgs, int give_predicted) at source/analysis.c:273> (R):
+:: | | | | +-printf()
+:: | | | | \-GetCompoundSum() <void GetCompoundSum (double *Ki_DOCK, double *Ki_QM, double *Z_DOCK, double *Z_QM, RBTree *avgs, int give_predicted) at source/analysis.c:273> (recursive: see 1984)
+:: | | | +-printf()
+:: | | | \-DivideSTICCoefficients() <void DivideSTICCoefficients (double Z_DOCK, RBTree *avg) at source/analysis.c:324> (R):
+:: | | |  \-DivideSTICCoefficients() <void DivideSTICCoefficients (double Z_DOCK, RBTree *avg) at source/analysis.c:324> (recursive: see 1988)
+:: | | +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (R):
+:: | | | +-FreeCompound() <void FreeCompound (struct compoundData *data) at source/structs.c:506>:
+:: | | | | \-free()
+:: | | | +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (recursive: see 1990)
+:: | | | +-free()
+:: | | | \-fprintf()
+:: | | +-printf()
+:: | | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | | | | | +-fprintf()
+:: | | | | | +-exit()
+:: | | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | | | | | | \-strcmp()
+:: | | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | | | | | | \-strcmp()
+:: | | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 1998)
+:: | | | | +-fprintf()
+:: | | | | \-fflush()
+:: | | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | | \-BoltzmannAvgCompounds() <void BoltzmannAvgCompounds (RBTree **average, const RBTree *CompoundList, int qm_sort) at source/analysis.c:362> (recursive: see 1949)
+:: | +-fopen()
+:: | +-strerror()
+:: | +-FWriteCompoundAvg() <void FWriteCompoundAvg (FILE *summary_file, FILE *nmr_file, FILE **well_file, int *compound_counter, int max_compounds, const RBTree *averages, const char *prefix, int data_type) at source/analysis.c:622> (R):
+:: | | +-FWriteCompoundAvg() <void FWriteCompoundAvg (FILE *summary_file, FILE *nmr_file, FILE **well_file, int *compound_counter, int max_compounds, const RBTree *averages, const char *prefix, int data_type) at source/analysis.c:622> (recursive: see 2017)
+:: | | +-fclose()
+:: | | +-isnan()
+:: | | +-fprintf()
+:: | | +-strcpy()
+:: | | +-AdjustUnits() <void AdjustUnits (double *val, char *units) at source/analysis.c:404>:
+:: | | | +-log10()
+:: | | | \-strcpy()
+:: | | +-sprintf()
+:: | | +-fopen()
+:: | | \-FWriteSTICAvg() <void FWriteSTICAvg (FILE *nmr_file, CompoundTree *compound, int sort_criterion) at source/analysis.c:591>:
+:: | |  +-BoltzmannAvgSTICTree() <void BoltzmannAvgSTICTree (RBTree **averages, double *Z, const RBTree *stics) at source/analysis.c:220> (R):
+:: | |  | +-NumClusterReps() <int NumClusterReps (const struct STICelement *data) at source/structs.c:481>:
+:: | |  | +-calloc()
+:: | |  | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | |  | | \-malloc()
+:: | |  | +-malloc()
+:: | |  | +-BoltzmannAvgSTIC() <void BoltzmannAvgSTIC (struct STICelement *stic, double *Z_list_DOCK, double *Z_list_QM, double *Z_DOCK, double *Z_QM, double *dock, double *qm) at source/analysis.c:76>:
+:: | |  | | +-fprintf()
+:: | |  | | +-exit()
+:: | |  | | \-exp()
+:: | |  | +-exp()
+:: | |  | +-free()
+:: | |  | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | |  | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | |  | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | |  | | | | +-fprintf()
+:: | |  | | | | +-exit()
+:: | |  | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | |  | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | |  | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | |  | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 2042)
+:: | |  | | | +-fprintf()
+:: | |  | | | \-fflush()
+:: | |  | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | |  | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | |  | \-BoltzmannAvgSTICTree() <void BoltzmannAvgSTICTree (RBTree **averages, double *Z, const RBTree *stics) at source/analysis.c:220> (recursive: see 2029)
+:: | |  +-GetCompoundAverage() <void GetCompoundAverage (double *Ki_DOCK, double *Ki_QM, RBTree *avg, int give_predicted) at source/analysis.c:339>:
+:: | |  | +-GetCompoundSum() <void GetCompoundSum (double *Ki_DOCK, double *Ki_QM, double *Z_DOCK, double *Z_QM, RBTree *avgs, int give_predicted) at source/analysis.c:273> (R):
+:: | |  | | +-printf()
+:: | |  | | \-GetCompoundSum() <void GetCompoundSum (double *Ki_DOCK, double *Ki_QM, double *Z_DOCK, double *Z_QM, RBTree *avgs, int give_predicted) at source/analysis.c:273> (recursive: see 2060)
+:: | |  | +-printf()
+:: | |  | \-DivideSTICCoefficients() <void DivideSTICCoefficients (double Z_DOCK, RBTree *avg) at source/analysis.c:324> (R):
+:: | |  |  \-DivideSTICCoefficients() <void DivideSTICCoefficients (double Z_DOCK, RBTree *avg) at source/analysis.c:324> (recursive: see 2064)
+:: | |  +-ResortRBTree() <void ResortRBTree (RBTree **dest, const RBTree *source, int sort_criterion) at source/analysis.c:44> (R):
+:: | |  | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | |  | | \-malloc()
+:: | |  | +-malloc()
+:: | |  | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | |  | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | |  | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | |  | | | | +-fprintf()
+:: | |  | | | | +-exit()
+:: | |  | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | |  | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | |  | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | |  | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 2071)
+:: | |  | | | +-fprintf()
+:: | |  | | | \-fflush()
+:: | |  | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | |  | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | |  | \-ResortRBTree() <void ResortRBTree (RBTree **dest, const RBTree *source, int sort_criterion) at source/analysis.c:44> (recursive: see 2066)
+:: | |  +-FWriteSTICAvg_rec() <void FWriteSTICAvg_rec (FILE *nmr_file, const RBTree *stic, const char *cmpd_id) at source/analysis.c:485> (R):
+:: | |  | +-FWriteSTICAvg_rec() <void FWriteSTICAvg_rec (FILE *nmr_file, const RBTree *stic, const char *cmpd_id) at source/analysis.c:485> (recursive: see 2088)
+:: | |  | +-AdjustUnits() <void AdjustUnits (double *val, char *units) at source/analysis.c:404>:
+:: | |  | | +-log10()
+:: | |  | | \-strcpy()
+:: | |  | +-fprintf()
+:: | |  | +-NumClusterReps() <int NumClusterReps (const struct STICelement *data) at source/structs.c:481>:
+:: | |  | +-calloc()
+:: | |  | +-BoltzmannAvgSTIC() <void BoltzmannAvgSTIC (struct STICelement *stic, double *Z_list_DOCK, double *Z_list_QM, double *Z_DOCK, double *Z_QM, double *dock, double *qm) at source/analysis.c:76>:
+:: | |  | | +-fprintf()
+:: | |  | | +-exit()
+:: | |  | | \-exp()
+:: | |  | +-malloc()
+:: | |  | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | |  | | \-malloc()
+:: | |  | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | |  | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | |  | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | |  | | | | +-fprintf()
+:: | |  | | | | +-exit()
+:: | |  | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | |  | | | | | \-strcmp()
+:: | |  | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | |  | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | |  | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | |  | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 2104)
+:: | |  | | | +-fprintf()
+:: | |  | | | \-fflush()
+:: | |  | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | |  | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | |  | +-free()
+:: | |  | +-FWriteClusterRep() <void FWriteClusterRep (FILE *nmr_file, const RBTree *cr_avgs) at source/analysis.c:448> (R):
+:: | |  | | +-FWriteClusterRep() <void FWriteClusterRep (FILE *nmr_file, const RBTree *cr_avgs) at source/analysis.c:448> (recursive: see 2121)
+:: | |  | | +-fprintf()
+:: | |  | | \-AdjustUnits() <void AdjustUnits (double *val, char *units) at source/analysis.c:404>:
+:: | |  | |  +-log10()
+:: | |  | |  \-strcpy()
+:: | |  | \-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (R):
+:: | |  |  +-FreeCompound() <void FreeCompound (struct compoundData *data) at source/structs.c:506>:
+:: | |  |  | \-free()
+:: | |  |  +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (recursive: see 2127)
+:: | |  |  +-free()
+:: | |  |  \-fprintf()
+:: | |  \-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (R):
+:: | |   +-FreeCompound() <void FreeCompound (struct compoundData *data) at source/structs.c:506>:
+:: | |   | \-free()
+:: | |   +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (recursive: see 2133)
+:: | |   +-free()
+:: | |   \-fprintf()
+:: | +-fclose()
+:: | +-ResortRBTree() <void ResortRBTree (RBTree **dest, const RBTree *source, int sort_criterion) at source/analysis.c:44> (R):
+:: | | +-InitRBTree() <RBTree *InitRBTree (RBTree *node, int node_type) at source/RBTree.c:31>:
+:: | | | \-malloc()
+:: | | +-malloc()
+:: | | +-insertRBT() <RBTree *insertRBT (RBTree **ptrRoot, RBTree *x) at source/RBTree.c:291>:
+:: | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (R):
+:: | | | | +-RBTDirection() <short RBTDirection (const RBTree *lhs, const RBTree *rhs) at source/RBTree.c:196>:
+:: | | | | | +-fprintf()
+:: | | | | | +-exit()
+:: | | | | | +-RBTDirection_job() <short RBTDirection_job (const job_t *lhs, const job_t *rhs) at source/RBTree.c:188>:
+:: | | | | | | \-strcmp()
+:: | | | | | +-RBTDirection_compound() <short RBTDirection_compound (const struct compoundData *lhs, const struct compoundData *rhs) at source/RBTree.c:179>:
+:: | | | | | | \-strcmp()
+:: | | | | | +-RBTDirection_STIC() <short RBTDirection_STIC (const struct STICelement *lstic, const struct STICelement *rstic) at source/RBTree.c:130>
+:: | | | | | +-DoubleSort() <short DoubleSort (double lhs, double rhs) at source/RBTree.c:172>
+:: | | | | | \-AvgSort() <short AvgSort (struct AvgData *lhs, struct AvgData *rhs) at source/RBTree.c:152>:
+:: | | | | +-insertBST() <void insertBST (RBTree *rootnode, RBTree *x) at source/RBTree.c:247> (recursive: see 2145)
+:: | | | | +-fprintf()
+:: | | | | \-fflush()
+:: | | | +-LeftRotate() <RBTree *LeftRotate (RBTree *tree) at source/RBTree.c:98>:
+:: | | | \-RightRotate() <RBTree *RightRotate (RBTree *tree) at source/RBTree.c:67>:
+:: | | \-ResortRBTree() <void ResortRBTree (RBTree **dest, const RBTree *source, int sort_criterion) at source/analysis.c:44> (recursive: see 2140)
+:: | \-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (R):
+:: |  +-FreeCompound() <void FreeCompound (struct compoundData *data) at source/structs.c:506>:
+:: |  | \-free()
+:: |  +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (recursive: see 2162)
+:: |  +-free()
+:: |  \-fprintf()
+:: +-FPrintSQL() <void FPrintSQL (FILE *sql_file, RBTree *CompoundList, JobParameters *params) at source/effercio_db.c:120>:
+:: | +-fprintf()
+:: | \-FPrintSQLCompoundTree() <void FPrintSQLCompoundTree (FILE *sql_file, RBTree *CompoundList, JobParameters *params) at source/effercio_db.c:86> (R):
+:: |  +-FPrintSQLCompoundTree() <void FPrintSQLCompoundTree (FILE *sql_file, RBTree *CompoundList, JobParameters *params) at source/effercio_db.c:86> (recursive: see 2170)
+:: |  +-sscanf()
+:: |  +-fprintf()
+:: |  \-FPrintSQLSTICTree() <void FPrintSQLSTICTree (FILE *sql_file, int compound_id, RBTree *stics, JobParameters *params) at source/effercio_db.c:53> (R):
+:: |   +-FPrintSQLSTICTree() <void FPrintSQLSTICTree (FILE *sql_file, int compound_id, RBTree *stics, JobParameters *params) at source/effercio_db.c:53> (recursive: see 2174)
+:: |   +-fprintf()
+:: |   \-FPrintSQLClusterRep() <void FPrintSQLClusterRep (FILE *sql_file, int compound_id, struct ClusterRep *rep, struct STICelement *stic, JobParameters *params) at source/effercio_db.c:28>:
+:: |    \-fprintf()
+:: +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (R):
+:: | +-FreeCompound() <void FreeCompound (struct compoundData *data) at source/structs.c:506>:
+:: | | \-free()
+:: | +-FreeRBTree() <void FreeRBTree (RBTree *node) at source/RBTree.c:43> (recursive: see 2179)
+:: | +-free()
+:: | \-fprintf()
+:: +-SecondsToHMS() <char *SecondsToHMS (double num_secs) at source/io_utils.c:278>:
+:: | +-calloc()
+:: | \-sprintf()
+:: \-MPI_Finalize()
