@@ -39,10 +39,15 @@
 #include <string.h>
 #include "defines.h"
 #include "structs.h"
+#include "io_utils.h"
 #include "deque.h"
 #include "RBTree.h"
 #include "mpi.h"
 #include "memwatch.h"
+
+// Defined in analysis.c
+extern void BoltzmannAvgSTIC(struct STICelement *stic, double *Z_list_DOCK, double *Z_list_QM, double *Z_DOCK, double *Z_QM, double *dock,double *qm);
+extern void AdjustUnits(double *val, char *units);
 
 /**
  * This is a stack for cpu nodes, represented by their MPI rank.
@@ -325,7 +330,7 @@ void FPrintQM(FILE *file, const struct QMresult *data)
 	    fprintf(file, "        Free Energy of Receptor     = %.6f kcal/mol\n",data->G_prot);
     if (data->G_ligand != DOUBLE_INIT)
 	    fprintf(file, "        Free Energy of Ligand       = %.6f kcal/mol\n",data->G_ligand);
-    if (data->G_binding != DOUBLE_INIT)
+    if (data->G_binding != DOUBLE_INIT) {
         if (data->G_binding > ZERO) {
 	        fprintf(file, "        Free Energy of Binding      = %.6f kcal/mol (Does Not Bind)\n",data->G_binding);
 	        fprintf(file, "        Inhibition Constant (Ki)    = %.6G M\n",INFINITY);
@@ -334,6 +339,7 @@ void FPrintQM(FILE *file, const struct QMresult *data)
 	        fprintf(file, "        Free Energy of Binding      = %.6f kcal/mol\n",data->G_binding);
 	        fprintf(file, "        Inhibition Constant (Ki)    = %.6G M\n",data->Ki_QM);
         }
+    }
     if (data->Ki_QM != DOUBLE_INIT)
     fprintf(file, "\n\n");
 
@@ -443,7 +449,7 @@ void FreeSTIC(struct STICelement *data)
 }
 
 
-void FPrintSTIC(FILE *file, const struct STICelement *data)
+void FPrintSTIC(FILE *file, struct STICelement *data)
 {
     struct ClusterRep *clustptr;
     double coeff_dock[4096];
@@ -455,7 +461,7 @@ void FPrintSTIC(FILE *file, const struct STICelement *data)
     double adjusted_value = ZERO;
     char units[16];
 
-    BoltzmannAvgSTIC(data,&coeff_dock,coeff_qm,&Z_DOCK,&Z_QM,&Ki_docking,&Ki_qm);
+    BoltzmannAvgSTIC(data,coeff_dock,coeff_qm,&Z_DOCK,&Z_QM,&Ki_docking,&Ki_qm);
 
     if(file == NULL)
     	file = stdout;
@@ -713,7 +719,7 @@ char *BufferGetStr(char *buffptr, char **string)
 }
 
 
-int PackBufferSTIC(void **buffer, size_t *size,char *jobname, int jobretval,
+int PackBufferSTIC(void **buffer, size_t *size, const char *jobname, int jobretval,
 		   struct STICelement *data)
 {
     int retval = 0;
@@ -924,7 +930,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 		if (strcmp(dock_ptr->Ki_unit,STR_INIT) == 0) {
 			newlen = strlen(dock_data->Ki_unit) + 1;
 			oldlen = strlen(dock_ptr->Ki_unit) + 1;
-			memset(dock_ptr->Ki_unit,(char) NULL,oldlen);
+			memset(dock_ptr->Ki_unit,0,oldlen);
 			dock_ptr->Ki_unit = realloc(dock_ptr->Ki_unit, newlen*sizeof(char));
 			strncpy(dock_ptr->Ki_unit,dock_data->Ki_unit,newlen);
 		}
@@ -956,7 +962,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 		if (strcmp(qm_ptr->method,STR_INIT) == 0) {
 			newlen = strlen(qm_data->method) + 1;
 			oldlen = strlen(qm_ptr->method) + 1;
-			memset(qm_ptr->method,(char) NULL,oldlen);
+			memset(qm_ptr->method, 0,oldlen);
 			qm_ptr->method = realloc(qm_ptr->method, newlen*sizeof(char));
 			strncpy(qm_ptr->method,qm_data->method,newlen);
 		}
@@ -972,7 +978,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 		if (strcmp(qm_ptr->Ki_type,STR_INIT) == 0) {
 			newlen = strlen(qm_data->Ki_type) + 1;
 			oldlen = strlen(qm_ptr->Ki_type) + 1;
-			memset(qm_ptr->Ki_type,(char) NULL,oldlen);
+			memset(qm_ptr->Ki_type, 0,oldlen);
 			qm_ptr->Ki_type = realloc(qm_ptr->Ki_type, newlen*sizeof(char));
 			strncpy(qm_ptr->Ki_type,qm_data->Ki_type,newlen);
 		}
@@ -981,8 +987,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 
 	fflush(stdout);
 
-	FreeCompound(CompoundNode);
-		// CompoundNode->data = malloc(sizeof(CompoundTree));
+        CompoundNode->data = malloc(sizeof(CompoundTree));
 
 	return retval;
 
@@ -1102,7 +1107,7 @@ deque* CreateJobList(char inpfile[FILENAME_MAX], JobParameters *params)
 
     jobs = InitDeque(jobs);
 
-    memset(nextjob,(char) NULL,FILENAME_MAX);
+    memset(nextjob, 0,FILENAME_MAX);
 
     printf_master("Opening ligand file: %s ... ",inpfile);
     jobfile = fopen(inpfile,"r");
@@ -1163,7 +1168,7 @@ deque* CreateJobList(char inpfile[FILENAME_MAX], JobParameters *params)
     		}
     		if( get_next_line && fgets(nextjob,FILENAME_MAX,jobfile) == NULL)
     		{
-    			fprintf("ERROR - Broken ligand input file (%s). Expecting target energy line.\n",inpfile);
+    			fprintf(stderr, "ERROR - Broken ligand input file (%s). Expecting target energy line.\n",inpfile);
     			MPI_Abort(MPI_COMM_WORLD,DEFAULT_ERR_CODE);
     		}
     	}

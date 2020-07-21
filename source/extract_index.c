@@ -46,7 +46,7 @@ int ExtractIndex(char *input, char key)
 	numdigits = strspn(input,THE_DIGITS);
 	tempstr = (char *) malloc((numdigits + 1) * sizeof(char));
 	strncpy(tempstr,input,numdigits+1);
-	tempstr[numdigits] = (char) NULL;
+	tempstr[numdigits] = 0;
 
 	retval = atoi(tempstr);
     }

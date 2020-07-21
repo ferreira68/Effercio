@@ -38,7 +38,7 @@
 
 #include "structs.h"
 #include "RBTree.h"
-
+#include "io_utils.h"
 
 
 void ResortRBTree(RBTree **dest,const RBTree *source,int sort_criterion)
@@ -322,20 +322,20 @@ void GetCompoundSum(double *Ki_DOCK, double *Ki_QM,
 	}
 
     #ifdef DEBUG
-        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Z_DOCK  = %g\n",Z_DOCK);
-        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Ki_DOCK = %g\n",*Ki_DOCK);
-        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Z_QM    = %g\n",Z_QM);
-        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Ki_QM   = %g\n",*Ki_QM);
+        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Z_DOCK  = %g\n", *Z_DOCK);
+        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Ki_DOCK = %g\n", *Ki_DOCK);
+        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Z_QM    = %g\n", *Z_QM);
+        printf("DEBUG (GetCompoundSum) - Calling GetCompoundSum recursively with:  Ki_QM   = %g\n", *Ki_QM);
     #endif
 
 	GetCompoundSum(Ki_DOCK, Ki_QM, Z_DOCK, Z_QM, avgs->left, give_predicted);
 	GetCompoundSum(Ki_DOCK, Ki_QM, Z_DOCK, Z_QM, avgs->right, give_predicted);
 
     #ifdef DEBUG
-        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Z_DOCK  = %g\n",Z_DOCK);
-        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Ki_DOCK = %g\n",*Ki_DOCK);
-        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Z_QM    = %g\n",Z_QM);
-        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Ki_QM   = %g\n",*Ki_QM);
+        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Z_DOCK  = %g\n", *Z_DOCK);
+        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Ki_DOCK = %g\n", *Ki_DOCK);
+        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Z_QM    = %g\n", *Z_QM);
+        printf("DEBUG (GetCompoundSum) - GetCompoundSum returned:  Ki_QM   = %g\n", *Ki_QM);
     #endif
 }
 
@@ -809,8 +809,17 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 		analysis_dir = "./";
 	}
 
-	sprintf(adk_dir,"%s/adk",analysis_dir);
-	sprintf(qm_dir,"%s/qm",analysis_dir);
+        // TODO:Pass this errors up
+        memset(adk_dir, 0, FILENAME_MAX);
+	if (snprintf(adk_dir, FILENAME_MAX-1,"%s/adk",analysis_dir) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED adk_Dir\n");
+            adk_dir[FILENAME_MAX-1] = 0;
+        }
+        memset(qm_dir, 0, FILENAME_MAX);
+	if (snprintf(qm_dir, FILENAME_MAX-1,"%s/qm",analysis_dir) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qm_Dir\n");
+            qm_dir[FILENAME_MAX-1] = 0;
+        }
 	VerifyDir(adk_dir,1,master_name);
 	VerifyDir(qm_dir,1,master_name);
 
@@ -821,7 +830,10 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 	// Write the average to file.
 	ID = ((CompoundTree*)CompoundList->data)->data->ID;
     // This should have a check for overrun on the filename
-	sprintf(summary_filename,"%s/%s_DOCK",adk_dir,master_name);
+	if (snprintf(summary_filename, FILENAME_MAX-1,"%s/%s_DOCK",adk_dir,master_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qm_Dir\n");
+        }
+        summary_filename[FILENAME_MAX-1] = 0;
 	summary_file = fopen(summary_filename,"w");
 	if (summary_file == NULL)
 	{
@@ -830,7 +842,11 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 		summary_file = stdout;
 	}
 
-	sprintf(nmr_filename,"%s/%s_DOCK",adk_dir,nmr_name);
+        memset(nmr_filename, 0, FILENAME_MAX);
+	if (snprintf(nmr_filename, FILENAME_MAX-1,"%s/%s_DOCK",adk_dir,nmr_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED nmr_filename\n");
+            nmr_filename[FILENAME_MAX-1] = 0;
+        }
 	nmr_file = fopen(nmr_filename,"w");
 	if (nmr_file == NULL)
 	{
@@ -858,7 +874,11 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 	ResortRBTree(&avg_QM,averages,AVG_SORT_QM);
 
 	// Write QM data, just like dock.
-	sprintf(summary_filename,"%s/%s_QM",qm_dir,master_name);
+        memset(summary_filename, 0, FILENAME_MAX);
+	if (snprintf(summary_filename, FILENAME_MAX,"%s/%s_QM",qm_dir,master_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED summary_filename\n");
+            summary_filename[FILENAME_MAX-1] = 0;
+        }
 	summary_file = fopen(summary_filename,"w");
 	if (summary_file == NULL)
 	{
@@ -867,7 +887,9 @@ void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, in
 		summary_file = stdout;
 	}
 
-	sprintf(nmr_filename,"%s/%s_QM",qm_dir,nmr_name);
+	if (snprintf(nmr_filename, FILENAME_MAX,"%s/%s_QM",qm_dir,nmr_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED nmr_filename\n");
+        }
 	nmr_file = fopen(nmr_filename,"w");
 	if (nmr_file == NULL)
 	{

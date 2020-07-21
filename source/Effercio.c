@@ -45,9 +45,14 @@
 #include <sys/stat.h>
 #include "defines.h"
 #include "structs.h"
+#include "io_utils.h"
 #include "deque.h"
 #include "RBTree.h"
 #include "mpi.h"
+#include "rundock.h"
+#include "runmopac.h"
+#include "util.h"
+#include "dynamic_arrays.h"
 #include "effercio_db.h"
 
 #ifdef HAVE_CONFIG_H
@@ -56,11 +61,13 @@
 
 #include "memwatch.h"
 
-deque* CreateJobList(char inpfile[FILENAME_MAX], JobParameters *params);
+void BoltzmannAvgCompoundTree(RBTree *CompoundList, const char *analysis_dir, int use_gibbs);
+void FPrintCompoundTree(FILE *file, const RBTree *data);
 char *SecondsToHMS(double num_secs);
+deque* CreateJobList(char inpfile[FILENAME_MAX], JobParameters *params);
 job_t* InitJob(job_t *newjob);
-int VerifyDir(char dirname[FILENAME_MAX], int verbose, char nodestr[HOST_NAME_MAX]);
-void printf_verbose(int verbose, const char *format, ...);
+int CountJobs(const deque *jobs);
+int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecule_list);
 
 
 /**
@@ -234,14 +241,11 @@ deque_node* finish_job(deque *jobs, deque *busy_list,
 {
 
 	job_t *job_info;
-	int job_type;
-	double G_prot = DOUBLE_INIT;
 
 	if(finished_job == NULL || finished_job->type != DEQUE_JOB)
 		return NULL;
 
 	job_info = (job_t*)finished_job->data;
-	job_type = job_info->type;
 
 	if(busy_list != NULL)
 		remove_node(busy_list,finished_job);
@@ -340,7 +344,10 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 
 	start_time = stop_time = time(NULL);
 
-        sprintf(filestub,"%s.",params->receptor_name);
+        if (snprintf(filestub, FILENAME_MAX,"%s.",params->receptor_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED filestub\n");
+            filestub[FILENAME_MAX-1] = 0;
+        }
 
 	if(is_master)
 	{
@@ -403,8 +410,12 @@ int SendMapFiles(MPI_Comm transfer_comm, int rank, int root_group_rank, JobParam
 
 		MPI_Bcast(&filename_size,1,MPI_INT,root_group_rank,transfer_comm);
 		MPI_Bcast(&d_name,filename_size,MPI_CHAR,root_group_rank,transfer_comm);
-		if(!is_master)
-			sprintf(tmp_name,"%s/%s",transfer_dir,d_name);
+		if(!is_master) {
+			if (snprintf(tmp_name, FILENAME_MAX,"%s/%s",transfer_dir,d_name) == FILENAME_MAX) {
+                            fprintf(stderr, "ERROR - TRUNCATED tmp_name\n");
+                            tmp_name[FILENAME_MAX-1] = 0;
+                        }
+                }
 		if(map_file != NULL)
 			fclose(map_file);
 
@@ -579,7 +590,7 @@ int RestoreCompoundTree(RBTree **CompoundList)
 			int retval;
 			RBTree *new_stic_node = NULL;
 			new_stic = InitSTIC(new_stic);
-			retval = UnpackFileSTIC(stic_tpl,new_compound.ID, 0, new_stic);
+			retval = UnpackFileSTIC(stic_tpl,&new_compound.ID, 0, new_stic);
 			if(retval)
 			{
 				fprintf(stderr,"RestoreCompoundTree: Could not unpack stic. Expected: %d. Unpaced: %d\n",new_compound.num_STIC,stic_idx);
@@ -671,11 +682,6 @@ void SetupEffercio( cpunode **free_cpus,
 		JobParameters *params)
 {
 	int destination = 0;
-	int restored = FALSE;
-
-	if(params->restart_job)
-		restored = RestoreState(free_cpus,jobs, busy_list,CompoundList,params);
-
 
 	// Kick off the initial round of jobs, one to each slave
 	// Send out as many jobs as there are slave nodes, unless
@@ -751,7 +757,6 @@ int main(int argc, char **argv)
 	RBTree *CompoundList = NULL;
 
 	// MPI data
-	MPI_Group transfer_group;
 	MPI_Comm transfer_comm;
 
 
@@ -1153,9 +1158,11 @@ int main(int argc, char **argv)
 		fflush(NULL);
 
 		if (params.verbose) {
-		  printf("Master process is running on %s (pid: %lu)\n",hostname,getpid());
+		  printf("Master process is running on %s (pid: %d)\n",hostname,getpid());
 			printf("Slave processes are running on:\n");
-			for (i=1;i<OUTPUT_WIDTH;i++) printf("-"); printf("\n");
+			for (i=1;i<OUTPUT_WIDTH;i++)
+                            printf("-");
+                        printf("\n");
 		}
 		fflush(stdout);
 		outwidth = 0;
@@ -1207,7 +1214,9 @@ int main(int argc, char **argv)
 		}
 		if (params.verbose) {
 			printf("\n");
-			for (i=1;i<OUTPUT_WIDTH;i++) printf("-"); printf("\n");
+			for (i=1;i<OUTPUT_WIDTH;i++)
+                            printf("-");
+                        printf("\n");
 			printf("Unique Hosts are:\n");
 			for (i=0;i<num_unique;i++) {
 				printf("%s (rank = %d)\n",unique_hosts[i],unique_ranks[i]);
@@ -1262,7 +1271,6 @@ int main(int argc, char **argv)
 	else
 	{
 		char workdir[FILENAME_MAX];
-		int group_rank;
 		strcpy(workdir,params.scratch_dir);
 		if (params.useDefaultScratch)
 		{
@@ -1303,7 +1311,7 @@ int main(int argc, char **argv)
 	//and the job node pointer, which is then used by the master to
 	//efficiently remove the finished job from the queue.
 	if (master_node) {
-	  int destination, sender, job_type, finished_dock_count;
+	  int destination, job_type, finished_dock_count;
 	  int unpack_stic_status = 0;
 	  char *temp_mopac_res;
 	  finished_dock_count = 0;
@@ -1424,7 +1432,6 @@ int main(int argc, char **argv)
             #endif
 			received_job->input_data = *results;
 
-			sender = status.MPI_SOURCE;
 			if(strncmp(result_name,params.receptor_name,strlen(params.receptor_name)) == 0)
 			  {
 			    // TODO: Decide what to do if there is no ligand name. Then, add that check here.
@@ -1572,7 +1579,7 @@ int main(int argc, char **argv)
 
 			STIC = InitSTIC(STIC);
 
-			SetupSTIC(newjob.input_data);
+			SetupSTIC(&newjob.input_data);
 			newjob.input_data.Hf = STIC->Hf = float_buff[0];
 			newjob.input_data.G = STIC->G = float_buff[1];
 			newjob.type = status.MPI_TAG;
@@ -1595,7 +1602,7 @@ int main(int argc, char **argv)
 			    FPrintSTIC(stdout, STIC);
             #endif
 
-			PackBufferSTIC(&return_buffer,&num_bytes,jobname,retval,STIC);
+			PackBufferSTIC((void**)&return_buffer,&num_bytes,jobname,retval,STIC);
 
 			MPI_Send(&num_bytes,1,MPI_INT,MASTER,retval,MPI_COMM_WORLD);
 			MPI_Send(return_buffer,num_bytes,MPI_BYTE,MASTER,retval,MPI_COMM_WORLD);
@@ -1699,8 +1706,8 @@ int main(int argc, char **argv)
 
 	// Should probably have a function to free params rather than this piecemeal approach
 	FreeStringArray(&params.dock_params,&params.num_dock_params);
-	FreeStringArray(params.mopac_footer_params,&params.num_mopac_footer_params);
-	FreeStringArray(params.mopac_header_params,&params.num_mopac_header_params);
+	FreeStringArray(&params.mopac_footer_params,&params.num_mopac_footer_params);
+	FreeStringArray(&params.mopac_header_params,&params.num_mopac_header_params);
 
 	MPI_Finalize();
 

@@ -43,6 +43,9 @@
 #include <unistd.h>
 #include "defines.h"
 #include "structs.h"
+#include "io_utils.h"
+#include "extract_index.h"
+#include "dynamic_arrays.h"
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -151,7 +154,7 @@ int RunMOPAC(job_t *job,
     IncludesReceptor = TRUE;
     find = &job->name[strlen(receptor)];
     if(strlen(find) == 0)
-      return MOPACException(MOPAC_ERROR,"%s: ERROR - No ligand name and/or STIC indices in mopac job named %s.\n",nodestr,job->name);
+      return MOPACException(MOPAC_ERROR, MOPAC_STIC, "%s: ERROR - No ligand name and/or STIC indices in mopac job named %s.\n",nodestr,job->name);
     if(find[0] == '_')
       find = &find[1];
   }
@@ -181,19 +184,19 @@ int RunMOPAC(job_t *job,
    
 
   // Initialize arrays
-  memset(initdir,(char) NULL,FILENAME_MAX);
-  memset(workdir,(char) NULL,FILENAME_MAX);
-  memset(filestub,(char) NULL,FILENAME_MAX);
-  memset(temp_name, (char) NULL,FILENAME_MAX);
-  memset(src_name, (char) NULL,FILENAME_MAX);
-  memset(dest_name, (char) NULL,FILENAME_MAX);
-  memset(pdbqtfile_name,(char) NULL,FILENAME_MAX);
-  memset(testdeck_name,(char) NULL,FILENAME_MAX);
-  memset(testout_name,(char) NULL,FILENAME_MAX);
-  memset(inputdeck_name,(char) NULL,FILENAME_MAX);
-  memset(outputdeck_name,(char) NULL,FILENAME_MAX);
-  memset(line,(char) NULL,ARG_MAX);
-  memset(cmdstr,(char) NULL,ARG_MAX);
+  memset(initdir, 0,FILENAME_MAX);
+  memset(workdir, 0,FILENAME_MAX);
+  memset(filestub, 0,FILENAME_MAX);
+  memset(temp_name,  0,FILENAME_MAX);
+  memset(src_name,  0,FILENAME_MAX);
+  memset(dest_name,  0,FILENAME_MAX);
+  memset(pdbqtfile_name, 0,FILENAME_MAX);
+  memset(testdeck_name, 0,FILENAME_MAX);
+  memset(testout_name, 0,FILENAME_MAX);
+  memset(inputdeck_name, 0,FILENAME_MAX);
+  memset(outputdeck_name, 0,FILENAME_MAX);
+  memset(line, 0,ARG_MAX);
+  memset(cmdstr, 0,ARG_MAX);
 
   // Set up the filenames
   getcwd(initdir,FILENAME_MAX);
@@ -254,12 +257,18 @@ int RunMOPAC(job_t *job,
   }
 
   // Bring the .pdbqt file to the local scratch directory
-  sprintf(temp_name,"%s/%s",structDir,pdbqtfile_name);
+  if (snprintf(temp_name, FILENAME_MAX,"%s/%s",structDir,pdbqtfile_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+            temp_name[FILENAME_MAX-1] = 0;
+  }
   if (access(temp_name,F_OK) == -1) {
-    memset(pdbqtfile_name,(char) NULL,FILENAME_MAX);
+    memset(pdbqtfile_name, 0,FILENAME_MAX);
     strcpy(pdbqtfile_name,filestub);
     strcat(pdbqtfile_name,".pdb");
-    sprintf(temp_name,"%s/%s",structDir,pdbqtfile_name);
+    if (snprintf(temp_name, FILENAME_MAX, "%s/%s",structDir,pdbqtfile_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qm_Dir\n");
+            temp_name[FILENAME_MAX-1] = 0;
+    }
   }
   CopyFile(temp_name,pdbqtfile_name);
 #ifdef DEBUG
@@ -310,7 +319,10 @@ int RunMOPAC(job_t *job,
       else
     	{
 	  char restart_filename[FILENAME_MAX];
-	  sprintf(restart_filename,"%s.%s.res",filestub,method);
+	  if (snprintf(restart_filename, FILENAME_MAX, "%s.%s.res",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qm_Dir\n");
+            restart_filename[FILENAME_MAX-1] = 0;
+          }
 	  CopyFile(job->mopac_res,restart_filename);
 	  should_restart = TRUE;
     	}
@@ -335,10 +347,13 @@ int RunMOPAC(job_t *job,
       printf("%s: ERROR - Failed to open MOPAC input deck for writing (%s)\n",nodestr,testdeck_name);
       return MOPACException(MOPAC_ERROR,MOPAC_STIC,"%s: ERROR - %s\n",nodestr,strerror(errno));
     }
-    memset(MOPAC_header,(char) NULL, 512);
+    memset(MOPAC_header, 0, 512);
     // Added user specified header keywords
     MOPAC_add_keywords(MOPAC_header,parameters->mopac_header_params, parameters->num_mopac_header_params);
-    sprintf(line," %s ",method);
+    if (snprintf(line, ARG_MAX, " %s ",method) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+      line[ARG_MAX-1] = 0;
+    }
     strcat(MOPAC_header,line);
     strcat(MOPAC_header,"LET CHARGES ");
     if (useMOZYME) {
@@ -346,9 +361,12 @@ int RunMOPAC(job_t *job,
       strcat(MOPAC_header,"MOZYME ");
     }
     strcat(MOPAC_header,MOPAC_KEYWDS_SOLV);
-    sprintf(line," CHARGE=%.0f\n %s: Test run to validate charges\n\n",total_charge,job->name);
+    if (snprintf(line, ARG_MAX," CHARGE=%.0f\n %s: Test run to validate charges\n\n",total_charge,job->name) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+      line[ARG_MAX-1] = 0;
+    }
     strcat(MOPAC_header,line);
-    memset(line,(char) NULL,ARG_MAX);
+    memset(line, 0,ARG_MAX);
     fputs(MOPAC_header,testdeck);
 
 
@@ -364,6 +382,8 @@ int RunMOPAC(job_t *job,
 	lineptr = strstr(line,"***");
 	if (lineptr != NULL) {
           strncpy(lineptr,MOPAC_LIGAND_RESNAME,sizeof(MOPAC_LIGAND_RESNAME)-1);
+          /// ^^^ TODO: Do you know there's room for "LIG D   1" or do you mean to
+          // it to "LIG", which has the same length as "***"
         }
         // Now we can work on the line
 	lineptr = line;
@@ -372,7 +392,7 @@ int RunMOPAC(job_t *job,
 	int line_counter;
 	for (line_counter=LINE_OFFSET+1;line_counter<line_length;line_counter++) {
 	  lineptr++;
-	  lineptr[0] = (char) NULL;
+	  lineptr[0] = 0;
 	}
 	fputs(line,testdeck);
       }
@@ -398,18 +418,31 @@ int RunMOPAC(job_t *job,
 
     if (strlen(envMOPAC_LIC) > 0)
       {
-	sprintf(cmdstr,"MOPAC_LICENSE=%s",envMOPAC_LIC);
+	if (snprintf(cmdstr, ARG_MAX,"MOPAC_LICENSE=%s",envMOPAC_LIC) == ARG_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+            cmdstr[ARG_MAX-1] = 0;
+        }
 	add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
       }
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,envPATH);
-    sprintf(cmdstr,"PWD=%s",workdir);
+    if (snprintf(cmdstr, ARG_MAX,"PWD=%s",workdir) == ARG_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+            cmdstr[ARG_MAX-1] = 0;
+    }
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
   // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
-  if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
-    sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
-  else
-    sprintf(cmdstr,"LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH"));
+  if (strlen(getenv("LD_LIBRARY_PATH")) > 0) {
+    if (snprintf(cmdstr, ARG_MAX,"LD_LIBRARY_PATH=%s:%s", envMOPAC_LIC,getenv("LD_LIBRARY_PATH")) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+    }
+  }
+  else {
+    if (snprintf(cmdstr, ARG_MAX, "LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH")) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+      cmdstr[ARG_MAX-1] = 0;
+    }
+  }
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
     // Dump the environment list for DEBUG purposes
@@ -421,7 +454,10 @@ int RunMOPAC(job_t *job,
 #endif
 
     // Run MOPAC
-    sprintf(cmdstr,"%s/%s",MOPAC_HOME,MOPAC_EXE);
+    if (snprintf(cmdstr, ARG_MAX,"%s/%s",MOPAC_HOME,MOPAC_EXE) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+      cmdstr[ARG_MAX-1] = 0;
+    }
     if (verbose) {
       printf("%s: Charge validation step for %s (using %s)\n",nodestr,filestub,MOPAC_EXE);
       fflush(stdout);
@@ -511,7 +547,10 @@ int RunMOPAC(job_t *job,
 #ifndef DEBUG
     remove(testdeck_name);
     remove(testout_name);
-    sprintf(temp_name,"%s_test.arc",filestub);
+    if (snprintf(temp_name, FILENAME_MAX,"%s_test.arc",filestub) == FILENAME_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+      temp_name[FILENAME_MAX-1] = 0;
+    }
     remove(temp_name);
 #endif
   }
@@ -534,7 +573,10 @@ int RunMOPAC(job_t *job,
   MOPAC_add_keywords(MOPAC_header,parameters->mopac_header_params,parameters->num_mopac_header_params);
   MOPAC_add_keywords(MOPAC_footer,parameters->mopac_footer_params,parameters->num_mopac_footer_params);
     
-  sprintf(line," %s ",method);
+  if (snprintf(line, ARG_MAX," %s ",method) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_header,line);
   if (verbose) printf("%s: Time remaining for MOPAC calculation is %.0f seconds\n",nodestr,time_left);
 /*
@@ -544,13 +586,19 @@ int RunMOPAC(job_t *job,
 #endif
 */
   // sprintf(line,"T=%.0f DUMP=4320 PL ",time_left);
-  sprintf(line,"T=%.0f DUMP=4320 ",time_left);
+  if (snprintf(line, ARG_MAX, "T=%.0f DUMP=4320 ",time_left) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_header,line);
   //strcat(MOPAC_header,"XYZ GRAPH ");
   strcat(MOPAC_header,"XYZ ");
   strcat(MOPAC_header, MOPAC_KEYWDS_SOLV);
   //strcat(MOPAC_header," MULLIK ");
-  sprintf(line," %s ",MOPAC_KEYWDS_CHRG);
+  if (snprintf(line, ARG_MAX," %s ",MOPAC_KEYWDS_CHRG) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_header,line);
 
   if(should_restart)
@@ -568,7 +616,10 @@ int RunMOPAC(job_t *job,
     strcat(MOPAC_header,"BFGS PDBOUT +\n ");
   }
 
-  sprintf(line,"CHARGE=%.0f",total_charge);
+  if (snprintf(line, ARG_MAX, "CHARGE=%.0f",total_charge) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_header,line);
   //strcat(MOPAC_header," PRECISE LET DDMIN=0.0 GNORM=0.15");
     if (job->type == PRESCREENING) {
@@ -599,13 +650,19 @@ int RunMOPAC(job_t *job,
   strcat(MOPAC_header,job->name);
   strcat(MOPAC_header,": Geometry optimization step\n\n");
 
-  sprintf(line," %s ",method);
+  if (snprintf(line, ARG_MAX," %s ",method) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_footer,line);
-  sprintf(line,"T=%.0f ",time_left*FREE_ENERGY_TIME_RATIO);
+  if (snprintf(line, ARG_MAX,"T=%.0f ",time_left*FREE_ENERGY_TIME_RATIO) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   if(time_left > 2700)// If there are only 45 minutes left (or less) dump the restart file more frequently
-    sprintf(line,"DUMP=4320 ");
+    strcpy(line,"DUMP=4320 ");
   else
-    sprintf(line,"DUMP=240 ");
+    strcpy(line,"DUMP=240 ");
   strcat(MOPAC_footer,line);
   if (useMOZYME) {
     // strcat(MOPAC_footer,"MOZYME REORTHOG ");
@@ -621,14 +678,17 @@ int RunMOPAC(job_t *job,
     #endif
   strcat(MOPAC_footer,MOPAC_KEYWDS_SOLV);
   strcat(MOPAC_footer," +\n OLDGEO GEO-OK ");
-  sprintf(line,"CHARGE=%.0f",total_charge);
+  if (snprintf(line, ARG_MAX, "CHARGE=%.0f",total_charge) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac line\n");
+    line[ARG_MAX-1] = 0;
+  }
   strcat(MOPAC_footer,line);
   strcat(MOPAC_footer," LET");
   strcat(MOPAC_footer,"\n ");
   strcat(MOPAC_footer,job->name);
   strcat(MOPAC_footer,": Free energy calculation\n");
 
-  if (!doFreeEnergy) MOPAC_footer[0] = (char) NULL;
+  if (!doFreeEnergy) MOPAC_footer[0] = 0;
 
 #ifdef DEBUG
   printf("%s: DEBUG (RunMOPAC) - MOPAC_header\n%s\n%s\n%s\n",nodestr,DASH_HDR,MOPAC_header,DASH_HDR);
@@ -651,15 +711,16 @@ int RunMOPAC(job_t *job,
       lineptr = strstr(line,"***");
       if (lineptr != NULL) {
          strncpy(lineptr,MOPAC_LIGAND_RESNAME,sizeof(MOPAC_LIGAND_RESNAME)-1);
+         // TODO: See previous todo about MOPAC_LIGAND_RESNAME
       }
       // Now we can work on the line
       lineptr = line;
       lineptr += LINE_OFFSET;
-      strncpy(lineptr,"\n",1);
+      *lineptr = '\n';
       int line_counter;
       for (line_counter=LINE_OFFSET+1;line_counter<line_length;line_counter++) {
 	lineptr++;
-	lineptr[0] = (char) NULL;
+	lineptr[0] = 0;
       }
       fputs(line,inputdeck);
     }
@@ -699,23 +760,38 @@ int RunMOPAC(job_t *job,
 
   // Make sure MOPAC can find the license file
   if (strlen(envMOPAC_LIC) > 0) {
-    sprintf(cmdstr,"MOPAC_LICENSE=%s",envMOPAC_LIC);
+    if (snprintf(cmdstr, ARG_MAX,"MOPAC_LICENSE=%s",envMOPAC_LIC) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED mopac env\n");
+      cmdstr[ARG_MAX-1] = 0;
+    }
+            
     add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
   }
 
   // Set the path
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,envPATH);
-  sprintf(cmdstr,"PWD=%s",getenv("PWD"));
+  if (snprintf(cmdstr, ARG_MAX, "PWD=%s",getenv("PWD")) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac env\n");
+    cmdstr[ARG_MAX-1] = 0;
+  }
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
   // Make sure LD_LIBRARY_PATH is set to find the MOPAC I/O library (libiomp5.so)
 #ifdef DEBUG
   printf("%s: DEBUG (RunMOPAC) - LD_LIBRARY_PATH=%s\n",nodestr,getenv("LD_LIBRARY_PATH"));
 #endif
-  if (strlen(getenv("LD_LIBRARY_PATH")) > 0)
-    sprintf(cmdstr,"LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH"));
-  else
-    sprintf(cmdstr,"LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH"));
+  if (strlen(getenv("LD_LIBRARY_PATH")) > 0) {
+    if (snprintf(cmdstr, ARG_MAX, "LD_LIBRARY_PATH=%s:%s",envMOPAC_LIC,getenv("LD_LIBRARY_PATH")) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED mopac env\n");
+      cmdstr[ARG_MAX-1] = 0;
+    }
+  }
+  else {
+    if (snprintf(cmdstr, ARG_MAX,"LD_LIBRARY_PATH=%s",getenv("LD_LIBRARY_PATH")) == ARG_MAX) {
+      fprintf(stderr, "ERROR - TRUNCATED mopac env\n");
+      cmdstr[ARG_MAX-1] = 0;
+    }
+  }
   add_strtoarray(&MOPAC_env,&num_MOPAC_env,cmdstr);
 
   // Dump the environment list for DEBUG purposes
@@ -727,7 +803,10 @@ int RunMOPAC(job_t *job,
 #endif
 
   // Run MOPAC
-  sprintf(cmdstr,"%s/%s",MOPAC_HOME,MOPAC_EXE);
+  if (snprintf(cmdstr, ARG_MAX, "%s/%s",MOPAC_HOME,MOPAC_EXE) == ARG_MAX) {
+    fprintf(stderr, "ERROR - TRUNCATED mopac command\n");
+    cmdstr[ARG_MAX-1] = 0;
+  }
   if (verbose) {
     printf("%s: Semi-empirical QM step for %s (using %s)\n",nodestr,filestub,MOPAC_EXE);
     fflush(stdout);
@@ -761,7 +840,7 @@ int RunMOPAC(job_t *job,
   }
   rewind(outputdeck);
 
-  memset(line,(char) NULL,ARG_MAX);
+  memset(line, 0,ARG_MAX);
   int num_runs = 1;
   int run_count = 0;
   double temp_val = ZERO;
@@ -826,14 +905,20 @@ int RunMOPAC(job_t *job,
 	int numchars;
 	numchars = strlen(method) + 1;
 	MOPACresults->method = realloc(MOPACresults->method,numchars * sizeof(char));
-	memset(MOPACresults->method,(char) NULL,numchars);
+	memset(MOPACresults->method, 0,numchars);
 	strcpy(MOPACresults->method,method);
       }
     }
     if(strstr(line,MOPAC_NO_TIME_LEFT) != NULL)
       {
-	sprintf(temp_name,"%s.%s.res",filestub,method);
-	sprintf(job->mopac_res,"%s/%s",resultsDir,temp_name);
+	if (snprintf(temp_name, FILENAME_MAX,"%s.%s.res",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+            temp_name[FILENAME_MAX-1] = 0;
+        }
+	if (snprintf(job->mopac_res, FILENAME_MAX, "%s/%s",resultsDir,temp_name) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED mopac_res\n");
+            job->mopac_res[FILENAME_MAX] = 0;
+        }
 	printf_verbose(parameters->verbose,"%s: Saving restart file %s as %s\n",nodestr,temp_name,job->mopac_res);
 
 	CopyFile(temp_name,job->mopac_res);
@@ -914,9 +999,11 @@ int RunMOPAC(job_t *job,
     struct stat file_status;
     int stat_retval = 0;
     // move the MOPAC output file
-    sprintf(dest_name,"%s/%s.%s.out",resultsDir,filestub,method);
+    if (snprintf(dest_name, FILENAME_MAX,"%s/%s.%s.out",resultsDir,filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED dest_name\n");
+            dest_name[FILENAME_MAX-1] = 0;
+    }
     #ifdef DEBUG
-    char jname[512];
     printf("DEBUG (RunMOPAC) - Copying (outputdeck_name) %s --> (dest_name) %s\n",outputdeck_name,dest_name);
     #endif
     // move the structure file
@@ -924,8 +1011,15 @@ int RunMOPAC(job_t *job,
     // CopyFile(outputdeck_name,dest_name);
     // remove(outputdeck_name);
     // if (useMOZYME) {
-      sprintf(src_name,"%s.%s.pdb",filestub,method);
-      sprintf(dest_name,"%s/%s.%s.pdb",resultsDir,filestub,method);
+      if (snprintf(src_name, FILENAME_MAX,"%s.%s.pdb",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED src_name\n");
+            src_name[FILENAME_MAX-1] = 0;
+      }
+      if (snprintf(dest_name, FILENAME_MAX,"%s/%s.%s.pdb",resultsDir,filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED dest_name\n");
+            dest_name[FILENAME_MAX-1] = 0;
+      }
+
     // }
     // else {
       // sprintf(src_name,"%s.%s.syb",filestub,method);
@@ -946,15 +1040,27 @@ int RunMOPAC(job_t *job,
 #ifndef DEBUG
   if (retval == 0) {
     remove(inputdeck_name);
-    sprintf(temp_name,"%s.%s.arc",filestub,method);
+    if (snprintf(temp_name,"%s.%s.arc",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
     remove(temp_name);
-    sprintf(temp_name,"%s.%s.den",filestub,method);
+    if (snprintf(temp_name,"%s.%s.den",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
     remove(temp_name);
-    sprintf(temp_name,"%s.%s.gpt",filestub,method);
+    if (snprintf(temp_name,"%s.%s.gpt",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
     remove(temp_name);
-    sprintf(temp_name,"%s.%s.res",filestub,method);
+    if (snprintf(temp_name,"%s.%s.res",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
     remove(temp_name);
-    sprintf(temp_name,"%s.%s.temp",filestub,method);
+    if (snprintf(temp_name,"%s.%s.temp",filestub,method) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED temp_name\n");
+    }
     remove(temp_name);
   }
 #endif

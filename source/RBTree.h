@@ -66,5 +66,6 @@ RBTree*  InitRBTree(RBTree *node,int node_type);
 RBTree* FirstRBTNode(RBTree* tree);
 RBTree* insertRBT(RBTree **ptrRoot,RBTree *x);
 RBTree* FindRBTNode(RBTree *tree, void *new_data);
+void FreeRBTree(RBTree *node);
 
 #endif //RBTREE_H

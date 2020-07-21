@@ -374,11 +374,17 @@ RBTree* FindRBTNode(RBTree *tree, void *key)
 		direction = RBTDirection_compound(((CompoundTree*)tree->data)->data,(struct compoundData*)key);
 		break;
 	case STIC_AVG:
-	  return -1*DoubleSort(((struct STICAvg*)tree->data)->Z,((struct STICAvg*)key)->Z);
+            fprintf(stderr, "Evaluate STIC_AVG in FindRBTNode\n");
+            exit(RBTREE_TYPE_ERROR);
+	  //return -1*DoubleSort(((struct STICAvg*)tree->data)->Z,((struct STICAvg*)key)->Z);
 	case COMPOUND_AVG:
-		return AvgSort(&((struct CompoundAvg*)tree->data)->Ki,&((struct CompoundAvg*)key)->Ki);
+            fprintf(stderr, "Evaluate COMPOUND_AVG in FindRBTNode\n");
+            exit(RBTREE_TYPE_ERROR);
+		//return AvgSort(&((struct CompoundAvg*)tree->data)->Ki,&((struct CompoundAvg*)key)->Ki);
 	case CR_AVG:
-	  return -1*DoubleSort(((struct ClusterRepAvg*)tree->data)->Z,((struct ClusterRepAvg*)key)->Z);
+            fprintf(stderr, "Evaluate CR_AVG in FindRBTNode\n");
+            exit(RBTREE_TYPE_ERROR);
+	  //return -1*DoubleSort(((struct ClusterRepAvg*)tree->data)->Z,((struct ClusterRepAvg*)key)->Z);
 	default:
 		fprintf(stderr,"FindRBTNode: Cannot search for the following tree type: %d\n",tree->type);
 		exit(RBTREE_TYPE_ERROR);
