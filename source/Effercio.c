@@ -857,10 +857,6 @@ int main(int argc, char **argv)
 		while (WaitDebug) ;
 	}
 #endif
-if (rank == 1) {
-    printf("Sleeping rank 1\n");
-    sleep(20);
-}
 //
 ///////////////////////////////////////////////////////////////////////////////
 	if (master_node) {
