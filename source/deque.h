@@ -81,6 +81,9 @@ deque_node* pop_front(deque *the_deque);
  */
 deque_node* pop_back(deque *the_deque);
 
+deque_node* remove_node(deque *the_deque, deque_node *node);
+void clear_deque(deque *the_deque);
+
 /**
  * Returns the i-th element in the deque from the head. Head is the 0-th
  * element
@@ -90,7 +93,7 @@ deque_node* at(deque *the_deque, size_t i);
 /**
  * Returns the size of the deque
  */
-size_t deque_size(deque *the_deque);
+size_t deque_size(const deque *the_deque);
 
 #endif
 

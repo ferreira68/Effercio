@@ -38,6 +38,9 @@
 #include <unistd.h>
 #include "defines.h"
 #include "structs.h"
+#include "extract_index.h"
+#include "io_utils.h"
+#include "dynamic_arrays.h"
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -48,7 +51,6 @@
 
 int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 {
-    static int first_job = TRUE;
     //const int FILE_BUFF_SIZE = 2 * 1024 * 1024;
     char filestub[FILENAME_MAX];
     char initdir[FILENAME_MAX];
@@ -91,23 +93,23 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     int verbose = params->verbose;
 
     // Initialize arrays
-    memset(filestub,(char) NULL,FILENAME_MAX);
-    memset(initdir,(char) NULL,FILENAME_MAX);
-    memset(workdir,(char) NULL,FILENAME_MAX);
-    memset(receptPDB, (char) NULL,FILENAME_MAX);
-    memset(receptStruct,(char) NULL,FILENAME_MAX);
-    memset(ligandStruct,(char) NULL,FILENAME_MAX);
-    memset(dpf_file,(char) NULL,FILENAME_MAX);
-    memset(dlg_file,(char) NULL,FILENAME_MAX);
-    memset(tmp_name,(char) NULL,FILENAME_MAX);
-    memset(tmp_name2,(char) NULL,FILENAME_MAX);
-    memset(cmdstr,(char) NULL,ARG_MAX);
-    memset(line,(char) NULL,ARG_MAX);
-    memset(cmplx_filename,(char) NULL,FILENAME_MAX);
-    memset(cmplxstub,(char) NULL,FILENAME_MAX);
-    memset(qmligand_filename,(char) NULL,FILENAME_MAX);
-    memset(prepare_script_name,(char) NULL,FILENAME_MAX);
-    memset(dockOpts,(char) NULL,ARG_MAX);
+    memset(filestub, 0,FILENAME_MAX);
+    memset(initdir, 0,FILENAME_MAX);
+    memset(workdir, 0,FILENAME_MAX);
+    memset(receptPDB,  0,FILENAME_MAX);
+    memset(receptStruct, 0,FILENAME_MAX);
+    memset(ligandStruct, 0,FILENAME_MAX);
+    memset(dpf_file, 0,FILENAME_MAX);
+    memset(dlg_file, 0,FILENAME_MAX);
+    memset(tmp_name, 0,FILENAME_MAX);
+    memset(tmp_name2, 0,FILENAME_MAX);
+    memset(cmdstr, 0,ARG_MAX);
+    memset(line, 0,ARG_MAX);
+    memset(cmplx_filename, 0,FILENAME_MAX);
+    memset(cmplxstub, 0,FILENAME_MAX);
+    memset(qmligand_filename, 0,FILENAME_MAX);
+    memset(prepare_script_name, 0,FILENAME_MAX);
+    memset(dockOpts, 0,ARG_MAX);
 
 /*
     // Use the following to allow a debugger to attach to the slave process
@@ -187,24 +189,28 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     // TODO: Let MPI handle all of these file transfers
     
     // Copy the .map files to the working directory
-    for (i=1;i<OUTPUT_WIDTH;i++) printf_verbose(verbose,"-"); printf_verbose(verbose,"\n");
+    for (i=1;i<OUTPUT_WIDTH;i++) printf_verbose(verbose,"-");
+    printf_verbose(verbose,"\n");
     printf_verbose(verbose,"%s: Ligand     = %s\n",nodestr,job->name);
     printf_verbose(verbose,"%s: Receptor   = %s\n",nodestr,receptName);
     printf_verbose(verbose,"%s: Source Dir = %s\n",nodestr,receptDir);
 
 
     // Copy the ligand file to the local scratch directory
-    sprintf(tmp_name,"%s/%s",ligandDir,ligandStruct);
+    if (snprintf(tmp_name, FILENAME_MAX,"%s/%s",ligandDir,ligandStruct) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED tmp_name\n");
+            tmp_name[FILENAME_MAX-1] = 0;
+    }
     CopyFile(tmp_name,ligandStruct);
 
     // Decide which script to use
-    if (AUTODOCK_VER == "4.0") {
+    if (strncmp(AUTODOCK_VER, "4.0", 4)) {
 	strcpy(prepare_script_name,"prepare_dpf4.py");
     }
-    else if (AUTODOCK_VER == "4.1") {
+    else if (strncmp(AUTODOCK_VER, "4.1", 4)) {
 	strcpy(prepare_script_name,"prepare_dpf41.py");
     }
-    else if (AUTODOCK_VER == "4.2") {
+    else if (strncmp(AUTODOCK_VER, "4.2", 4)) {
 	strcpy(prepare_script_name,"prepare_dpf42.py");
     }
 
@@ -253,7 +259,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     add_strtoarray(&MGL_env,&num_MGL_env,envPYTHONPATH);
     add_strtoarray(&MGL_env,&num_MGL_env,envPATH);
     //sprintf(cmdstr,"PWD=%s",getenv("PWD"));
-    sprintf(cmdstr,"PWD=%s",workdir);
+    if (snprintf(cmdstr, ARG_MAX,"PWD=%s",workdir) == ARG_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qm_Dir\n");
+            cmdstr[ARG_MAX-1] = 0;
+    }
     add_strtoarray(&MGL_env,&num_MGL_env,cmdstr);
 
     // Dump the environment list for DEBUG purposes
@@ -265,7 +274,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     #endif
 
     // Run the script to create the .dpf file here
-    sprintf(cmdstr,"%s/%s",MGL_TOOLS,prepare_script_name);
+    if (snprintf(cmdstr, ARG_MAX,"%s/%s",MGL_TOOLS,prepare_script_name) == ARG_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+            cmdstr[ARG_MAX-1] = 0;
+    }
     if (verbose) {
 	printf("%s: Calling %s to create docking parameter file\n",nodestr,prepare_script_name);
 	fflush(stdout);
@@ -286,7 +298,7 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
       int prepare_retval = execve(cmdstr,MGL_args,MGL_env);
       if(prepare_retval)
 	{
-	  printf("%s: ERROR - parameter file creation ended with the following error code: %d",prepare_retval);
+	  printf("%s: ERROR - parameter file creation ended with the following error code: %d",nodestr, prepare_retval);
 	  return -1;
 	}
     }
@@ -312,7 +324,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
     fsync(fileno(destfile));
     fclose(destfile);
     printf_verbose(verbose,"%s: Running AutoDock on %s\n",nodestr,dpf_file);
-    sprintf(cmdstr,"%s -p %s >> %s",AUTODOCK_EXE,dpf_file,dlg_file);
+    if (snprintf(cmdstr, ARG_MAX,"%s -p %s >> %s",AUTODOCK_EXE,dpf_file,dlg_file) == ARG_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED cmdstr\n");
+            cmdstr[ARG_MAX-1] = 0;
+    }
     #ifdef DEBUG
     printf("%s: DEBUG - cmdstr = %s \n",nodestr,cmdstr);
     #endif
@@ -399,7 +414,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 	dockdata->time = difftime(autodock_time,timestamp);
 
 	//sprintf(cmplx_filename,"%s/%s_%03d.pdbqt",clustersDir,cmplxstub,(i+1));
-	sprintf(cmplx_filename,"%s/%s_%03d.pdb",clustersDir,cmplxstub,(i+1));
+	if (snprintf(cmplx_filename, FILENAME_MAX,"%s/%s_%03d.pdb",clustersDir,cmplxstub,(i+1)) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED cmplx_filename\n");
+            cmplx_filename[FILENAME_MAX-1] = 0;
+        }
 	printf_verbose(verbose,"%s: Placing docked complex in %s\n",nodestr,cmplx_filename);
 	complexfile = fopen(cmplx_filename,"w+");
 	if (complexfile == NULL) {
@@ -410,7 +428,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 	rewind(complexfile);
 
 	//sprintf(qmligand_filename,"%s/%s_%03d.pdbqt",clustersDir,filestub,(i+1));
-	sprintf(qmligand_filename,"%s/%s_%03d.pdb",clustersDir,filestub,(i+1));
+	if (snprintf(qmligand_filename, FILENAME_MAX,"%s/%s_%03d.pdb",clustersDir,filestub,(i+1)) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED qmligand_filename\n");
+            qmligand_filename[FILENAME_MAX] = 0;
+        }
 	printf_verbose(verbose,"%s: Placing docked ligand structure in %s\n",nodestr,qmligand_filename);
 	qmligandfile = fopen(qmligand_filename,"w+");
 	if (qmligandfile == NULL) {
@@ -454,7 +475,7 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 		    strncpy(lineptr,tempstr,3);
 		    // Set the residue number for the ligand
 		    lineptr = lineptr + 5;
-		    strcpy(tempstr,"   1");
+		    strcpy(tempstr,"  1");
 		    strncpy(lineptr,tempstr,4);
 		    // Keep the charge but drop the trailing information.
 		    // MOPAC should be able to deal with the charge
@@ -469,17 +490,21 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
                     lineptr = line + 13;
                     if (strstr(lineptr,"r") == lineptr) {
                         lineptr--;
-                        strncpy(lineptr,"B",1);
+                        *lineptr = 'B';
+                        // ^^ this originally was a strncpy for one byte. Also, is there
+                        // really space to put the B before r to make Br? Similar
+                        // for Cl below
                     }
                 }
                 // NOTE: Autodock 4.2 has a bug in its output routines.  All "Cl" atoms
-                //       are written as simply "r" in the .dlg file.  This needs to be
+                //       are written as simply "l" in the .dlg file.  This needs to be
                 //       fixed for MOPAC.
 	        if (strstr(line,"ATOM") == line) {
                     lineptr = line + 13;
                     if (strstr(lineptr,"l") == lineptr) {
                         lineptr--;
-                        strncpy(lineptr,"C",1);
+                        *lineptr = 'C';
+                        // See Br note above.
                     }
                 }
 		fputs(line,complexfile);
@@ -536,7 +561,7 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 		GetValueByColumn(line," ",7,&dockdata->rmsd_ref);
 
 
-	    memset(line,(char) NULL,ARG_MAX);
+	    memset(line, 0,ARG_MAX);
 	}
 
 	fsync(fileno(complexfile));
@@ -592,7 +617,10 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 
     // Move results to the right place
     // - Store the docking log file
-    sprintf(tmp_name,"%s/%s",resultsDir,dlg_file);
+    if (snprintf(tmp_name, FILENAME_MAX,"%s/%s",resultsDir,dlg_file) == FILENAME_MAX) {
+            fprintf(stderr, "ERROR - TRUNCATED tmp_name\n");
+            tmp_name[FILENAME_MAX-1] = 0;
+    }
     MoveFile(dlg_file,tmp_name);
     
     if (verbose) {
@@ -600,7 +628,6 @@ int RunDock(job_t *job,JobParameters *params, struct STICelement *results)
 	printf_verbose(verbose,"\n");
     }
 
-    first_job = FALSE;
     chdir(initdir);
 
     // Use fsync in an attempt to flush the file handles for deleted files

@@ -219,9 +219,7 @@ void GetValueByColumn(const char *string, const char *key, int data_column,
 	}
     }
     // Free up the pointers
-    reference  = realloc(reference,0);
-    substring  = reference;
-    endpointer = reference;
+    free(reference);
 
     reference  = NULL;
     substring  = NULL;
@@ -239,7 +237,6 @@ void GetStringByColumn(const char *string, const char *key, int data_column,
     int column = 0;
     char *reference;
     char *substring;
-    char *endpointer;
 
     // Initialize the pointers
     reference  = malloc((strlen(string)+1) * sizeof(char));
@@ -253,8 +250,8 @@ void GetStringByColumn(const char *string, const char *key, int data_column,
     while (substring != NULL) {
         column++;
         if (column == data_column) {
-            memset(*retstr,0,sizeof(*retstr));
             (*retstr) = realloc((*retstr),(strlen(substring)+1)*sizeof(char));
+            memset(*retstr,0, (strlen(substring)+1)*sizeof(char));
             strcpy((*retstr),substring);
 	    break;
 	}
@@ -263,13 +260,9 @@ void GetStringByColumn(const char *string, const char *key, int data_column,
 	}
     }
     // Free up the pointers
-    reference  = realloc(reference,0);
-    substring  = reference;
-    endpointer = reference;
-
+    free(reference);
     reference  = NULL;
     substring  = NULL;
-    endpointer = NULL;
 
     return;
 }
@@ -308,7 +301,7 @@ char *SecondsToHMS(double num_secs)
 }
 
 
-int VerifyDir(char dirname[FILENAME_MAX], int verbose, char nodestr[HOST_NAME_MAX])
+int VerifyDir(const char dirname[FILENAME_MAX], int verbose, const char nodestr[HOST_NAME_MAX])
 {
     // This function checks to see if 'dirname' exists.
     // If it does not, it is created.

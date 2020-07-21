@@ -184,9 +184,24 @@ typedef struct {
 //Declaring functions avoids "assignment makes pointer from integer
 //without a cast" compilation warns and potential problems later on.
 struct compoundData *InitCompound(struct compoundData *data);
+void FreeCompound(struct compoundData *data);
 struct STICelement *InitSTIC(struct STICelement *data);
 struct ClusterRep *InitClusterRep(struct ClusterRep *data);
 cpunode* PopCPUNode(cpunode **stack);
 cpunode* PushCPUNode(cpunode **stack,int rank);
+int NumClusterReps(const struct STICelement *data);
+
+void SetupSTIC(struct STICelement *data);
+void FreeSTIC(struct STICelement *data);
+void FPrintSTIC(FILE *file, struct STICelement *data);
+int PackBufferSTIC(void **buffer, size_t *size, const char *jobname, int jobretval, struct STICelement *data);
+int UnpackBufferSTIC(void *buffer, size_t size,char **jobname, int *jobretval, struct STICelement *data);
+int UnpackFileSTIC(FILE *file,char **jobname, int *jobretval, struct STICelement *data);
+
+char* JobString(char* string, const job_t* job);
+void FreeJob(job_t *job);
+
+int HaveFreeCPUs(const cpunode *node_list);
+void FreeCPUNode(cpunode *cpu);
 
 #endif

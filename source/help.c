@@ -29,6 +29,7 @@
 
 #include "defines.h"
 #include "memwatch.h"
+#include "io_utils.h"
 
 void PrintHelp()
 {

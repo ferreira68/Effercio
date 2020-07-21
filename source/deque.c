@@ -185,7 +185,7 @@ deque_node* remove_node(deque *the_deque, deque_node *node)
 	return node;
 }
 
-size_t deque_size(deque *the_deque)
+size_t deque_size(const deque *the_deque)
 {
 	deque_node *curr;
 	size_t size = 0;
