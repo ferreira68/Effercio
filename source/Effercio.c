@@ -828,6 +828,11 @@ int main(int argc, char **argv)
             printf("ERROR - LD_LIBRARY_PATH needs to be defined for mopac\n");
             exit(EXIT_FAILURE);
         }
+        if (getenv("USER") == NULL) {
+            printf("ERROR - USER needs to be defined because Effercio uses the username\n");
+            exit(EXIT_FAILURE);
+        }
+
 
 	// Check the length of the strings and truncate if necessary
 	if ((strlen(hostname) + 15) <= HOST_NAME_MAX) {
