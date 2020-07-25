@@ -199,6 +199,7 @@ int UnpackBufferSTIC(void *buffer, size_t size,char **jobname, int *jobretval, s
 int UnpackFileSTIC(FILE *file,char **jobname, int *jobretval, struct STICelement *data);
 
 char* JobString(char* string, const job_t* job);
+job_t* InitJob(job_t *newjob);
 void FreeJob(job_t *job);
 
 int HaveFreeCPUs(const cpunode *node_list);

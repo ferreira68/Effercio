@@ -106,7 +106,7 @@ am_Effercio_OBJECTS = Effercio-help.$(OBJEXT) \
 	Effercio-extract_index.$(OBJEXT) Effercio-Effercio.$(OBJEXT) \
 	Effercio-RBTree.$(OBJEXT) Effercio-deque.$(OBJEXT) \
 	Effercio-tpl.$(OBJEXT) Effercio-effercio_db.$(OBJEXT) \
-	Effercio-util.$(OBJEXT)
+	Effercio-util.$(OBJEXT) Effercio-state.$(OBJEXT)
 Effercio_OBJECTS = $(am_Effercio_OBJECTS)
 Effercio_DEPENDENCIES =
 Effercio_LINK = $(CCLD) $(Effercio_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -134,7 +134,7 @@ am__depfiles_remade = ./$(DEPDIR)/Effercio-Effercio.Po \
 	./$(DEPDIR)/Effercio-extract_index.Po \
 	./$(DEPDIR)/Effercio-help.Po ./$(DEPDIR)/Effercio-io_utils.Po \
 	./$(DEPDIR)/Effercio-rundock.Po \
-	./$(DEPDIR)/Effercio-runmopac.Po \
+	./$(DEPDIR)/Effercio-runmopac.Po ./$(DEPDIR)/Effercio-state.Po \
 	./$(DEPDIR)/Effercio-structs.Po ./$(DEPDIR)/Effercio-tpl.Po \
 	./$(DEPDIR)/Effercio-util.Po
 am__mv = mv -f
@@ -271,7 +271,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-Effercio_SOURCES = help.c io_utils.c analysis.c structs.c rundock.c runmopac.c dynamic_arrays.c extract_index.c Effercio.c RBTree.c deque.c tpl.c effercio_db.c util.c
+Effercio_SOURCES = help.c io_utils.c analysis.c structs.c rundock.c runmopac.c dynamic_arrays.c extract_index.c Effercio.c RBTree.c deque.c tpl.c effercio_db.c util.c state.c
 Effercio_LDADD = -lm
 Effercio_CFLAGS = -Wall
 all: all-am
@@ -371,6 +371,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-io_utils.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-rundock.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-runmopac.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-state.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-structs.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-tpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Effercio-util.Po@am__quote@ # am--include-marker
@@ -591,6 +592,20 @@ Effercio-util.obj: util.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-util.obj `if test -f 'util.c'; then $(CYGPATH_W) 'util.c'; else $(CYGPATH_W) '$(srcdir)/util.c'; fi`
 
+Effercio-state.o: state.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -MT Effercio-state.o -MD -MP -MF $(DEPDIR)/Effercio-state.Tpo -c -o Effercio-state.o `test -f 'state.c' || echo '$(srcdir)/'`state.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Effercio-state.Tpo $(DEPDIR)/Effercio-state.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='state.c' object='Effercio-state.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-state.o `test -f 'state.c' || echo '$(srcdir)/'`state.c
+
+Effercio-state.obj: state.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -MT Effercio-state.obj -MD -MP -MF $(DEPDIR)/Effercio-state.Tpo -c -o Effercio-state.obj `if test -f 'state.c'; then $(CYGPATH_W) 'state.c'; else $(CYGPATH_W) '$(srcdir)/state.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Effercio-state.Tpo $(DEPDIR)/Effercio-state.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='state.c' object='Effercio-state.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Effercio_CFLAGS) $(CFLAGS) -c -o Effercio-state.obj `if test -f 'state.c'; then $(CYGPATH_W) 'state.c'; else $(CYGPATH_W) '$(srcdir)/state.c'; fi`
+
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
 tags: tags-am
@@ -729,6 +744,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/Effercio-io_utils.Po
 	-rm -f ./$(DEPDIR)/Effercio-rundock.Po
 	-rm -f ./$(DEPDIR)/Effercio-runmopac.Po
+	-rm -f ./$(DEPDIR)/Effercio-state.Po
 	-rm -f ./$(DEPDIR)/Effercio-structs.Po
 	-rm -f ./$(DEPDIR)/Effercio-tpl.Po
 	-rm -f ./$(DEPDIR)/Effercio-util.Po
@@ -788,6 +804,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/Effercio-io_utils.Po
 	-rm -f ./$(DEPDIR)/Effercio-rundock.Po
 	-rm -f ./$(DEPDIR)/Effercio-runmopac.Po
+	-rm -f ./$(DEPDIR)/Effercio-state.Po
 	-rm -f ./$(DEPDIR)/Effercio-structs.Po
 	-rm -f ./$(DEPDIR)/Effercio-tpl.Po
 	-rm -f ./$(DEPDIR)/Effercio-util.Po

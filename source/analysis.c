@@ -713,7 +713,7 @@ void FWriteCompoundAvg(FILE *summary_file,FILE *nmr_file,FILE **well_file,
 	}
 
     #ifdef DEBUG
-        printf("DEBUG (FWriteComoundAvg) - Writing data for %s\n",ID);
+        printf("DEBUG (FWriteCompoundAvg) - Writing data for %s\n",ID);
     #endif
 	if (data_type == AVG_SORT_DOCK)
         ki_val = cmpd_avg->Ki.Ki_DOCK;

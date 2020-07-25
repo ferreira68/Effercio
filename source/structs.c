@@ -828,11 +828,14 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 	if(*molecule_list != NULL)
 	{
 		struct compoundData *tmp = NULL;
+                char *name_holder = NULL; // This is used to temporarily hold the calloc'ed ID from InitCompound.
 		tmp = InitCompound(tmp);
+                name_holder = tmp->ID;
 		tmp->ID = compound_name;//ok, since tmp is temporary for the search
 		CompoundNode = FindRBTNode(*molecule_list,tmp);
 		compound_is_new = (CompoundNode == NULL);
-		tmp->ID = NULL;FreeCompound(tmp);
+		tmp->ID = name_holder;
+                FreeCompound(tmp);
 	}
 	else
 		compound_is_new = 1;
@@ -841,12 +844,20 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 	{
 		size_t name_size = strlen(compound_name) + 1;
 		struct compoundData *cmpd = NULL;
+                CompoundTree *new_compound_leaf = malloc(sizeof(CompoundTree));
+
 		CompoundNode = InitRBTree(CompoundNode,COMPOUND);
-		CompoundNode->data = malloc(sizeof(CompoundTree));
+		CompoundNode->data = new_compound_leaf;
+
+                // Initialize compound and copy its name into the structure.
 		cmpd = InitCompound(cmpd);
+                free(cmpd->ID); // not to leak this memory. It's calloc'ed in InitCompound.
 		strncpy(cmpd->ID,compound_name,name_size);
-		((CompoundTree*)CompoundNode->data)->stics = NULL;
-		((CompoundTree*)CompoundNode->data)->data = cmpd;
+
+                // Assign
+                new_compound_leaf->stics = NULL;
+                new_compound_leaf->data = cmpd;
+		CompoundNode->data = new_compound_leaf;
 		insertRBT(molecule_list,CompoundNode);
 	}
 
@@ -870,7 +881,8 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 		STICptr = InitSTIC(STICptr);
 		STICNode = InitRBTree(STICNode,STIC);
 		STICNode->data = STICptr;
-		*STICptr = *data;STICptr->reps = NULL;
+		*STICptr = *data;
+                STICptr->reps = NULL;
 		((CompoundTree*)CompoundNode->data)->stics = insertRBT(&((CompoundTree*)CompoundNode->data)->stics,STICNode);
 	}
 	else
