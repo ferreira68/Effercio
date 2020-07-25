@@ -417,7 +417,6 @@ void BoltzmannAvgCompounds(RBTree **average, const RBTree *CompoundList, int qm_
 	BoltzmannAvgCompounds(average,CompoundList->left,qm_sort);
 	BoltzmannAvgCompounds(average,CompoundList->right,qm_sort);
 
-    free(avg);
 }
 
 void AdjustUnits(double *val, char *units)
@@ -685,6 +684,9 @@ void FWriteCompoundAvg(FILE *summary_file,FILE *nmr_file,FILE **well_file,
         cmpd_avg = ((struct CompoundAvg*)averages->data);
     }
 
+    memset(units, 0, 16);
+    memset(cmpd_format, 0, 16);
+
     // walk down the left tree
     struct RBTreeNode *left_avg = (averages->left);
 	FWriteCompoundAvg(summary_file,nmr_file,well_file,compound_counter,max_compounds,left_avg,
@@ -744,8 +746,7 @@ void FWriteCompoundAvg(FILE *summary_file,FILE *nmr_file,FILE **well_file,
         #ifdef DEBUG
             printf("DEBUG (FWriteCompoundAvg) - Opening well file: %s\n",well_filename);
         #endif
-		*well_file = fopen(well_filename,"w");
-        well_file = &(*well_file);
+	*well_file = fopen(well_filename,"w");
         if (*well_file == NULL)
         {
             printf("ERROR - Could not open file %s\n",well_filename);

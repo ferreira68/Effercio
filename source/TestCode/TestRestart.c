@@ -37,7 +37,7 @@ int main () {
     printf("For save test, renaming compound restart file\n");
     rename("Effercio.compound.restart", "Effercio.compound.restart.orig");
 
-    SaveState(jobs, busy_list, &CompoundList, &params);
+    SaveState(jobs, busy_list, CompoundList, &params);
     printf("Saved State\n");
     BoltzmannAvgCompoundTree(CompoundList, "/effercio/effercio_test/analysis", params.UseFreeEnergy);
 
