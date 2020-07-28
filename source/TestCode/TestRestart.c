@@ -15,6 +15,16 @@ int main () {
     int retval;
     struct STICelement results = {1,2,3,4,-42.0,-15,-1,-42,NULL};
 
+    struct ClusterRep* testrep = InitClusterRep(NULL);
+    results.reps = testrep;
+    testrep->index = 12;
+    testrep->size = 34;
+    testrep->docked.G_binding = 99999;
+    testrep->docked.Ki_unit = strdup("Foo");
+    testrep->optimized.Hf = -42.0;
+    testrep->optimized.method  = strdup("Foo");
+    testrep->optimized.Ki_type = strdup("Foo");
+
 
     jobs = InitDeque(NULL);
     busy_list = InitDeque(NULL);
@@ -22,9 +32,10 @@ int main () {
     retval = RestoreState(&free_cpus, jobs, busy_list, &CompoundList, &params);
     if (retval) {
         printf("Restore successful\n");
+        retval = 0;
     } else {
         printf("Error restoring state\n");
-        return retval;
+        return 1;
     }
     params.restart_job = 1;
     
