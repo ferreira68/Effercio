@@ -540,21 +540,29 @@ int NumClusterReps(const struct STICelement *data)
 }
 
 
-struct compoundData *InitCompound(struct compoundData *data)
+struct compoundData *InitCompoundByName(struct compoundData *data, const char *compound_name)
 {
     data = (struct compoundData *) malloc(sizeof(struct compoundData));
 
-    data->ID = calloc((size_t) strlen(STR_INIT)+1,sizeof(char));
-    strncpy(data->ID,STR_INIT,strlen(STR_INIT)+1);
+    if (compound_name == NULL)
+        compound_name = STR_INIT;
+
+    data->ID = calloc((size_t) strlen(compound_name)+1,sizeof(char));
+    strncpy(data->ID,compound_name,strlen(compound_name)+1);
     data->num_STIC = 0;
     return data;
 }
 
+struct compoundData* InitCompound(struct compoundData *data)
+{
+    return InitCompoundByName(data, STR_INIT);
+}
+
 void FreeCompound(struct compoundData *data)
 {
-  if(data != NULL)
+  if(data == NULL)
     return;
-  free(data->ID);
+  free(data->ID); data->ID = NULL;
   free(data);
   return;
 }
@@ -828,13 +836,9 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 	if(*molecule_list != NULL)
 	{
 		struct compoundData *tmp = NULL;
-                char *name_holder = NULL; // This is used to temporarily hold the calloc'ed ID from InitCompound.
-		tmp = InitCompound(tmp);
-                name_holder = tmp->ID;
-		tmp->ID = compound_name;//ok, since tmp is temporary for the search
+		tmp = InitCompoundByName(tmp, compound_name);
 		CompoundNode = FindRBTNode(*molecule_list,tmp);
 		compound_is_new = (CompoundNode == NULL);
-		tmp->ID = name_holder;
                 FreeCompound(tmp);
 	}
 	else
@@ -842,7 +846,6 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 
 	if(compound_is_new)
 	{
-		size_t name_size = strlen(compound_name) + 1;
 		struct compoundData *cmpd = NULL;
                 CompoundTree *new_compound_leaf = malloc(sizeof(CompoundTree));
 
@@ -850,9 +853,7 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 		CompoundNode->data = new_compound_leaf;
 
                 // Initialize compound and copy its name into the structure.
-		cmpd = InitCompound(cmpd);
-                free(cmpd->ID); // not to leak this memory. It's calloc'ed in InitCompound.
-		strncpy(cmpd->ID,compound_name,name_size);
+		cmpd = InitCompoundByName(cmpd, compound_name);
 
                 // Assign
                 new_compound_leaf->stics = NULL;
@@ -992,14 +993,15 @@ int MergeSTICData(char *compound_name, struct STICelement *data, RBTree **molecu
 			oldlen = strlen(qm_ptr->Ki_type) + 1;
 			memset(qm_ptr->Ki_type, 0,oldlen);
 			qm_ptr->Ki_type = realloc(qm_ptr->Ki_type, newlen*sizeof(char));
-			strncpy(qm_ptr->Ki_type,qm_data->Ki_type,newlen);
+			strncpy(qm_ptr->Ki_type,qm_data->Ki_type,newlen-1);
+                        qm_ptr->Ki_type[newlen-1] = 0;
 		}
 		data_rep = data_rep->next;
 	}
 
 	fflush(stdout);
 
-        CompoundNode->data = malloc(sizeof(CompoundTree));
+        //CompoundNode->data = malloc(sizeof(CompoundTree));
 
 	return retval;
 

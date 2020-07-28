@@ -397,8 +397,10 @@ void BoltzmannAvgCompounds(RBTree **average, const RBTree *CompoundList, int qm_
 	avg->compound = (CompoundTree*)CompoundList->data;
 	// avg->Ki.Ki_DOCK = avg->Ki.Ki_QM = 0.0;
     // How are we going to sort these?
-    if (qm_sort) avg->Ki.sort_criterion = AVG_SORT_QM;
-    else avg->Ki.sort_criterion = AVG_SORT_DOCK;
+    if (qm_sort)
+        avg->Ki.sort_criterion = AVG_SORT_QM;
+    else
+        avg->Ki.sort_criterion = AVG_SORT_DOCK;
 	new_node->data = avg;
 
 	// Average coefficients
@@ -422,7 +424,7 @@ void BoltzmannAvgCompounds(RBTree **average, const RBTree *CompoundList, int qm_
 void AdjustUnits(double *val, char *units)
 {
   double pow_10;
-  if (val == NULL)
+  if (val == NULL || units == NULL)
     return;
 
   if (*val <= 0)

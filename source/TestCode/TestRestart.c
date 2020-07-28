@@ -1,7 +1,7 @@
 /**
  * Test restoring a state using .restore files
  *
- * mpicc -DHAVE_CONFIG_H -I../../ -I.. -ggdb -O0 TestRestart.c ../state.c ../deque.c ../tpl.c ../structs.c ../io_utils.c ../RBTree.c ../analysis.c -lm
+ * mpicc -DHAVE_CONFIG_H -I../../ -I.. -ggdb -O0 -o TestRestart TestRestart.c ../state.c ../deque.c ../tpl.c ../structs.c ../io_utils.c ../RBTree.c ../analysis.c -lm
  */
 
 #include "state.h"
@@ -13,6 +13,8 @@ int main () {
     RBTree *CompoundList = NULL;
     JobParameters params;
     int retval;
+    struct STICelement results = {1,2,3,4,-42.0,-15,-1,-42,NULL};
+
 
     jobs = InitDeque(NULL);
     busy_list = InitDeque(NULL);
@@ -39,7 +41,14 @@ int main () {
 
     SaveState(jobs, busy_list, CompoundList, &params);
     printf("Saved State\n");
+
+    printf("Testing MergeSTICData\n");
+    MergeSTICData(((CompoundTree*)CompoundList->data)->data->ID,&results,&CompoundList);
+
+    printf("Testing BoltzmannAvgCompoundTree\n");
     BoltzmannAvgCompoundTree(CompoundList, "/effercio/effercio_test/analysis", params.UseFreeEnergy);
+
+    FPrintCompoundTree(stdout, CompoundList);
 
     return retval;
 
